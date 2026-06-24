@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="sv"><head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BJN Mark &amp; Miljö — Mark, anläggning &amp; miljö</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&amp;family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://unpkg.com/@studio-freight/lenis@1.0.33/dist/lenis.min.js"></script>
+<style>
+:root{
+  --c-bg:#F3F2EF; --c-surface:#FFFFFF; --c-ink:#15171A; --c-dark:#0E0F10;
+  --c-slate:#44505A; --c-muted:#6B7280; --c-line:rgba(0,0,0,0.10);
+  --font-display:'Space Grotesk',sans-serif; --font-body:'Inter',sans-serif;
+}
+*{box-sizing:border-box}
+body{background-color:var(--c-bg);color:var(--c-ink);font-family:var(--font-body);margin:0;overflow-x:hidden;opacity:0;-webkit-font-smoothing:antialiased}
+.display{font-family:var(--font-display)}
+.tight{letter-spacing:-0.04em}
+.wrapper{position:relative;z-index:10;background-color:var(--c-bg);margin-bottom:100vh;box-shadow:0 50px 100px rgba(0,0,0,0.18)}
+.word-wrap{display:inline-block;overflow:hidden;vertical-align:top;padding-bottom:0.1em}
+.word-inner{display:inline-block;transform:translateY(110%)}
+.loader{position:fixed;inset:0;background:var(--c-dark);z-index:10000;display:flex;justify-content:center;align-items:center;color:#fff}
+.loader-text{font-family:var(--font-display);font-size:3vw;letter-spacing:-0.05em;font-weight:600}
+.loader-bar{position:absolute;bottom:0;left:0;height:2px;background:#fff;width:0%}
+.svc-card{position:relative;border-radius:14px;overflow:hidden;height:20rem}
+.svc-card img{width:100%;height:100%;object-fit:cover;transition:transform .8s ease}
+.svc-card:hover img{transform:scale(1.08)}
+.svc-scrim{position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.88),rgba(0,0,0,.15) 45%,transparent)}
+.svc-glass{position:absolute;bottom:0;left:0;width:100%;padding:1.5rem;display:flex;justify-content:space-between;align-items:flex-end;border-top:1px solid rgba(255,255,255,.14);background:rgba(255,255,255,.07);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
+.footer-sticky{position:fixed;bottom:0;left:0;width:100%;height:100vh;z-index:1;background:var(--c-dark);color:#fff;display:flex;flex-direction:column;justify-content:center}
+.noise-overlay{position:fixed;inset:0;pointer-events:none;z-index:9000;opacity:0.035;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.7' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+details>summary{list-style:none}
+details>summary::-webkit-details-marker{display:none}
+@media (max-width:768px){ .loader-text{font-size:8vw} }
+</style></head>
+<body class="antialiased selection:bg-neutral-800 selection:text-white">
+
+  <div class="noise-overlay"></div>
+
+  <!-- PRELOADER -->
+  <div class="loader">
+    <div class="loader-text">BJN MARK &amp; MILJÖ</div>
+    <div class="loader-bar"></div>
+  </div>
+
+  <!-- NAV -->
+  <nav class="fixed top-0 w-full px-6 py-6 md:px-12 flex justify-between items-center z-50 mix-blend-difference text-white">
+    <div class="display font-semibold text-xl tight flex items-center gap-2">
+      <iconify-icon icon="solar:hill-2-linear" width="24"></iconify-icon> BJN
+    </div>
+    <div class="hidden md:flex gap-8 text-xs font-medium uppercase tracking-widest text-white/80">
+      <a href="#om" class="hover:text-white transition-colors">Om oss</a>
+      <a href="#tjanster" class="hover:text-white transition-colors">Tjänster</a>
+      <a href="#projekt" class="hover:text-white transition-colors">Projekt</a>
+      <a href="#kontakt" class="hover:text-white transition-colors">Kontakt</a>
+    </div>
+    <a href="#kontakt" class="hidden md:block border border-white/25 px-5 py-2 text-xs uppercase tracking-widest hover:bg-white hover:text-black transition-colors rounded-sm">Begär offert</a>
+  </nav>
+
+  <div class="wrapper">
+
+    <!-- ============ HERO ============ -->
+    <section class="h-screen relative flex items-center justify-center overflow-hidden bg-black">
+      <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?q=80&amp;w=3870&amp;auto=format&amp;fit=crop" class="absolute inset-0 w-full h-full object-cover opacity-55 hero-img" alt="Markarbete">
+      <div class="relative z-10 text-center text-white w-full px-4">
+        <div class="flex justify-center mb-6 overflow-hidden">
+          <span class="hero-fade opacity-0 text-xs md:text-sm font-medium tracking-[0.3em] uppercase border border-white/20 px-4 py-1 rounded-full backdrop-blur-sm">Sedan 2009 — Mälardalen</span>
+        </div>
+        <h1 class="display text-[12vw] md:text-[8.5vw] leading-[0.9] font-medium tight hero-text overflow-hidden text-white/95"><span class="block translate-y-full">VI BYGGER</span></h1>
+        <h1 class="display text-[12vw] md:text-[8.5vw] leading-[0.9] font-medium tight hero-text overflow-hidden text-white/95"><span class="block translate-y-full">GRUNDEN</span></h1>
+        <p class="mt-8 text-sm md:text-base font-light text-white/70 max-w-lg mx-auto hero-fade opacity-0 leading-relaxed">Mark, anläggning &amp; miljö i världsklass. Från schakt till färdig finplanering — utfört med precision, miljöansvar och full kontroll.</p>
+        <div class="mt-10 flex flex-wrap justify-center gap-4 hero-fade opacity-0">
+          <div class="flex items-center gap-2 text-[10px] uppercase tracking-widest text-white/60 border border-white/12 px-3 py-1.5 rounded bg-black/20"><iconify-icon icon="solar:leaf-linear"></iconify-icon> ISO 14001</div>
+          <div class="flex items-center gap-2 text-[10px] uppercase tracking-widest text-white/60 border border-white/12 px-3 py-1.5 rounded bg-black/20"><iconify-icon icon="solar:shield-check-linear"></iconify-icon> ID06</div>
+          <div class="flex items-center gap-2 text-[10px] uppercase tracking-widest text-white/60 border border-white/12 px-3 py-1.5 rounded bg-black/20"><iconify-icon icon="solar:verified-check-linear"></iconify-icon> Godkänd F-skatt</div>
+        </div>
+      </div>
+      <div class="absolute bottom-10 left-1/2 -translate-x-1/2 hero-fade opacity-0 animate-bounce"><iconify-icon icon="solar:arrow-down-linear" width="24" class="text-white/50"></iconify-icon></div>
+    </section>
+
+    <!-- ============ TRUST STRIP (ljus, tunn) ============ -->
+    <section class="bg-[var(--c-surface)] py-5 border-b border-black/10 overflow-hidden">
+      <div class="max-w-[1600px] mx-auto px-6 md:px-12 flex flex-wrap items-center justify-center md:justify-between gap-x-10 gap-y-3 text-[11px] uppercase tracking-[0.18em] text-neutral-500">
+        <span class="flex items-center gap-2"><iconify-icon icon="solar:shield-check-linear" class="text-[var(--c-slate)]"></iconify-icon> ID06-anslutna</span>
+        <span class="flex items-center gap-2"><iconify-icon icon="solar:leaf-linear" class="text-[var(--c-slate)]"></iconify-icon> Miljöcertifierade ISO 14001</span>
+        <span class="flex items-center gap-2"><iconify-icon icon="solar:document-text-linear" class="text-[var(--c-slate)]"></iconify-icon> Godkänd för F-skatt</span>
+        <span class="flex items-center gap-2"><iconify-icon icon="solar:hand-shake-linear" class="text-[var(--c-slate)]"></iconify-icon> Fullt försäkrade</span>
+        <span class="flex items-center gap-2"><iconify-icon icon="solar:star-linear" class="text-[var(--c-slate)]"></iconify-icon> 4,9 i kundbetyg</span>
+      </div>
+    </section>
+
+    <!-- ============ OM OSS / DNA (ljus — sektion 2) ============ -->
+    <section id="om" class="py-28 md:py-32 px-6 md:px-20 grid md:grid-cols-2 gap-16 max-w-[1600px] mx-auto">
+      <div class="sticky top-32 self-start">
+        <h2 class="display text-4xl md:text-5xl font-medium tight leading-tight split-animate">
+          Mark är vårt <br>modersmål. <span class="text-neutral-400">Sedan 2009.</span>
+        </h2>
+        <div class="mt-8 flex flex-wrap gap-4 text-xs font-medium uppercase tracking-widest text-neutral-500">
+          <div class="flex items-center gap-2"><iconify-icon icon="solar:users-group-two-rounded-linear" class="text-lg"></iconify-icon> Familjeägt</div>
+          <div class="flex items-center gap-2"><iconify-icon icon="solar:settings-linear" class="text-lg"></iconify-icon> Egen maskinpark</div>
+        </div>
+      </div>
+      <div class="text-lg md:text-xl font-light leading-relaxed text-neutral-600">
+        <p class="mb-8 split-animate">BJN Mark &amp; Miljö är ett familjeägt anläggningsföretag i Mälardalen. Sedan 2009 har vi tagit oss an allt från villatomter och dräneringar till kommunala anläggningsprojekt och miljösanering.</p>
+        <p class="mb-8 split-animate">Vi är små nog att bry oss om varje detalj, men rustade nog att leverera komplexa markentreprenader med full kontroll på tid, ekonomi och miljö.</p>
+        <div class="h-px w-full bg-black/10 my-10"></div>
+        <div class="grid grid-cols-2 gap-8">
+          <div><h4 class="text-sm font-medium uppercase tracking-widest text-black mb-2">Bas</h4><p class="text-sm text-neutral-500">Västerås &amp; Mälardalen</p></div>
+          <div><h4 class="text-sm font-medium uppercase tracking-widest text-black mb-2">Fokus</h4><p class="text-sm text-neutral-500">Mark · Anläggning · Miljö</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ TJÄNSTER (ljus — sektion 3) ============ -->
+    <section id="tjanster" class="bg-[var(--c-surface)] py-24 md:py-28 border-y border-black/10">
+      <div class="max-w-[1600px] mx-auto px-6 md:px-12">
+        <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-14">
+          <div>
+            <div class="flex items-center gap-3 mb-4"><span class="w-8 h-px bg-[var(--c-slate)]"></span><span class="text-xs font-medium uppercase tracking-widest text-[var(--c-slate)]">Tjänster</span></div>
+            <h2 class="display text-4xl md:text-5xl font-medium tight">Det vi gör</h2>
+          </div>
+          <p class="max-w-md text-neutral-500 leading-relaxed">Hela vägen från obearbetad mark till färdig, hållbar yta — en kontakt, ett ansvar, ett lag.</p>
+        </div>
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
+          <div class="svc-card group"><img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=900&amp;q=80" alt="Schakt"><div class="svc-scrim"></div><div class="svc-glass"><span class="text-white font-medium text-lg display tight">Markarbeten &amp; schakt</span><iconify-icon icon="solar:arrow-right-up-linear" class="text-white" width="22"></iconify-icon></div></div>
+          <div class="svc-card group"><img src="https://images.unsplash.com/photo-1621905251918-48416bd8575a?w=900&amp;q=80" alt="Anläggning"><div class="svc-scrim"></div><div class="svc-glass"><span class="text-white font-medium text-lg display tight">Anläggning &amp; finplanering</span><iconify-icon icon="solar:arrow-right-up-linear" class="text-white" width="22"></iconify-icon></div></div>
+          <div class="svc-card group"><img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=900&amp;q=80" alt="Dränering & VA"><div class="svc-scrim"></div><div class="svc-glass"><span class="text-white font-medium text-lg display tight">Dränering &amp; VA</span><iconify-icon icon="solar:arrow-right-up-linear" class="text-white" width="22"></iconify-icon></div></div>
+          <div class="svc-card group"><img src="https://images.unsplash.com/photo-1599707367072-cd6ada2bc375?w=900&amp;q=80" alt="Grundläggning"><div class="svc-scrim"></div><div class="svc-glass"><span class="text-white font-medium text-lg display tight">Grundläggning</span><iconify-icon icon="solar:arrow-right-up-linear" class="text-white" width="22"></iconify-icon></div></div>
+          <div class="svc-card group"><img src="https://images.unsplash.com/photo-1473445730015-841f29a9490b?w=900&amp;q=80" alt="Miljösanering"><div class="svc-scrim"></div><div class="svc-glass"><span class="text-white font-medium text-lg display tight">Miljösanering</span><iconify-icon icon="solar:arrow-right-up-linear" class="text-white" width="22"></iconify-icon></div></div>
+          <div class="svc-card group"><img src="https://images.unsplash.com/photo-1486718448742-163732cd1544?w=900&amp;q=80" alt="Drift"><div class="svc-scrim"></div><div class="svc-glass"><span class="text-white font-medium text-lg display tight">Drift &amp; vinterväghållning</span><iconify-icon icon="solar:arrow-right-up-linear" class="text-white" width="22"></iconify-icon></div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ METRICS (ljus) ============ -->
+    <section class="py-20 md:py-24 px-6 md:px-12 max-w-[1600px] mx-auto">
+      <div class="flex flex-col gap-14">
+        <div class="flex flex-col md:flex-row justify-between items-start md:items-end gap-6">
+          <h2 class="display text-3xl md:text-5xl font-medium tight leading-tight max-w-3xl">Siffror som håller hela vägen ner i grunden.</h2>
+          <span class="text-sm font-medium uppercase tracking-widest text-neutral-500 pb-2 border-b border-black">Etablerade 2009</span>
+        </div>
+        <div class="grid grid-cols-2 md:grid-cols-4 divide-y md:divide-y-0 md:divide-x divide-black/10 border-y border-black/10">
+          <div class="flex flex-col gap-2 py-8 md:py-10 md:px-8 first:md:pl-0"><span class="display text-5xl md:text-7xl font-medium tight">15<span class="text-neutral-400">+</span></span><span class="text-xs font-medium uppercase tracking-widest mt-3">År i branschen</span><span class="text-sm text-neutral-500">Erfarenhet i varje skopa</span></div>
+          <div class="flex flex-col gap-2 py-8 md:py-10 md:px-8"><span class="display text-5xl md:text-7xl font-medium tight">600<span class="text-neutral-400">+</span></span><span class="text-xs font-medium uppercase tracking-widest mt-3">Genomförda projekt</span><span class="text-sm text-neutral-500">Privat, företag &amp; kommun</span></div>
+          <div class="flex flex-col gap-2 py-8 md:py-10 md:px-8"><span class="display text-5xl md:text-7xl font-medium tight">25<span class="text-neutral-400">+</span></span><span class="text-xs font-medium uppercase tracking-widest mt-3">Maskiner &amp; medarbetare</span><span class="text-sm text-neutral-500">Egen kapacitet</span></div>
+          <div class="flex flex-col gap-2 py-8 md:py-10 md:px-8 last:md:pr-0"><span class="display text-5xl md:text-7xl font-medium tight">100<span class="text-neutral-400">%</span></span><span class="text-xs font-medium uppercase tracking-widest mt-3">Återvunna massor</span><span class="text-sm text-neutral-500">Spårbart enligt ISO 14001</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ MANIFESTO (MÖRK — eventuell mörk sektion längre ner) ============ -->
+    <section class="py-28 md:py-36 bg-[var(--c-dark)] text-white border-y border-black/10">
+      <div class="max-w-[1500px] mx-auto px-6 md:px-12">
+        <div class="flex flex-col gap-4 mb-20 max-w-3xl">
+          <span class="text-xs font-medium uppercase tracking-widest text-white/45">Vårt hantverk</span>
+          <h2 class="display text-4xl md:text-6xl font-medium tight split-animate">Stabil mark är ett löfte — inte en slump.</h2>
+        </div>
+        <div class="flex flex-col divide-y divide-white/10 border-t border-white/10">
+          <div class="py-10 flex flex-col md:flex-row gap-6 md:gap-24 group hover:bg-white/[0.03] transition-colors -mx-6 px-6 md:-mx-12 md:px-12">
+            <span class="display text-4xl md:text-5xl font-medium tight text-white/30 group-hover:text-white transition-colors w-24">01</span>
+            <div class="flex-1 flex flex-col gap-3"><h3 class="display text-2xl md:text-3xl font-medium tight">Grundlig projektering</h3><p class="text-base md:text-lg text-white/55 max-w-2xl font-light">Vi börjar i marken. Geoteknik, avvägning och en tydlig plan innan första spadtaget — så att inga överraskningar dyker upp senare.</p></div>
+          </div>
+          <div class="py-10 flex flex-col md:flex-row gap-6 md:gap-24 group hover:bg-white/[0.03] transition-colors -mx-6 px-6 md:-mx-12 md:px-12">
+            <span class="display text-4xl md:text-5xl font-medium tight text-white/30 group-hover:text-white transition-colors w-24">02</span>
+            <div class="flex-1 flex flex-col gap-3"><h3 class="display text-2xl md:text-3xl font-medium tight">Egna maskiner &amp; lag</h3><p class="text-base md:text-lg text-white/55 max-w-2xl font-light">Egen maskinpark och fasta yrkesarbetare. Inga underleverantörsled att skylla på — vi äger hela leveransen från start till mål.</p></div>
+          </div>
+          <div class="py-10 flex flex-col md:flex-row gap-6 md:gap-24 group hover:bg-white/[0.03] transition-colors -mx-6 px-6 md:-mx-12 md:px-12">
+            <span class="display text-4xl md:text-5xl font-medium tight text-white/30 group-hover:text-white transition-colors w-24">03</span>
+            <div class="flex-1 flex flex-col gap-3"><h3 class="display text-2xl md:text-3xl font-medium tight">Miljö i varje beslut</h3><p class="text-base md:text-lg text-white/55 max-w-2xl font-light">Masshantering, sanering och återvinning enligt ISO 14001. Vi lämnar marken bättre än vi fann den — dokumenterat och spårbart.</p></div>
+          </div>
+          <div class="py-10 flex flex-col md:flex-row gap-6 md:gap-24 group hover:bg-white/[0.03] transition-colors -mx-6 px-6 md:-mx-12 md:px-12">
+            <span class="display text-4xl md:text-5xl font-medium tight text-white/30 group-hover:text-white transition-colors w-24">04</span>
+            <div class="flex-1 flex flex-col gap-3"><h3 class="display text-2xl md:text-3xl font-medium tight">Överlämning utan punktlista</h3><p class="text-base md:text-lg text-white/55 max-w-2xl font-light">Vi är inte klara förrän du är det. Slutbesiktning, dokumentation och en yta som håller i decennier — inte bara till garantin gått ut.</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ PROJEKT (ljus) ============ -->
+    <section id="projekt" class="py-28 md:py-32 bg-[var(--c-bg)]">
+      <div class="max-w-[1600px] mx-auto px-6 md:px-12 flex flex-col gap-20">
+        <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 border-b border-black/10 pb-8">
+          <h2 class="display text-5xl md:text-7xl font-medium tight">Utvalda projekt</h2>
+          <span class="text-sm font-medium uppercase tracking-widest text-neutral-500">2022 — 2024</span>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-y-20 md:gap-x-12 items-center">
+          <div class="md:col-span-7 flex flex-col gap-6 group cursor-pointer">
+            <div class="overflow-hidden bg-neutral-200 aspect-[4/3] rounded-sm"><img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=1400&amp;q=80" class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700" alt="Bostadsområde"></div>
+            <div class="flex justify-between items-start border-t border-black/10 pt-4"><div><h3 class="display text-2xl font-medium tight">Kvarteret Eken</h3><span class="text-sm text-neutral-500 block mt-1">Västerås</span></div><span class="text-xs uppercase tracking-widest font-medium">Markentreprenad</span></div>
+          </div>
+          <div class="md:col-span-4 md:col-start-9 flex flex-col gap-6 group cursor-pointer mt-0 md:mt-40">
+            <div class="overflow-hidden bg-neutral-200 aspect-[3/4] rounded-sm"><img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=1000&amp;q=80" class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700" alt="VA-projekt"></div>
+            <div class="flex justify-between items-start border-t border-black/10 pt-4"><div><h3 class="display text-2xl font-medium tight">Strandvägen VA</h3><span class="text-sm text-neutral-500 block mt-1">Enköping</span></div><span class="text-xs uppercase tracking-widest font-medium">Dränering</span></div>
+          </div>
+          <div class="md:col-span-8 md:col-start-3 flex flex-col gap-6 group cursor-pointer mt-0 md:mt-16">
+            <div class="overflow-hidden bg-neutral-200 aspect-video rounded-sm"><img src="https://images.unsplash.com/photo-1517089152318-42ec560349c0?w=1400&amp;q=80" class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700" alt="Industripark"></div>
+            <div class="flex justify-between items-start border-t border-black/10 pt-4"><div><h3 class="display text-2xl font-medium tight">Hacksta Industripark</h3><span class="text-sm text-neutral-500 block mt-1">Västerås</span></div><span class="text-xs uppercase tracking-widest font-medium">Anläggning</span></div>
+          </div>
+        </div>
+        <div class="flex justify-center"><button class="border border-black/80 hover:bg-black hover:text-white transition-colors px-8 py-4 rounded-full text-sm font-medium uppercase tracking-widest">Se hela referensarkivet</button></div>
+      </div>
+    </section>
+
+    <!-- ============ OMDÖMEN (ljus) ============ -->
+    <section class="py-28 md:py-32 bg-[var(--c-surface)] border-y border-black/10">
+      <div class="max-w-[1500px] mx-auto px-6 md:px-12 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        <div class="lg:col-span-3 flex flex-col gap-6">
+          <iconify-icon icon="solar:chat-square-like-linear" width="48" class="text-neutral-300"></iconify-icon>
+          <div class="flex items-center gap-4"><img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=120&amp;q=80" class="w-12 h-12 rounded-full object-cover grayscale" alt="Kund"><div><p class="font-medium text-sm">Anders Lind</p><p class="text-xs text-neutral-500">Projektledare, Mälarbygg</p></div></div>
+        </div>
+        <div class="lg:col-span-9 lg:border-l border-black/10 lg:pl-12">
+          <blockquote class="display text-2xl md:text-4xl font-medium tight leading-snug split-animate">"BJN tog totalansvar för marken från dag ett. Tidplanen höll, ekonomin höll, och slutresultatet är det renaste vi sett. Vi anlitar dem igen — varje gång."</blockquote>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ FAQ (ljus) ============ -->
+    <section class="py-24 md:py-28 bg-[var(--c-bg)]">
+      <div class="max-w-[1500px] mx-auto px-6 md:px-12 grid grid-cols-1 md:grid-cols-12 gap-10">
+        <div class="md:col-span-4 flex flex-col gap-4"><span class="text-xs font-medium uppercase tracking-widest text-neutral-500">Du kanske undrar</span><h2 class="display text-5xl md:text-7xl font-medium tight">FAQ</h2></div>
+        <div class="md:col-span-8 flex flex-col divide-y divide-black/10 border-t border-black/10">
+          <details class="group py-6 cursor-pointer" open=""><summary class="flex justify-between items-center font-medium text-lg md:text-xl">Vilka typer av markarbeten åtar ni er?<span class="transition-transform duration-300 group-open:rotate-45"><iconify-icon icon="solar:add-circle-linear" width="26" class="text-neutral-400"></iconify-icon></span></summary><p class="text-base md:text-lg text-neutral-600 mt-4 pr-12 leading-relaxed font-light">Allt från enskilda villatomter och dräneringar till kompletta markentreprenader åt företag och kommun — schakt, VA, grundläggning, finplanering och miljösanering.</p></details>
+          <details class="group py-6 cursor-pointer"><summary class="flex justify-between items-center font-medium text-lg md:text-xl text-neutral-700 hover:text-black transition-colors">Hur snabbt kan ni starta ett projekt?<span class="transition-transform duration-300 group-open:rotate-45"><iconify-icon icon="solar:add-circle-linear" width="26" class="text-neutral-400"></iconify-icon></span></summary><p class="text-base md:text-lg text-neutral-600 mt-4 pr-12 leading-relaxed font-light">Med egen maskinpark och fasta lag är vi flexibla. Efter platsbesök och offert kan vi oftast vara på plats inom ett par veckor — akuta jobb snabbare.</p></details>
+          <details class="group py-6 cursor-pointer"><summary class="flex justify-between items-center font-medium text-lg md:text-xl text-neutral-700 hover:text-black transition-colors">Hanterar ni miljöfarliga massor?<span class="transition-transform duration-300 group-open:rotate-45"><iconify-icon icon="solar:add-circle-linear" width="26" class="text-neutral-400"></iconify-icon></span></summary><p class="text-base md:text-lg text-neutral-600 mt-4 pr-12 leading-relaxed font-light">Ja. Vi är miljöcertifierade enligt ISO 14001 och hanterar sanering, masshantering och återvinning med full dokumentation och spårbarhet.</p></details>
+          <details class="group py-6 cursor-pointer"><summary class="flex justify-between items-center font-medium text-lg md:text-xl text-neutral-700 hover:text-black transition-colors">Arbetar ni med ROT-avdrag för privatpersoner?<span class="transition-transform duration-300 group-open:rotate-45"><iconify-icon icon="solar:add-circle-linear" width="26" class="text-neutral-400"></iconify-icon></span></summary><p class="text-base md:text-lg text-neutral-600 mt-4 pr-12 leading-relaxed font-light">Absolut. Vi hjälper privatkunder med ROT där det är tillämpligt och sköter all administration mot Skatteverket åt dig.</p></details>
+          <div class="pt-8 flex justify-between items-center text-neutral-500 text-sm"><span>Undrar du något annat?</span><a href="#kontakt" class="font-medium text-black flex items-center gap-2 hover:gap-3 transition-all">Ställ din fråga <iconify-icon icon="solar:arrow-right-linear"></iconify-icon></a></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CTA + KONTAKT (mörk) ============ -->
+    <section id="kontakt" class="py-28 md:py-32 bg-[var(--c-ink)] text-white relative z-10 border-b border-white/5">
+      <div class="max-w-[1500px] mx-auto px-6 md:px-12 grid lg:grid-cols-2 gap-16 items-center">
+        <div>
+          <div class="flex items-center gap-3 mb-6"><span class="w-8 h-px bg-white/50"></span><span class="text-xs font-medium uppercase tracking-widest text-white/50">Kontakt</span></div>
+          <h2 class="display text-4xl md:text-6xl font-medium tight leading-[1.05] mb-6">Redo att <br>bryta mark?</h2>
+          <p class="text-white/60 font-light leading-relaxed max-w-md mb-10">Beskriv ditt projekt så återkommer vi med ett kostnadsfritt platsbesök och en tydlig offert — utan krångel.</p>
+          <div class="space-y-4">
+            <a href="tel:021000000" class="flex items-center gap-3 text-lg hover:text-white/70 transition-colors"><iconify-icon icon="solar:phone-linear"></iconify-icon> 021 — 00 00 00</a>
+            <a href="mailto:info@bjnmark.se" class="flex items-center gap-3 text-lg hover:text-white/70 transition-colors"><iconify-icon icon="solar:letter-linear"></iconify-icon> info@bjnmark.se</a>
+            <p class="flex items-center gap-3 text-white/60"><iconify-icon icon="solar:map-point-linear"></iconify-icon> Västerås, Mälardalen</p>
+          </div>
+        </div>
+        <div class="bg-white/[0.04] border border-white/10 rounded-2xl p-8 backdrop-blur-sm">
+          <div class="grid gap-4">
+            <input type="text" placeholder="Namn" class="bg-transparent border border-white/15 rounded-lg px-4 py-3.5 text-sm placeholder:text-white/40 focus:border-white/50 focus:outline-none transition-colors">
+            <input type="tel" placeholder="Telefon" class="bg-transparent border border-white/15 rounded-lg px-4 py-3.5 text-sm placeholder:text-white/40 focus:border-white/50 focus:outline-none transition-colors">
+            <select class="bg-transparent border border-white/15 rounded-lg px-4 py-3.5 text-sm text-white/60 focus:border-white/50 focus:outline-none transition-colors"><option class="text-black">Typ av projekt</option><option class="text-black">Markarbeten &amp; schakt</option><option class="text-black">Dränering &amp; VA</option><option class="text-black">Grundläggning</option><option class="text-black">Miljösanering</option><option class="text-black">Annat</option></select>
+            <textarea rows="4" placeholder="Beskriv ditt projekt" class="bg-transparent border border-white/15 rounded-lg px-4 py-3.5 text-sm placeholder:text-white/40 focus:border-white/50 focus:outline-none transition-colors resize-none"></textarea>
+            <button type="button" class="bg-white text-black rounded-lg px-6 py-4 text-sm font-medium uppercase tracking-widest hover:bg-white/85 transition-colors">Skicka förfrågan</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </div>
+  <!-- /wrapper -->
+
+  <!-- ============ FOOTER (mörk reveal) ============ -->
+  <footer class="footer-sticky">
+    <div class="relative z-10 w-full max-w-[1500px] mx-auto px-6 py-12 h-full flex flex-col justify-center">
+      <div class="grid md:grid-cols-2 gap-12 md:gap-24 mb-16 items-start">
+        <div class="space-y-12">
+          <div><h4 class="text-xs uppercase tracking-widest text-white/40 mb-6">Hör av dig</h4><a href="tel:021000000" class="block display text-4xl md:text-5xl font-medium tight hover:text-white/70 transition-colors mb-2">021 — 00 00 00</a><p class="text-white/50 font-light">Vardagar 07—17</p></div>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div><div class="flex items-center gap-2 mb-3 text-white"><iconify-icon icon="solar:map-point-linear"></iconify-icon><span class="font-medium text-sm uppercase tracking-wide">Kontor &amp; maskinhall</span></div><p class="text-sm text-white/50 leading-relaxed font-light">Industrigatan 1<br>721 30 Västerås</p></div>
+            <div><div class="flex items-center gap-2 mb-3 text-white"><iconify-icon icon="solar:letter-linear"></iconify-icon><span class="font-medium text-sm uppercase tracking-wide">E-post</span></div><p class="text-sm text-white/50 leading-relaxed font-light">info@bjnmark.se</p></div>
+          </div>
+        </div>
+        <div class="md:text-right flex flex-col justify-between h-full">
+          <div><h4 class="text-xs uppercase tracking-widest text-white/40 mb-6">Sociala medier</h4><div class="flex md:justify-end gap-4"><a href="#" class="p-3 border border-white/20 rounded-full hover:bg-white hover:text-black transition-colors"><iconify-icon icon="solar:instagram-linear" width="20"></iconify-icon></a><a href="#" class="p-3 border border-white/20 rounded-full hover:bg-white hover:text-black transition-colors"><iconify-icon icon="solar:facebook-linear" width="20"></iconify-icon></a></div></div>
+          <div class="mt-12 space-y-3"><div class="text-xs text-white/40 uppercase tracking-widest"><span class="block mb-1">BJN MARK &amp; MILJÖ AB</span><span class="block text-[10px] text-white/30">Org.nr 556000-0000 · Godkänd för F-skatt</span></div></div>
+        </div>
+      </div>
+      <div class="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center text-[10px] text-white/40 uppercase tracking-widest"><div>© 2024 BJN Mark &amp; Miljö</div><div class="mt-2 md:mt-0">Mark · Anläggning · Miljö</div></div>
+    </div>
+  </footer>
+
+  <script>
+    gsap.registerPlugin(ScrollTrigger);
+    const lenis = new Lenis({ duration:1.2, easing:(t)=>Math.min(1,1.001-Math.pow(2,-10*t)), smooth:true });
+    function raf(time){ lenis.raf(time); requestAnimationFrame(raf); }
+    requestAnimationFrame(raf);
+    function splitTextToWords(el){ const words=el.innerText.split(' '); el.innerHTML=''; words.forEach(w=>{ const wrap=document.createElement('span'); wrap.className='word-wrap'; wrap.innerHTML=`<span class="word-inner">${w}&nbsp;</span>`; el.appendChild(wrap); }); }
+    document.querySelectorAll('.split-animate').forEach(splitTextToWords);
+    const loadTl = gsap.timeline({ onComplete:()=>{ document.body.style.opacity=1; initSite(); } });
+    loadTl.to('.loader-bar',{ width:'100%', duration:1.1, ease:'power2.inOut' }).to('.loader-text',{ y:-40, opacity:0, duration:0.5 }).to('.loader',{ yPercent:-100, duration:0.8, ease:'power4.inOut' });
+    function initSite(){
+      gsap.to('.hero-text span',{ y:0, stagger:0.1, duration:1.4, ease:'power4.out' });
+      gsap.to('.hero-fade',{ opacity:1, y:0, stagger:0.1, duration:1, delay:0.5 });
+      gsap.to('.hero-img',{ yPercent:25, ease:'none', scrollTrigger:{ trigger:'.hero-img', start:'top top', end:'bottom top', scrub:true } });
+      document.querySelectorAll('.split-animate').forEach(el=>{ gsap.to(el.querySelectorAll('.word-inner'),{ y:'0%', duration:0.8, ease:'power3.out', stagger:0.015, scrollTrigger:{ trigger:el, start:'top 90%', toggleActions:'play none none reverse' } }); });
+      gsap.from('.footer-sticky > div',{ y:50, opacity:0, scale:0.96, scrollTrigger:{ trigger:'.footer-sticky', start:'top 90%', end:'bottom bottom', scrub:true } });
+    }
+  </script>
+</body></html>

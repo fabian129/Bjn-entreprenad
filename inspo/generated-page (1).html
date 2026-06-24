@@ -1,0 +1,575 @@
+<html lang="en"><head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sustainabylt | Commercial Construction Specialists</title>
+<!-- Fonts: Space Grotesk for technical feel, Inter for clean body -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&amp;family=Space+Grotesk:wght@300;400;500;600&amp;display=swap" rel="stylesheet">
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com"></script>
+<!-- Iconify -->
+<script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+<!-- GSAP / Lenis -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://unpkg.com/@studio-freight/lenis@1.0.33/dist/lenis.min.js"></script>
+<style>
+/* --- CORE VARIABLES --- */
+:root {
+--c-bg: #F5F5F5; /* Light Concrete */
+--c-text: #171717;
+--c-accent: #334155; /* Slate */
+--font-display: 'Space Grotesk', sans-serif;
+--font-body: 'Inter', sans-serif;
+}
+body {
+background-color: var(--c-bg);
+color: var(--c-text);
+font-family: var(--font-body);
+margin: 0;
+overflow-x: hidden;
+opacity: 0; /* JS fade in */
+-webkit-font-smoothing: antialiased;
+}
+/* --- LAYOUT UTILS --- */
+.wrapper {
+position: relative;
+z-index: 10;
+background-color: var(--c-bg);
+margin-bottom: 100vh; /* Reveal Footer */
+box-shadow: 0 50px 100px rgba(0,0,0,0.2);
+}
+/* --- TEXT REVEAL UTILS --- */
+.word-wrap {
+display: inline-block;
+overflow: hidden;
+vertical-align: top;
+padding-bottom: 0.1em;
+}
+.word-inner {
+display: inline-block;
+transform: translateY(110%);
+}
+/* --- PRELOADER --- */
+.loader {
+position: fixed;
+inset: 0;
+background: #171717;
+z-index: 10000;
+display: flex;
+justify-content: center;
+align-items: center;
+color: #fff;
+}
+.loader-text {
+font-family: var(--font-display);
+font-size: 3vw;
+letter-spacing: -0.05em;
+font-weight: 500;
+}
+.loader-bar {
+position: absolute;
+bottom: 0;
+left: 0;
+height: 2px;
+background: #fff;
+width: 0%;
+}
+/* --- CARD STACK SECTION --- */
+.stack-section {
+padding: 10vh 0;
+background: #111;
+color: #F5F5F5;
+position: relative;
+}
+.stack-container {
+width: 100%;
+max-width: 1400px;
+margin: 0 auto;
+position: relative;
+padding-bottom: 10vh;
+}
+.card-item {
+position: sticky;
+top: 10vh;
+height: 80vh;
+width: 100%;
+display: flex;
+align-items: center;
+justify-content: center;
+margin-bottom: 5vh;
+}
+.card-inner {
+width: 90%;
+height: 100%;
+background: #1a1a1a;
+border: 1px solid rgba(255,255,255,0.1);
+position: relative;
+overflow: hidden;
+display: grid;
+grid-template-columns: 1fr 1.2fr;
+border-radius: 4px; /* Slight roundness for modern feel */
+}
+.card-content {
+padding: 4rem;
+display: flex;
+flex-direction: column;
+justify-content: space-between;
+background: #1a1a1a;
+z-index: 2;
+}
+.card-img-wrap {
+position: relative;
+width: 100%;
+height: 100%;
+overflow: hidden;
+}
+.card-img {
+width: 100%;
+height: 100%;
+object-fit: cover;
+filter: grayscale(100%); /* Monochrome feel */
+transition: transform 1.5s ease, filter 0.5s ease;
+}
+.card-inner:hover .card-img {
+transform: scale(1.05);
+filter: grayscale(0%);
+}
+@media (max-width: 768px) {
+.card-inner { grid-template-columns: 1fr; }
+.card-item { top: 5vh; height: 85vh; }
+.card-img-wrap { height: 40%; order: -1; }
+.card-content { padding: 2rem; height: 60%; }
+.loader-text { font-size: 8vw; }
+}
+/* --- FOOTER REVEAL --- */
+.footer-sticky {
+position: fixed;
+bottom: 0;
+left: 0;
+width: 100%;
+height: 100vh;
+z-index: 1;
+background: #0f0f0f;
+color: #fff;
+display: flex;
+flex-direction: column;
+justify-content: center;
+}
+/* --- UTILS --- */
+.display { font-family: var(--font-display); }
+.tracking-tight-custom { letter-spacing: -0.04em; }
+/* --- NOISE --- */
+.noise-overlay {
+position: fixed;
+inset: 0;
+pointer-events: none;
+z-index: 9000;
+opacity: 0.04;
+background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.7' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='1'/%3E%3C/svg%3E");
+}
+</style></head>
+<body class="antialiased selection:bg-gray-800 selection:text-white">
+
+    <!-- OVERLAYS -->
+    <div class="noise-overlay"></div>
+
+    <!-- PRELOADER -->
+    <div class="loader">
+        <div class="loader-text">SUSTAINABYLT</div>
+        <div class="loader-bar"></div>
+    </div>
+
+    <!-- NAVIGATION -->
+    <nav class="fixed top-0 w-full px-6 py-6 md:px-12 flex justify-between items-center z-50 mix-blend-difference text-white">
+        <div class="display font-semibold text-xl tracking-tight-custom flex items-center gap-2">
+            <!-- Simple Abstract Logo Icon -->
+            <iconify-icon icon="solar:buildings-linear" width="24" stroke-width="1.5"></iconify-icon>
+            SUSTAINABYLT
+        </div>
+        <div class="hidden md:flex gap-8 text-xs font-medium uppercase tracking-widest text-gray-300">
+            <a href="#about" class="hover:text-white transition-colors">About</a>
+            <a href="#services" class="hover:text-white transition-colors">Services</a>
+            <a href="#contact" class="hover:text-white transition-colors">Contact</a>
+        </div>
+        <a href="#contact" class="hidden md:block border border-white/20 px-5 py-2 text-xs uppercase tracking-widest hover:bg-white hover:text-black transition-colors rounded-sm">
+            Get in touch
+        </a>
+    </nav>
+
+    <!-- MAIN CONTENT WRAPPER -->
+    <div class="wrapper">
+        
+        <!-- HERO SECTION -->
+        <section class="h-screen relative flex items-center justify-center overflow-hidden bg-black">
+            <!-- Darkened Construction Image -->
+            <img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?q=80&amp;w=3870&amp;auto=format&amp;fit=crop" class="absolute inset-0 w-full h-full object-cover opacity-50 hero-img" alt="Commercial Construction">
+            
+            <div class="relative z-10 text-center text-white w-full px-4">
+                <div class="flex justify-center mb-6 overflow-hidden">
+                    <span class="hero-fade opacity-0 text-xs md:text-sm font-medium tracking-[0.3em] uppercase border border-white/20 px-4 py-1 rounded-full backdrop-blur-sm">
+                        Est. 2006 — Albury/Wodonga
+                    </span>
+                </div>
+                
+                <h1 class="display text-[10vw] md:text-[8vw] leading-[0.9] font-medium tracking-tight-custom hero-text overflow-hidden text-white/90">
+                    <span class="block translate-y-full">EXCEPTIONAL</span>
+                </h1>
+                <h1 class="display text-[10vw] md:text-[8vw] leading-[0.9] font-medium tracking-tight-custom hero-text overflow-hidden text-white/90">
+                    <span class="block translate-y-full">PROJECTS</span>
+                </h1>
+                
+                <p class="mt-8 text-sm md:text-base font-light text-gray-300 max-w-lg mx-auto hero-fade opacity-0 leading-relaxed">
+                    Commercial Construction Specialists. Triple Certified ISO Systems. Small enough to care, big enough to deliver.
+                </p>
+
+                <!-- ISO Badges Representation -->
+                <div class="mt-10 flex flex-wrap justify-center gap-4 hero-fade opacity-0">
+                    <div class="flex items-center gap-2 text-[10px] uppercase tracking-widest text-gray-400 border border-white/10 px-3 py-1.5 rounded bg-black/20">
+                        <iconify-icon icon="solar:shield-check-linear"></iconify-icon> ISO 45001
+                    </div>
+                    <div class="flex items-center gap-2 text-[10px] uppercase tracking-widest text-gray-400 border border-white/10 px-3 py-1.5 rounded bg-black/20">
+                        <iconify-icon icon="solar:leaf-linear"></iconify-icon> ISO 14001
+                    </div>
+                    <div class="flex items-center gap-2 text-[10px] uppercase tracking-widest text-gray-400 border border-white/10 px-3 py-1.5 rounded bg-black/20">
+                        <iconify-icon icon="solar:verified-check-linear"></iconify-icon> ISO 9001
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Scroll Indicator -->
+            <div class="absolute bottom-10 left-1/2 -translate-x-1/2 hero-fade opacity-0 animate-bounce">
+                <iconify-icon icon="solar:arrow-down-linear" width="24" class="text-white/50"></iconify-icon>
+            </div>
+        </section>
+
+        <!-- INTRO / ABOUT SECTION -->
+        <section id="about" class="py-32 px-6 md:px-20 grid md:grid-cols-2 gap-16 max-w-[1600px] mx-auto bg-[var(--c-bg)]">
+            <div class="sticky top-32 self-start">
+                <h2 class="display text-4xl md:text-5xl font-medium tracking-tight-custom leading-tight split-animate text-[#171717]">
+                    Construction is <br>in our <span class="text-gray-400">DNA.</span>
+                </h2>
+                <div class="mt-8 flex gap-4 text-xs font-medium uppercase tracking-widest text-gray-500">
+                    <div class="flex items-center gap-2">
+                        <iconify-icon icon="solar:users-group-two-rounded-linear" class="text-lg"></iconify-icon>
+                        Family Owned
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <iconify-icon icon="solar:hammer-linear" class="text-lg"></iconify-icon>
+                        3rd Gen Builders
+                    </div>
+                </div>
+            </div>
+            <div class="text-lg md:text-xl font-light leading-relaxed text-gray-600">
+                <p class="mb-8 split-animate">
+                    Based in Albury/Wodonga, Sustainabylt has been a trusted name since 2006. We are third-generation builders and plumbers, bringing decades of inherited knowledge and modern precision to every commercial project.
+                </p>
+                <p class="mb-8 split-animate">
+                    We pride ourselves on being agile enough to offer personalized care, yet robust enough to manage complex, large-scale commercial deliveries with triple-certified ISO systems for safety, quality, and environmental management.
+                </p>
+                
+                <div class="h-px w-full bg-black/10 my-10"></div>
+                
+                <div class="grid grid-cols-2 gap-8">
+                    <div>
+                        <h4 class="text-sm font-medium uppercase tracking-widest text-black mb-2">Location</h4>
+                        <p class="text-sm text-gray-500">Albury, NSW 2640</p>
+                    </div>
+                    <div>
+                        <h4 class="text-sm font-medium uppercase tracking-widest text-black mb-2">Focus</h4>
+                        <p class="text-sm text-gray-500">Commercial &amp; Industrial</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SERVICES STACK -->
+        <section id="services" class="stack-section">
+            <div class="text-center mb-24 px-6">
+                <div class="text-xs uppercase tracking-[0.2em] mb-4 text-gray-500">Capabilities</div>
+                <h2 class="display text-4xl md:text-6xl font-medium tracking-tight-custom">OUR EXPERTISE</h2>
+            </div>
+
+            <div class="stack-container">
+                
+                <!-- Service 1 -->
+                <div class="card-item">
+                    <div class="card-inner">
+                        <div class="card-content">
+                            <div>
+                                <div class="text-sm font-mono mb-6 text-gray-500 border border-white/20 inline-block px-2 py-1 rounded">01</div>
+                                <h3 class="text-2xl md:text-3xl font-medium display tracking-tight-custom">Commercial Construction</h3>
+                                <p class="text-sm mt-2 text-gray-500 uppercase tracking-widest">End-to-End Build</p>
+                            </div>
+                            <div class="text-gray-400 font-light text-sm md:text-base leading-relaxed">
+                                From ground-up construction to complex structural works. We deliver commercial spaces built to last, adhering to the strictest safety and quality standards (ISO 45001, 9001).
+                            </div>
+                            <div class="flex items-center gap-2 text-xs uppercase tracking-widest pt-4 border-t border-white/10">
+                                <iconify-icon icon="solar:ruler-pen-linear"></iconify-icon> Design &amp; Construct
+                            </div>
+                        </div>
+                        <div class="card-img-wrap">
+                            <img src="https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/917d6f93-fb36-439a-8c48-884b67b35381_1600w.jpg" class="card-img" alt="Commercial Construction">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="card-item">
+                    <div class="card-inner">
+                        <div class="card-content">
+                            <div>
+                                <div class="text-sm font-mono mb-6 text-gray-500 border border-white/20 inline-block px-2 py-1 rounded">02</div>
+                                <h3 class="text-2xl md:text-3xl font-medium display tracking-tight-custom">Shopfitting &amp; Interiors</h3>
+                                <p class="text-sm mt-2 text-gray-500 uppercase tracking-widest">Retail &amp; Office</p>
+                            </div>
+                            <div class="text-gray-400 font-light text-sm md:text-base leading-relaxed">
+                                Bespoke fit-outs for retail, hospitality, and office environments. Our in-house interior design capabilities ensure functional, aesthetic, and brand-aligned spaces.
+                            </div>
+                            <div class="flex items-center gap-2 text-xs uppercase tracking-widest pt-4 border-t border-white/10">
+                                <iconify-icon icon="solar:armchair-2-linear"></iconify-icon> Interior Design
+                            </div>
+                        </div>
+                        <div class="card-img-wrap">
+                            <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&amp;w=2000&amp;auto=format&amp;fit=crop" class="card-img" alt="Shopfitting">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="card-item">
+                    <div class="card-inner">
+                        <div class="card-content">
+                            <div>
+                                <div class="text-sm font-mono mb-6 text-gray-500 border border-white/20 inline-block px-2 py-1 rounded">03</div>
+                                <h3 class="text-2xl md:text-3xl font-medium display tracking-tight-custom">Project Management</h3>
+                                <p class="text-sm mt-2 text-gray-500 uppercase tracking-widest">Delivery &amp; Systems</p>
+                            </div>
+                            <div class="text-gray-400 font-light text-sm md:text-base leading-relaxed">
+                                Comprehensive management from concept to handover. We handle property development logistics, council approvals, and trade coordination.
+                            </div>
+                            <div class="flex items-center gap-2 text-xs uppercase tracking-widest pt-4 border-t border-white/10">
+                                <iconify-icon icon="solar:clipboard-check-linear"></iconify-icon> Property Development
+                            </div>
+                        </div>
+                        <div class="card-img-wrap">
+                            <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?q=80&amp;w=2000&amp;auto=format&amp;fit=crop" class="card-img" alt="Project Management">
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- CTA SECTION -->
+        <section class="py-32 bg-[#F5F5F5] text-center flex flex-col items-center justify-center relative z-10 border-b border-gray-200">
+            <h2 class="display text-3xl md:text-4xl font-medium tracking-tight-custom mb-6">Start Your Project</h2>
+            <div class="max-w-xl text-gray-600 font-light mb-10 leading-relaxed px-6">
+                Ready to deliver exceptional results? Contact our head office to discuss your commercial requirements.
+            </div>
+            <div class="flex flex-col items-center gap-2">
+                 <div class="h-12 w-px bg-black/20"></div>
+                 <span class="text-xs uppercase tracking-widest text-gray-400">Scroll for Contact</span>
+            </div>
+        </section>
+
+    </div> 
+    <!-- END WRAPPER -->
+
+    <!-- FOOTER (FIXED BEHIND) -->
+    <footer id="contact" class="footer-sticky bg-[#0f0f0f]">
+        <div class="relative z-10 w-full max-w-[1400px] mx-auto px-6 py-12 h-full flex flex-col justify-center">
+            
+            <div class="grid md:grid-cols-2 gap-12 md:gap-24 mb-16 items-start">
+                
+                <!-- Left: Contact Info -->
+                <div class="space-y-12">
+                     <div>
+                        <h4 class="text-xs uppercase tracking-widest text-gray-500 mb-6">Get in Touch</h4>
+                        <a href="tel:0438122185" class="block display text-4xl md:text-5xl font-medium tracking-tight-custom hover:text-gray-300 transition-colors mb-2">
+                            Alex: 0438 122 185
+                        </a>
+                        <p class="text-gray-400 font-light">By Appointment Only</p>
+                     </div>
+
+                     <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <div>
+                            <div class="flex items-center gap-2 mb-3 text-white">
+                                <iconify-icon icon="solar:map-point-linear"></iconify-icon>
+                                <span class="font-medium text-sm uppercase tracking-wide">Head Office &amp; Workshop</span>
+                            </div>
+                            <p class="text-sm text-gray-400 leading-relaxed font-light">
+                                1/330 Kiewa St,<br>Albury, NSW 2640
+                            </p>
+                        </div>
+                        <div>
+                             <div class="flex items-center gap-2 mb-3 text-white">
+                                <iconify-icon icon="solar:mailbox-linear"></iconify-icon>
+                                <span class="font-medium text-sm uppercase tracking-wide">Postal</span>
+                            </div>
+                            <p class="text-sm text-gray-400 leading-relaxed font-light">
+                                PO Box 103,<br>Albury NSW 2640
+                            </p>
+                        </div>
+                     </div>
+                </div>
+
+                <!-- Right: Legal & Social -->
+                <div class="md:text-right flex flex-col justify-between h-full">
+                    <div>
+                        <h4 class="text-xs uppercase tracking-widest text-gray-500 mb-6">Socials</h4>
+                        <div class="flex md:justify-end gap-6">
+                            <a href="https://instagram.com/sustainabylt" target="_blank" class="p-3 border border-white/20 rounded-full hover:bg-white hover:text-black transition-colors">
+                                <iconify-icon icon="solar:instagram-linear" width="20"></iconify-icon>
+                            </a>
+                            <a href="#" class="p-3 border border-white/20 rounded-full hover:bg-white hover:text-black transition-colors">
+                                <iconify-icon icon="solar:facebook-linear" width="20"></iconify-icon>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="mt-12 space-y-4">
+                        <div class="text-xs text-gray-500 uppercase tracking-widest">
+                            <span class="block mb-1">SUSTAINABYLT PTY LTD</span>
+                            <span class="block text-[10px] text-gray-600">ACN: 665 988 232 / ABN: 69 665 988 232</span>
+                        </div>
+                        <div class="text-[10px] text-gray-600 leading-relaxed font-mono">
+                            VIC CCB-L 100021, DBU 41470, PIC 50062<br>
+                            NSW 451063C
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center text-[10px] text-gray-600 uppercase tracking-widest">
+                <div>© 2024 by Sustainabylt</div>
+                <div class="mt-2 md:mt-0">Commercial Specialists</div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // --- SETUP ---
+        gsap.registerPlugin(ScrollTrigger);
+
+        // --- LENIS SCROLL ---
+        const lenis = new Lenis({
+            duration: 1.2,
+            easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+            direction: 'vertical',
+            smooth: true,
+        });
+        function raf(time) {
+            lenis.raf(time);
+            requestAnimationFrame(raf);
+        }
+        requestAnimationFrame(raf);
+
+        // --- TEXT SPLITTER UTILITY ---
+        function splitTextToWords(element) {
+            const text = element.innerText;
+            const words = text.split(' ');
+            element.innerHTML = '';
+            words.forEach(word => {
+                const wordWrap = document.createElement('span');
+                wordWrap.classList.add('word-wrap');
+                wordWrap.innerHTML = `<span class="word-inner">${word}&nbsp;</span>`;
+                element.appendChild(wordWrap);
+            });
+        }
+
+        // Apply split to all elements with class .split-animate
+        document.querySelectorAll('.split-animate').forEach(el => {
+            splitTextToWords(el);
+        });
+
+        // --- LOADER ---
+        const loadTl = gsap.timeline({
+            onComplete: () => {
+                document.body.style.opacity = 1;
+                initSite();
+            }
+        });
+
+        loadTl.to('.loader-bar', { width: '100%', duration: 1.2, ease: 'power2.inOut' })
+              .to('.loader-text', { y: -50, opacity: 0, duration: 0.5 })
+              .to('.loader', { yPercent: -100, duration: 0.8, ease: 'power4.inOut' });
+
+        function initSite() {
+            // Hero Animations
+            gsap.to('.hero-text span', { 
+                y: 0, 
+                stagger: 0.1, 
+                duration: 1.5, 
+                ease: 'power4.out' 
+            });
+            gsap.to('.hero-fade', { opacity: 1, y: 0, stagger: 0.1, duration: 1, delay: 0.5 });
+            
+            // Hero Parallax
+            gsap.to('.hero-img', {
+                yPercent: 30,
+                ease: 'none',
+                scrollTrigger: {
+                    trigger: '.hero-img',
+                    start: 'top top',
+                    end: 'bottom top',
+                    scrub: true
+                }
+            });
+
+            // --- TEXT REVEAL ON SCROLL ---
+            const splitElements = document.querySelectorAll('.split-animate');
+            splitElements.forEach(el => {
+                const words = el.querySelectorAll('.word-inner');
+                gsap.to(words, {
+                    y: "0%",
+                    duration: 0.8,
+                    ease: "power3.out",
+                    stagger: 0.015,
+                    scrollTrigger: {
+                        trigger: el,
+                        start: "top 90%", 
+                        toggleActions: "play none none reverse"
+                    }
+                });
+            });
+
+            // --- CARD STACK ANIMATION ---
+            const cards = gsap.utils.toArray('.card-item');
+            
+            cards.forEach((card, i) => {
+                const nextCard = cards[i+1];
+                if (nextCard) {
+                    gsap.to(card.querySelector('.card-inner'), {
+                        scale: 0.95,
+                        opacity: 0.5, 
+                        filter: 'blur(5px)',
+                        ease: "none",
+                        scrollTrigger: {
+                            trigger: nextCard,
+                            start: "top bottom", 
+                            end: "top 10vh",    
+                            scrub: true
+                        }
+                    });
+                }
+            });
+
+            // Footer Reveal Effect
+            gsap.from('.footer-sticky > div', {
+                y: 50,
+                opacity: 0,
+                scale: 0.95,
+                scrollTrigger: {
+                    trigger: '.footer-sticky',
+                    start: 'top 90%', 
+                    end: 'bottom bottom',
+                    scrub: true
+                }
+            });
+        }
+    </script>
+
+</body></html>

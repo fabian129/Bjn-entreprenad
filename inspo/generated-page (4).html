@@ -1,0 +1,702 @@
+<html lang="en"><head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sunday Homes | Renovation &amp; Design</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://code.iconify.design/2/2.2.1/iconify.min.js"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+
+<style>
+.iconify {
+stroke-width: 1.5px !important;
+}
+body {
+font-family: 'Manrope', sans-serif;
+}
+.font-serif {
+font-family: 'Instrument Serif', serif;
+}
+/* Custom scrollbar hide for horizontal scrolling areas */
+.no-scrollbar::-webkit-scrollbar {
+display: none;
+}
+.no-scrollbar {
+-ms-overflow-style: none;
+scrollbar-width: none;
+}
+</style></head>
+<body class="bg-stone-50 text-stone-800 antialiased selection:bg-orange-100 selection:text-orange-900">
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-50 bg-stone-50/80 backdrop-blur-md border-b border-stone-200/50">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <!-- Logo -->
+            <div class="flex items-center gap-2">
+                <div class="w-8 h-8 rounded-full bg-stone-900 text-stone-50 flex items-center justify-center">
+                    <span class="iconify" data-icon="lucide:home" data-width="16"></span>
+                </div>
+                <span class="font-medium tracking-tight text-lg text-stone-900">Sunday<span class="text-stone-400">Homes</span></span>
+            </div>
+
+            <!-- Desktop Links -->
+            <div class="hidden lg:flex items-center gap-8 text-sm font-medium text-stone-500">
+                <a href="#services" class="hover:text-stone-900 transition-colors">Services</a>
+                <a href="#process" class="hover:text-stone-900 transition-colors">Process</a>
+                <a href="#portfolio" class="hover:text-stone-900 transition-colors">Portfolio</a>
+                <a href="#faq" class="hover:text-stone-900 transition-colors">FAQ</a>
+            </div>
+
+            <!-- CTA -->
+            <div class="flex items-center gap-4">
+                <a href="tel:+1234567890" class="hidden md:block text-sm font-medium text-stone-500 hover:text-stone-900">
+                    (555) 123-4567
+                </a>
+                <button class="hidden md:flex items-center gap-2 bg-stone-200 hover:bg-stone-300 text-stone-900 px-5 py-2.5 rounded-full text-sm font-medium transition-all">
+                    Start Project
+                </button>
+                <button class="lg:hidden text-stone-900">
+                    <span class="iconify" data-icon="lucide:menu" data-width="24"></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="pt-32 pb-20 md:pt-40 md:pb-24 px-6 relative overflow-hidden">
+        <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-center relative z-10">
+            
+            <!-- Content -->
+            <div class="max-w-2xl">
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-orange-50 border border-orange-100 text-orange-800 text-xs font-medium mb-8">
+                    <span class="iconify" data-icon="lucide:sparkles" data-width="12"></span>
+                    <span>Spring bookings now open</span>
+                </div>
+                
+                <h1 class="text-5xl md:text-7xl lg:text-8xl font-serif text-stone-900 leading-[1] mb-8 tracking-tight">
+                    Make room for <br>
+                    <span class="italic text-stone-400">better living.</span>
+                </h1>
+                
+                <p class="text-lg text-stone-500 leading-relaxed mb-10 max-w-md">
+                    Comprehensive home renovations, additions, and custom builds. We handle the complexity so you can enjoy the transformation.
+                </p>
+
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <button class="bg-stone-900 text-white px-8 py-4 rounded-full text-sm font-medium hover:bg-stone-800 transition-colors shadow-xl shadow-stone-900/10 flex items-center justify-center gap-2 group">
+                        Get an Estimate
+                        <span class="iconify group-hover:translate-x-1 transition-transform" data-icon="lucide:arrow-right" data-width="16"></span>
+                    </button>
+                    <button class="bg-white border border-stone-200 text-stone-700 px-8 py-4 rounded-full text-sm font-medium hover:bg-stone-50 transition-colors flex items-center justify-center gap-2">
+                        View Gallery
+                    </button>
+                </div>
+
+                <div class="mt-12 flex items-center gap-6 pt-8 border-t border-stone-200/50">
+                    <div class="flex -space-x-3">
+                        <div class="w-10 h-10 rounded-full bg-stone-300 border-2 border-stone-50 flex items-center justify-center text-[10px] font-bold text-stone-500">JD</div>
+                        <div class="w-10 h-10 rounded-full bg-stone-400 border-2 border-stone-50 flex items-center justify-center text-[10px] font-bold text-stone-600">AS</div>
+                        <div class="w-10 h-10 rounded-full bg-stone-200 border-2 border-stone-50 flex items-center justify-center text-[10px] font-bold text-stone-500">+</div>
+                    </div>
+                    <div>
+                        <div class="flex text-orange-400 gap-0.5 mb-1">
+                            <span class="iconify" data-icon="lucide:star" data-width="12" data-fill="currentColor"></span>
+                            <span class="iconify" data-icon="lucide:star" data-width="12" data-fill="currentColor"></span>
+                            <span class="iconify" data-icon="lucide:star" data-width="12" data-fill="currentColor"></span>
+                            <span class="iconify" data-icon="lucide:star" data-width="12" data-fill="currentColor"></span>
+                            <span class="iconify" data-icon="lucide:star" data-width="12" data-fill="currentColor"></span>
+                        </div>
+                        <p class="text-xs font-medium text-stone-500">Rated 5.0 by 500+ homeowners.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Hero Graphic -->
+            <div class="relative h-[600px] w-full hidden lg:block">
+                <div class="absolute right-0 top-0 w-11/12 h-full bg-stone-200 rounded-[2rem] overflow-hidden">
+                    <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&amp;fit=crop&amp;q=80&amp;w=1000')] bg-cover bg-center opacity-90 mix-blend-multiply filter sepia-[.1] contrast-[.95]"></div>
+                </div>
+                <!-- Float Card -->
+                <div class="absolute bottom-12 left-0 bg-white/90 backdrop-blur-md p-6 rounded-2xl border border-white/50 shadow-2xl shadow-stone-900/10 w-72">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="w-10 h-10 rounded-full bg-orange-100 text-orange-600 flex items-center justify-center">
+                            <span class="iconify" data-icon="lucide:check-circle" data-width="20"></span>
+                        </div>
+                        <div>
+                            <p class="text-xs text-stone-500 uppercase tracking-wide font-semibold">Project Update</p>
+                            <p class="text-sm font-medium text-stone-900">Final Walkthrough</p>
+                        </div>
+                    </div>
+                    <div class="space-y-2">
+                        <div class="h-1.5 w-full bg-stone-100 rounded-full overflow-hidden">
+                            <div class="h-full bg-green-500 w-full rounded-full"></div>
+                        </div>
+                        <div class="flex justify-between text-[10px] text-stone-400 font-medium">
+                            <span>Permits</span>
+                            <span>Build</span>
+                            <span class="text-stone-900">Complete</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Brand Strip -->
+    <section class="border-y border-stone-200 bg-white py-12">
+        <div class="max-w-7xl mx-auto px-6">
+            <p class="text-center text-xs font-medium text-stone-400 uppercase tracking-widest mb-8">Trusted by partners and suppliers</p>
+            <div class="flex flex-wrap justify-center gap-12 md:gap-20 opacity-40 grayscale">
+                <!-- Using text as logo placeholders for accuracy -->
+                <span class="text-xl font-serif italic font-bold">Architectural Digest</span>
+                <span class="text-xl font-sans font-bold tracking-tighter">dwell</span>
+                <span class="text-xl font-serif font-bold">Vogue Living</span>
+                <span class="text-xl font-sans font-black tracking-tight">HOUZZ</span>
+                <span class="text-xl font-serif italic">The Local</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Core Services Grid -->
+    <section id="services" class="py-24 px-6 bg-stone-50">
+        <div class="max-w-7xl mx-auto">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
+                <div class="max-w-2xl">
+                    <h2 class="text-4xl md:text-5xl font-serif text-stone-900 mb-6">Everything under one roof</h2>
+                    <p class="text-stone-500 text-lg leading-relaxed">We don't just manage subcontractors; we are the team. From the first sketch to the final coat of paint, we provide a single point of accountability.</p>
+                </div>
+                <button class="text-stone-900 font-medium hover:text-orange-700 transition-colors flex items-center gap-2 whitespace-nowrap">
+                    View all services
+                    <span class="iconify" data-icon="lucide:arrow-right" data-width="16"></span>
+                </button>
+            </div>
+
+            <!-- Bento Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 auto-rows-[minmax(250px,auto)]">
+                
+                <!-- Kitchens (Large) -->
+                <div class="md:col-span-2 group relative p-10 rounded-[2rem] bg-white border border-stone-200 hover:border-orange-200 hover:shadow-xl hover:shadow-orange-900/5 transition-all duration-300 overflow-hidden">
+                    <div class="relative z-10 h-full flex flex-col justify-between">
+                        <div class="w-12 h-12 bg-stone-50 rounded-xl border border-stone-100 flex items-center justify-center text-stone-900 mb-6">
+                            <span class="iconify" data-icon="lucide:chef-hat" data-width="24"></span>
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-serif text-stone-900 mb-3">Kitchen Renovations</h3>
+                            <p class="text-stone-500 max-w-md">Full remodels including custom cabinetry, islands, high-end appliance installation, and layout reconfiguration.</p>
+                        </div>
+                    </div>
+                    <!-- Subtle background decoration -->
+                    <div class="absolute right-0 bottom-0 w-64 h-64 bg-orange-50 rounded-full blur-3xl opacity-0 group-hover:opacity-50 transition-opacity translate-x-1/2 translate-y-1/2"></div>
+                </div>
+
+                <!-- Bathrooms -->
+                <div class="group relative p-10 rounded-[2rem] bg-white border border-stone-200 hover:border-orange-200 hover:shadow-xl hover:shadow-orange-900/5 transition-all duration-300">
+                    <div class="w-12 h-12 bg-stone-50 rounded-xl border border-stone-100 flex items-center justify-center text-stone-900 mb-6">
+                        <span class="iconify" data-icon="lucide:droplets" data-width="24"></span>
+                    </div>
+                    <h3 class="text-xl font-serif text-stone-900 mb-3">Luxury Baths</h3>
+                    <p class="text-sm text-stone-500">Spa-inspired master baths, powder rooms, and plumbing updates.</p>
+                </div>
+
+                <!-- Additions -->
+                <div class="group relative p-10 rounded-[2rem] bg-white border border-stone-200 hover:border-orange-200 hover:shadow-xl hover:shadow-orange-900/5 transition-all duration-300">
+                    <div class="w-12 h-12 bg-stone-50 rounded-xl border border-stone-100 flex items-center justify-center text-stone-900 mb-6">
+                        <span class="iconify" data-icon="lucide:maximize" data-width="24"></span>
+                    </div>
+                    <h3 class="text-xl font-serif text-stone-900 mb-3">Home Additions</h3>
+                    <p class="text-sm text-stone-500">Second story additions, bump-outs, and garage conversions.</p>
+                </div>
+
+                <!-- ADUs (Large) -->
+                <div class="md:col-span-2 group relative p-10 rounded-[2rem] bg-stone-900 text-stone-50 overflow-hidden">
+                    <div class="relative z-10 h-full flex flex-col justify-between">
+                        <div class="w-12 h-12 bg-stone-800 rounded-xl border border-stone-700 flex items-center justify-center text-white mb-6">
+                            <span class="iconify" data-icon="lucide:home" data-width="24"></span>
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-serif text-white mb-3">Accessory Dwelling Units (ADU)</h3>
+                            <p class="text-stone-400 max-w-md">Complete detached living units. Perfect for in-laws, rental income, or a backyard office. We handle all city permitting.</p>
+                        </div>
+                    </div>
+                    <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10"></div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Detailed Capabilities List -->
+    <section class="py-24 px-6 bg-white border-y border-stone-100">
+        <div class="max-w-7xl mx-auto">
+            <div class="mb-16">
+                <span class="text-xs font-semibold text-orange-600 uppercase tracking-widest mb-2 block">Comprehensive Scope</span>
+                <h2 class="text-3xl md:text-4xl font-serif text-stone-900">No detail too small.</h2>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-12">
+                
+                <!-- Category 1 -->
+                <div>
+                    <h4 class="text-lg font-semibold text-stone-900 mb-6 flex items-center gap-2">
+                        <span class="iconify text-stone-400" data-icon="lucide:layout-template" data-width="20"></span>
+                        Interiors
+                    </h4>
+                    <ul class="space-y-3">
+                        <li class="flex items-start gap-3 text-sm text-stone-500 hover:text-stone-900 transition-colors">
+                            <span class="w-1.5 h-1.5 rounded-full bg-stone-300 mt-1.5"></span>
+                            Drywall &amp; Painting
+                        </li>
+                        <li class="flex items-start gap-3 text-sm text-stone-500 hover:text-stone-900 transition-colors">
+                            <span class="w-1.5 h-1.5 rounded-full bg-stone-300 mt-1.5"></span>
+                            Hardwood &amp; Tile Flooring
+                        </li>
+                        <li class="flex items-start gap-3 text-sm text-stone-500 hover:text-stone-900 transition-colors">
+                            <span class="w-1.5 h-1.5 rounded-full bg-stone-300 mt-1.5"></span>
+                            Custom Millwork &amp; Trim
+                        </li>
+                        <li class="flex items-start gap-3 text-sm text-stone-500 hover:text-stone-900 transition-colors">
+                            <span class="w-1.5 h-1.5 rounded-full bg-stone-300 mt-1.5"></span>
+                            Staircase Renovation
+                        </li>
+                        <li class="flex items-start gap-3 text-sm text-stone-500 hover:text-stone-900 transition-colors">
+                            <span class="w-1.5 h-1.5 rounded-full bg-stone-300 mt-1.5"></span>
+                            Fireplace Refinishing
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Category 2 -->
+                <div>
+                    <h4 class="text-lg font-semibold text-stone-900 mb-6 flex items-center gap-2">
+                        <span class="iconify text-stone-400" data-icon="lucide:sun" data-width="20"></span>
+                        Exteriors
+                    </h4>
+                    <ul class="space-y-3">
+                        <li class="flex items-start gap-3 text-sm text-stone-500 hover:text-stone-900 transition-colors">
+                            <span class="w-1.5 h-1.5 rounded-full bg-stone-300 mt-1.5"></span>
+                            Siding &amp; Stucco
+                        </li>
+                        <li class="flex items-start gap-3 text-sm text-stone-500 hover:text-stone-900 transition-colors">
+                            <span class="w-1.5 h-1.5 rounded-full bg-stone-300 mt-1.5"></span>
+                            Roofing Replacement
+                        </li>
+                        <li class="flex items-start gap-3 text-sm text-stone-500 hover:text-stone-900 transition-colors">
+                            <span class="w-1.5 h-1.5 rounded-full bg-stone-300 mt-1.5"></span>
+                            Window &amp; Door Install
+                        </li>
+                        <li class="flex items-start gap-3 text-sm text-stone-500 hover:text-stone-900 transition-colors">
+                            <span class="w-1.5 h-1.5 rounded-full bg-stone-300 mt-1.5"></span>
+                            Decks &amp; Patios
+                        </li>
+                        <li class="flex items-start gap-3 text-sm text-stone-500 hover:text-stone-900 transition-colors">
+                            <span class="w-1.5 h-1.5 rounded-full bg-stone-300 mt-1.5"></span>
+                            Hardscaping
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Category 3 -->
+                <div>
+                    <h4 class="text-lg font-semibold text-stone-900 mb-6 flex items-center gap-2">
+                        <span class="iconify text-stone-400" data-icon="lucide:zap" data-width="20"></span>
+                        Systems
+                    </h4>
+                    <ul class="space-y-3">
+                        <li class="flex items-start gap-3 text-sm text-stone-500 hover:text-stone-900 transition-colors">
+                            <span class="w-1.5 h-1.5 rounded-full bg-stone-300 mt-1.5"></span>
+                            Electrical Panel Upgrades
+                        </li>
+                        <li class="flex items-start gap-3 text-sm text-stone-500 hover:text-stone-900 transition-colors">
+                            <span class="w-1.5 h-1.5 rounded-full bg-stone-300 mt-1.5"></span>
+                            Smart Home Integration
+                        </li>
+                        <li class="flex items-start gap-3 text-sm text-stone-500 hover:text-stone-900 transition-colors">
+                            <span class="w-1.5 h-1.5 rounded-full bg-stone-300 mt-1.5"></span>
+                            HVAC Installation
+                        </li>
+                        <li class="flex items-start gap-3 text-sm text-stone-500 hover:text-stone-900 transition-colors">
+                            <span class="w-1.5 h-1.5 rounded-full bg-stone-300 mt-1.5"></span>
+                            Re-piping (Copper/PEX)
+                        </li>
+                        <li class="flex items-start gap-3 text-sm text-stone-500 hover:text-stone-900 transition-colors">
+                            <span class="w-1.5 h-1.5 rounded-full bg-stone-300 mt-1.5"></span>
+                            Insulation &amp; Soundproofing
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Category 4 -->
+                <div>
+                    <h4 class="text-lg font-semibold text-stone-900 mb-6 flex items-center gap-2">
+                        <span class="iconify text-stone-400" data-icon="lucide:ruler" data-width="20"></span>
+                        Pre-Construction
+                    </h4>
+                    <ul class="space-y-3">
+                        <li class="flex items-start gap-3 text-sm text-stone-500 hover:text-stone-900 transition-colors">
+                            <span class="w-1.5 h-1.5 rounded-full bg-stone-300 mt-1.5"></span>
+                            Architectural Design
+                        </li>
+                        <li class="flex items-start gap-3 text-sm text-stone-500 hover:text-stone-900 transition-colors">
+                            <span class="w-1.5 h-1.5 rounded-full bg-stone-300 mt-1.5"></span>
+                            Structural Engineering
+                        </li>
+                        <li class="flex items-start gap-3 text-sm text-stone-500 hover:text-stone-900 transition-colors">
+                            <span class="w-1.5 h-1.5 rounded-full bg-stone-300 mt-1.5"></span>
+                            City Permitting
+                        </li>
+                        <li class="flex items-start gap-3 text-sm text-stone-500 hover:text-stone-900 transition-colors">
+                            <span class="w-1.5 h-1.5 rounded-full bg-stone-300 mt-1.5"></span>
+                            Material Sourcing
+                        </li>
+                        <li class="flex items-start gap-3 text-sm text-stone-500 hover:text-stone-900 transition-colors">
+                            <span class="w-1.5 h-1.5 rounded-full bg-stone-300 mt-1.5"></span>
+                            Budget Planning
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- The Process Section -->
+    <section id="process" class="py-24 px-6 bg-stone-50">
+        <div class="max-w-7xl mx-auto">
+            <div class="max-w-3xl mb-16">
+                <h2 class="text-3xl md:text-5xl font-serif text-stone-900 mb-6">How we build.</h2>
+                <p class="text-stone-500 text-lg">Construction is notorious for delays and hidden costs. We've built a linear, transparent workflow to eliminate the guesswork.</p>
+            </div>
+
+            <div class="relative">
+                <!-- Connecting Line -->
+                <div class="absolute top-8 left-0 w-full h-0.5 bg-stone-200 hidden md:block"></div>
+
+                <div class="grid md:grid-cols-4 gap-8">
+                    <!-- Step 1 -->
+                    <div class="relative pt-8 md:pt-0">
+                        <div class="hidden md:block absolute top-6 left-0 w-4 h-4 bg-stone-900 rounded-full border-4 border-stone-50 z-10"></div>
+                        <div class="md:mt-16">
+                            <span class="text-5xl font-serif text-stone-200 mb-4 block">01</span>
+                            <h3 class="text-lg font-semibold text-stone-900 mb-2">Discovery</h3>
+                            <p class="text-sm text-stone-500 leading-relaxed">We meet on-site to discuss your vision, take measurements, and provide a preliminary estimate range.</p>
+                        </div>
+                    </div>
+
+                    <!-- Step 2 -->
+                    <div class="relative pt-8 md:pt-0">
+                        <div class="hidden md:block absolute top-6 left-0 w-4 h-4 bg-white rounded-full border-4 border-stone-200 z-10"></div>
+                        <div class="md:mt-16">
+                            <span class="text-5xl font-serif text-stone-200 mb-4 block">02</span>
+                            <h3 class="text-lg font-semibold text-stone-900 mb-2">Design &amp; Permits</h3>
+                            <p class="text-sm text-stone-500 leading-relaxed">Our architects create detailed plans. We handle all city submissions and get the green light to build.</p>
+                        </div>
+                    </div>
+
+                    <!-- Step 3 -->
+                    <div class="relative pt-8 md:pt-0">
+                        <div class="hidden md:block absolute top-6 left-0 w-4 h-4 bg-white rounded-full border-4 border-stone-200 z-10"></div>
+                        <div class="md:mt-16">
+                            <span class="text-5xl font-serif text-stone-200 mb-4 block">03</span>
+                            <h3 class="text-lg font-semibold text-stone-900 mb-2">Construction</h3>
+                            <p class="text-sm text-stone-500 leading-relaxed">A dedicated project manager oversees the build. You get weekly updates via our client portal.</p>
+                        </div>
+                    </div>
+
+                    <!-- Step 4 -->
+                    <div class="relative pt-8 md:pt-0">
+                        <div class="hidden md:block absolute top-6 left-0 w-4 h-4 bg-white rounded-full border-4 border-stone-200 z-10"></div>
+                        <div class="md:mt-16">
+                            <span class="text-5xl font-serif text-stone-200 mb-4 block">04</span>
+                            <h3 class="text-lg font-semibold text-stone-900 mb-2">Handover</h3>
+                            <p class="text-sm text-stone-500 leading-relaxed">We perform a deep clean, final walkthrough, and hand over the keys. 2-year warranty included.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Us Section (Dark) -->
+    <section class="py-6 px-6">
+        <div class="max-w-7xl mx-auto">
+            <div class="bg-stone-900 rounded-[2.5rem] p-8 md:p-20 text-stone-300 relative overflow-hidden">
+                <!-- Texture Overlay -->
+                <div class="absolute inset-0 opacity-10 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')]"></div>
+                
+                <div class="relative z-10 grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
+                    <div>
+                        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-stone-800 border border-stone-700 text-stone-300 text-xs font-medium mb-8">
+                            <span class="iconify" data-icon="lucide:shield-check" data-width="12"></span>
+                            <span>Licensed, Bonded, Insured</span>
+                        </div>
+                        <h2 class="text-3xl md:text-5xl font-serif text-white mb-6 leading-tight">Peace of mind is <br><span class="italic text-stone-500">part of the plan.</span></h2>
+                        <p class="mb-10 font-light text-stone-400 text-lg">We've replaced the chaos of traditional contracting with a tech-forward, organized approach.</p>
+                        
+                        <ul class="space-y-6">
+                            <li class="flex items-start gap-4">
+                                <div class="mt-1 bg-stone-800 p-2 rounded-full text-green-400 border border-stone-700">
+                                    <span class="iconify" data-icon="lucide:check" data-width="16"></span>
+                                </div>
+                                <div>
+                                    <span class="block text-white font-medium text-lg">Fixed Price Contracts</span>
+                                    <span class="text-sm text-stone-500">No surprise costs. The price we quote is the price you pay.</span>
+                                </div>
+                            </li>
+                            <li class="flex items-start gap-4">
+                                <div class="mt-1 bg-stone-800 p-2 rounded-full text-green-400 border border-stone-700">
+                                    <span class="iconify" data-icon="lucide:user" data-width="16"></span>
+                                </div>
+                                <div>
+                                    <span class="block text-white font-medium text-lg">Dedicated Project Manager</span>
+                                    <span class="text-sm text-stone-500">One point of contact. No chasing down subcontractors.</span>
+                                </div>
+                            </li>
+                            <li class="flex items-start gap-4">
+                                <div class="mt-1 bg-stone-800 p-2 rounded-full text-green-400 border border-stone-700">
+                                    <span class="iconify" data-icon="lucide:clock" data-width="16"></span>
+                                </div>
+                                <div>
+                                    <span class="block text-white font-medium text-lg">On-Time Guarantee</span>
+                                    <span class="text-sm text-stone-500">We set a schedule and stick to it, with penalties if we're late.</span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Interactive Element Simulation -->
+                    <div class="bg-stone-800/50 backdrop-blur-sm rounded-3xl p-8 border border-stone-700 shadow-2xl">
+                        <div class="flex justify-between items-center mb-8 pb-6 border-b border-stone-700">
+                            <div>
+                                <h4 class="text-white font-semibold">Client Portal</h4>
+                                <p class="text-xs text-stone-500">Live view of The Larson Residence</p>
+                            </div>
+                            <div class="flex items-center gap-2 bg-green-500/10 px-3 py-1.5 rounded-full border border-green-500/20">
+                                <span class="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse"></span>
+                                <span class="text-xs font-medium text-green-400">On Track</span>
+                            </div>
+                        </div>
+                        
+                        <div class="space-y-6">
+                            <!-- Timeline Item 1 -->
+                            <div class="flex gap-4 opacity-50">
+                                <div class="flex flex-col items-center">
+                                    <div class="w-2 h-2 rounded-full bg-stone-500"></div>
+                                    <div class="w-0.5 h-full bg-stone-700 my-1"></div>
+                                </div>
+                                <div>
+                                    <h4 class="text-sm font-medium text-stone-300 line-through">Demolition &amp; Prep</h4>
+                                    <p class="text-xs text-stone-500">Completed Oct 12</p>
+                                </div>
+                            </div>
+                            
+                            <!-- Timeline Item 2 -->
+                            <div class="flex gap-4">
+                                <div class="flex flex-col items-center">
+                                    <div class="w-4 h-4 rounded-full border-2 border-green-500 bg-stone-800 z-10 shadow-[0_0_10px_rgba(34,197,94,0.3)]"></div>
+                                    <div class="w-0.5 h-full bg-stone-700 my-1"></div>
+                                </div>
+                                <div class="pb-2">
+                                    <h4 class="text-sm font-medium text-white">Rough Installation</h4>
+                                    <p class="text-xs text-stone-400 mt-1 mb-3">Plumbing and electrical rough-in passing inspection today.</p>
+                                    <!-- Attachment pill -->
+                                    <div class="inline-flex items-center gap-2 bg-stone-900 rounded-lg px-3 py-2 border border-stone-700">
+                                        <div class="bg-red-500/20 p-1 rounded text-red-400"><span class="iconify" data-icon="lucide:file-text" data-width="12"></span></div>
+                                        <span class="text-[10px] text-stone-400">Inspection_Report.pdf</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Timeline Item 3 -->
+                            <div class="flex gap-4 opacity-40">
+                                <div class="flex flex-col items-center">
+                                    <div class="w-2 h-2 rounded-full bg-stone-600"></div>
+                                </div>
+                                <div>
+                                    <h4 class="text-sm font-medium text-stone-400">Finishes</h4>
+                                    <p class="text-xs text-stone-500">Scheduled for Nov 01</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonial / Social Proof -->
+    <section class="py-24 px-6 bg-white">
+        <div class="max-w-4xl mx-auto text-center">
+            <div class="mb-10 flex justify-center text-orange-400 gap-1.5">
+                <span class="iconify" data-icon="lucide:star" data-width="24" data-fill="currentColor"></span>
+                <span class="iconify" data-icon="lucide:star" data-width="24" data-fill="currentColor"></span>
+                <span class="iconify" data-icon="lucide:star" data-width="24" data-fill="currentColor"></span>
+                <span class="iconify" data-icon="lucide:star" data-width="24" data-fill="currentColor"></span>
+                <span class="iconify" data-icon="lucide:star" data-width="24" data-fill="currentColor"></span>
+            </div>
+            <h3 class="text-3xl md:text-5xl font-serif text-stone-900 leading-tight mb-10">
+                "They transformed our dark, cramped 1970s kitchen into a bright, modern gathering space. The team was respectful, clean, and finished two days early."
+            </h3>
+            <div class="flex items-center justify-center gap-5">
+                <div class="w-14 h-14 rounded-full bg-stone-200 overflow-hidden ring-4 ring-stone-50">
+                    <div class="w-full h-full bg-stone-300 flex items-center justify-center text-stone-500 text-sm font-bold">EM</div>
+                </div>
+                <div class="text-left">
+                    <p class="text-base font-semibold text-stone-900">Elena Miles</p>
+                    <p class="text-sm text-stone-500">Homeowner, Venice CA</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="py-24 px-6 bg-stone-50 border-t border-stone-200">
+        <div class="max-w-3xl mx-auto">
+            <h2 class="text-3xl md:text-4xl font-serif text-stone-900 mb-12 text-center">Common Questions</h2>
+            
+            <div class="space-y-4">
+                <!-- Q1 -->
+                <div class="bg-white rounded-2xl p-6 border border-stone-200">
+                    <details class="group">
+                        <summary class="flex justify-between items-center font-medium cursor-pointer list-none text-stone-900">
+                            <span>Do you handle permits?</span>
+                            <span class="transition group-open:rotate-180">
+                                <span class="iconify" data-icon="lucide:chevron-down" data-width="20"></span>
+                            </span>
+                        </summary>
+                        <p class="text-stone-500 mt-3 text-sm leading-relaxed">
+                            Yes, absolutely. We have a dedicated team that handles the entire permitting process, from initial submission to final approval, ensuring your project complies with all local zoning and building codes.
+                        </p>
+                    </details>
+                </div>
+
+                <!-- Q2 -->
+                <div class="bg-white rounded-2xl p-6 border border-stone-200">
+                    <details class="group">
+                        <summary class="flex justify-between items-center font-medium cursor-pointer list-none text-stone-900">
+                            <span>How accurate are your estimates?</span>
+                            <span class="transition group-open:rotate-180">
+                                <span class="iconify" data-icon="lucide:chevron-down" data-width="20"></span>
+                            </span>
+                        </summary>
+                        <p class="text-stone-500 mt-3 text-sm leading-relaxed">
+                            We pride ourselves on accuracy. After the discovery phase, we provide a fixed-price contract. Unless you choose to change materials or scope during the build, the price won't change.
+                        </p>
+                    </details>
+                </div>
+
+                <!-- Q3 -->
+                <div class="bg-white rounded-2xl p-6 border border-stone-200">
+                    <details class="group">
+                        <summary class="flex justify-between items-center font-medium cursor-pointer list-none text-stone-900">
+                            <span>Do I need to hire an architect separately?</span>
+                            <span class="transition group-open:rotate-180">
+                                <span class="iconify" data-icon="lucide:chevron-down" data-width="20"></span>
+                            </span>
+                        </summary>
+                        <p class="text-stone-500 mt-3 text-sm leading-relaxed">
+                            Not necessarily. We are a design-build firm, meaning we have in-house architectural designers. However, if you already have plans from an architect, we are happy to build from them.
+                        </p>
+                    </details>
+                </div>
+
+                <!-- Q4 -->
+                <div class="bg-white rounded-2xl p-6 border border-stone-200">
+                    <details class="group">
+                        <summary class="flex justify-between items-center font-medium cursor-pointer list-none text-stone-900">
+                            <span>What areas do you serve?</span>
+                            <span class="transition group-open:rotate-180">
+                                <span class="iconify" data-icon="lucide:chevron-down" data-width="20"></span>
+                            </span>
+                        </summary>
+                        <p class="text-stone-500 mt-3 text-sm leading-relaxed">
+                            We currently serve the greater metropolitan area and surrounding suburbs within a 50-mile radius. Contact us to check if your specific location is within our coverage.
+                        </p>
+                    </details>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pre-Footer CTA -->
+    <section class="py-24 px-6 bg-white text-center">
+        <div class="max-w-2xl mx-auto">
+            <h2 class="text-4xl md:text-5xl font-serif text-stone-900 mb-6">Ready to build?</h2>
+            <p class="text-stone-500 text-lg mb-10">Schedule a free 15-minute discovery call to discuss your project feasibility and budget.</p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <button class="bg-stone-900 text-white px-8 py-4 rounded-full text-sm font-medium hover:bg-stone-800 transition-colors shadow-xl shadow-stone-900/10 w-full sm:w-auto">
+                    Book Discovery Call
+                </button>
+                <button class="bg-white border border-stone-200 text-stone-700 px-8 py-4 rounded-full text-sm font-medium hover:bg-stone-50 transition-colors w-full sm:w-auto">
+                    Download Services Guide
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-stone-900 text-stone-400 py-20 px-6 border-t border-stone-800">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-start gap-12">
+            <div class="max-w-xs">
+                <div class="flex items-center gap-2 mb-6">
+                    <div class="w-6 h-6 rounded-full bg-white text-stone-900 flex items-center justify-center">
+                        <span class="iconify" data-icon="lucide:home" data-width="12"></span>
+                    </div>
+                    <span class="font-medium tracking-tight text-white">Sunday<span class="text-stone-600">Homes</span></span>
+                </div>
+                <p class="text-sm text-stone-500 mb-6 leading-relaxed">
+                    Building spaces that inspire since 2014. Licensed, bonded, and insured (Lic #948291).
+                </p>
+                <div class="flex gap-4 text-stone-500">
+                    <a href="#" class="hover:text-white transition-colors"><span class="iconify" data-icon="lucide:instagram" data-width="20"></span></a>
+                    <a href="#" class="hover:text-white transition-colors"><span class="iconify" data-icon="lucide:twitter" data-width="20"></span></a>
+                    <a href="#" class="hover:text-white transition-colors"><span class="iconify" data-icon="lucide:facebook" data-width="20"></span></a>
+                    <a href="#" class="hover:text-white transition-colors"><span class="iconify" data-icon="lucide:linkedin" data-width="20"></span></a>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-12 w-full md:w-auto">
+                <div>
+                    <h4 class="text-sm font-semibold text-white mb-4">Company</h4>
+                    <ul class="space-y-3 text-sm text-stone-500">
+                        <li><a href="#" class="hover:text-white transition-colors">About</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Process</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Careers</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-sm font-semibold text-white mb-4">Services</h4>
+                    <ul class="space-y-3 text-sm text-stone-500">
+                        <li><a href="#" class="hover:text-white transition-colors">Kitchens</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Bathrooms</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Expansions</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">ADUs</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-sm font-semibold text-white mb-4">Resources</h4>
+                    <ul class="space-y-3 text-sm text-stone-500">
+                        <li><a href="#" class="hover:text-white transition-colors">Pricing Guide</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Material List</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">FAQ</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Client Portal</a></li>
+                    </ul>
+                </div>
+                 <div>
+                    <h4 class="text-sm font-semibold text-white mb-4">Legal</h4>
+                    <ul class="space-y-3 text-sm text-stone-500">
+                        <li><a href="#" class="hover:text-white transition-colors">Privacy</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Terms</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">License Info</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="max-w-7xl mx-auto mt-20 pt-8 border-t border-stone-800 flex flex-col md:flex-row justify-between text-xs text-stone-600">
+            <p>© 2024 Sunday Homes Construction Inc.</p>
+            <p class="mt-2 md:mt-0">Designed in California.</p>
+        </div>
+    </footer>
+
+
+</body></html>

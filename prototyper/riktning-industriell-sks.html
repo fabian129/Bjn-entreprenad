@@ -1,0 +1,750 @@
+<html lang="sv" class="scroll-smooth"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SKS Bygg &amp; Entreprenad | Västerås &amp; Mälardalen</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600&family=Barlow:wght@400;500&display=swap');
+/* Custom Utilities */
+.font-condensed { font-family: 'Barlow Condensed', sans-serif; }
+.font-sans { font-family: 'Barlow', sans-serif; }
+/* Hide scrollbar for carousels */
+.hide-scrollbar::-webkit-scrollbar { display: none; }
+.hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+/* Smooth Ticker Animation */
+@keyframes ticker {
+0% { transform: translate3d(0, 0, 0); }
+100% { transform: translate3d(-50%, 0, 0); }
+}
+.animate-ticker {
+animation: ticker 40s linear infinite;
+}
+/* Detail/Summary reset for clean accordion */
+details > summary { list-style: none; }
+details > summary::-webkit-details-marker { display: none; }
+</style><!-- aura-ga4-start -->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-2M6V79H761"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-2M6V79H761');
+</script>
+<!-- aura-ga4-end -->
+</head>
+<body class="bg-[#111111] text-white font-sans antialiased selection:bg-[#E8222A] selection:text-white overflow-x-hidden">
+
+    <!-- 1. Sticky Navigation -->
+    <nav class="fixed top-0 w-full z-50 bg-[#111111]/95 backdrop-blur-sm border-b border-white/5 transition-all duration-300">
+        <div class="max-w-[1400px] mx-auto px-6 h-20 flex items-center justify-between">
+            <!-- Logo -->
+            <a href="#" class="flex items-center gap-1 text-white group">
+                <iconify-icon icon="solar:buildings-3-linear" class="text-[#E8222A] text-2xl group-hover:scale-110 transition-transform duration-300"></iconify-icon>
+                <span class="font-condensed font-semibold text-3xl tracking-tighter uppercase">SKS</span>
+            </a>
+
+            <!-- Links (Desktop) -->
+            <div class="hidden lg:flex items-center gap-8 font-condensed uppercase tracking-widest text-xs font-semibold text-[#999999]">
+                <a href="#" class="hover:text-white transition-colors duration-200">Om oss</a>
+                <a href="#" class="hover:text-white transition-colors duration-200">Tjänster</a>
+                <a href="#" class="hover:text-white transition-colors duration-200">Jobba hos oss</a>
+                <a href="#" class="hover:text-white transition-colors duration-200">Områden</a>
+                <a href="#" class="hover:text-white transition-colors duration-200">Blogg</a>
+                <a href="#" class="hover:text-white transition-colors duration-200">FAQ</a>
+            </div>
+
+            <!-- CTA & Mobile Menu -->
+            <div class="flex items-center gap-4">
+                <a href="#" class="hidden md:inline-flex bg-[#E8222A] hover:bg-white hover:text-[#111111] transition-colors duration-300 text-white font-condensed font-semibold uppercase tracking-wider text-xs px-6 py-3 items-center justify-center rounded-none">Begär offert</a>
+                <button class="lg:hidden text-white text-2xl">
+                    <iconify-icon icon="solar:hamburger-menu-linear"></iconify-icon>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 2. Hero -->
+    <header class="relative min-h-[100svh] flex items-center pt-20 overflow-hidden">
+        <!-- Background Image & Gradients -->
+        <div class="absolute inset-0 z-0">
+            <div class="absolute inset-0 bg-zinc-900 bg-[url('https://images.unsplash.com/photo-1621905251189-08b45d6a269e?q=80&amp;w=2069&amp;auto=format&amp;fit=crop')] bg-cover bg-center mix-blend-luminosity opacity-30"></div>
+            <div class="absolute inset-0 bg-gradient-to-t from-[#111111] via-[#111111]/70 to-transparent"></div>
+            <div class="absolute inset-0 bg-gradient-to-r from-[#111111] via-[#111111]/50 to-transparent w-3/4"></div>
+        </div>
+
+        <div class="relative z-10 w-full max-w-[1400px] mx-auto px-6 py-20 flex flex-col justify-center">
+            <span class="text-[#E8222A] font-condensed uppercase tracking-[0.2em] text-xs md:text-sm font-semibold mb-6 flex items-center gap-3">
+                <span class="w-8 h-[1px] bg-[#E8222A]"></span>
+                Familjeägt byggföretag — Västerås &amp; Mälardalen
+            </span>
+            <h1 class="font-condensed font-semibold text-6xl md:text-8xl lg:text-9xl tracking-tighter leading-[0.85] uppercase max-w-5xl mb-6">
+                Bygg, Renovering &amp; Entreprenad<br>
+                <span class="text-[#999999]">— Från grund till tak.</span>
+            </h1>
+            <p class="text-[#999999] text-base md:text-lg max-w-xl mb-12 leading-relaxed">
+                Hantverk i världsklass för privatpersoner och företag. Vi bygger i hela Mälardalen med kompromisslös pålitlighet sedan 2011.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4">
+                <a href="#" class="bg-[#E8222A] hover:bg-white hover:text-[#111111] transition-colors duration-300 text-white font-condensed font-semibold uppercase tracking-wider text-sm px-8 py-4 text-center rounded-none flex items-center justify-center gap-2">
+                    Begär kostnadsfri offert <iconify-icon icon="solar:arrow-right-linear"></iconify-icon>
+                </a>
+                <a href="#" class="border border-white/20 hover:border-white transition-colors duration-300 text-white font-condensed font-semibold uppercase tracking-wider text-sm px-8 py-4 text-center rounded-none inline-flex items-center justify-center gap-3">
+                    <iconify-icon icon="solar:phone-linear" class="text-lg"></iconify-icon> Ring 021 — 00 00 00
+                </a>
+            </div>
+        </div>
+
+        <!-- Floating Stat Badge -->
+        <div class="absolute bottom-0 right-0 z-20 hidden md:flex border-l border-t border-white/10 bg-[#111111]/80 backdrop-blur-md">
+            <div class="p-8 border-l-4 border-[#E8222A]">
+                <div class="flex items-center gap-3 text-white font-condensed text-xl uppercase tracking-tight font-semibold">
+                    <div class="flex text-[#E8222A]">
+                        <iconify-icon icon="solar:star-bold"></iconify-icon>
+                        <iconify-icon icon="solar:star-bold"></iconify-icon>
+                        <iconify-icon icon="solar:star-bold"></iconify-icon>
+                        <iconify-icon icon="solar:star-bold"></iconify-icon>
+                        <iconify-icon icon="solar:star-bold"></iconify-icon>
+                    </div>
+                    4,9 i kundbetyg / 13+ År
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- 3. Trust Bar -->
+    <div class="bg-[#E8222A] w-full py-4 relative z-20 overflow-hidden">
+        <div class="max-w-[1400px] mx-auto px-6 flex flex-wrap justify-center md:justify-between items-center text-white text-xs font-condensed tracking-widest uppercase font-semibold gap-x-8 gap-y-3">
+            <div class="flex items-center gap-2"><iconify-icon icon="solar:shield-check-linear" class="text-lg"></iconify-icon> Licensierade &amp; försäkrade</div>
+            <div class="hidden md:block w-1 h-1 bg-white/50 rounded-full"></div>
+            <div class="flex items-center gap-2"><iconify-icon icon="solar:star-circle-linear" class="text-lg"></iconify-icon> 4,9 i kundbetyg</div>
+            <div class="hidden lg:block w-1 h-1 bg-white/50 rounded-full"></div>
+            <div class="hidden lg:flex items-center gap-2"><iconify-icon icon="solar:users-group-rounded-linear" class="text-lg"></iconify-icon> Familjeägt sedan 2011</div>
+            <div class="hidden xl:block w-1 h-1 bg-white/50 rounded-full"></div>
+            <div class="hidden xl:flex items-center gap-2"><iconify-icon icon="solar:calculator-minimalistic-linear" class="text-lg"></iconify-icon> Kostnadsfria offerter</div>
+            <div class="hidden xl:block w-1 h-1 bg-white/50 rounded-full"></div>
+            <div class="hidden xl:flex items-center gap-2"><iconify-icon icon="solar:broom-linear" class="text-lg"></iconify-icon> ID06-anslutna</div>
+        </div>
+    </div>
+
+    <!-- 4. Services Grid -->
+    <section class="py-32 px-6">
+        <div class="max-w-[1400px] mx-auto">
+            <div class="mb-16 flex flex-col md:flex-row md:items-end justify-between gap-8">
+                <div>
+                    <span class="text-[#E8222A] font-condensed uppercase tracking-[0.2em] text-xs font-semibold mb-4 flex items-center gap-3">
+                        <span class="w-8 h-[1px] bg-[#E8222A]"></span>
+                        Det vi gör
+                    </span>
+                    <h2 class="font-condensed font-semibold text-5xl md:text-7xl tracking-tighter uppercase text-white">Bygg, Renovering &amp; Entreprenad</h2>
+                </div>
+                <a href="#" class="hidden md:inline-flex items-center gap-2 text-white font-condensed uppercase tracking-widest text-xs font-semibold hover:text-[#E8222A] transition-colors pb-2 border-b border-white/20 hover:border-[#E8222A]">
+                    Visa alla tjänster <iconify-icon icon="solar:arrow-right-linear"></iconify-icon>
+                </a>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-1">
+                <!-- Service 1 -->
+                <a href="#" class="group relative aspect-square md:aspect-[3/4] bg-zinc-900 overflow-hidden block">
+                    <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1555964821-2e6b9195b6c2?q=80&amp;w=2070&amp;auto=format&amp;fit=crop')] bg-cover bg-center opacity-30 group-hover:opacity-50 transition-opacity duration-700 grayscale group-hover:grayscale-0"></div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-[#111111] via-[#111111]/60 to-transparent"></div>
+                    <div class="absolute bottom-0 left-0 p-8 w-full flex flex-col justify-end transform transition-transform duration-500 group-hover:-translate-y-4">
+                        <div class="w-10 h-[2px] bg-[#E8222A] mb-4 transform origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-500 delay-100"></div>
+                        <h3 class="font-condensed text-3xl font-semibold uppercase tracking-tight mb-2 text-white">Nybyggnation</h3>
+                        <p class="text-[#999999] text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-200 h-0 group-hover:h-auto overflow-hidden">Nyckelfärdiga villor och kommersiella byggnader — från ritning till inflyttningsklart.</p>
+                    </div>
+                    <div class="absolute top-8 right-8 w-12 h-12 rounded-full border border-white/10 flex items-center justify-center text-white/50 group-hover:border-[#E8222A] group-hover:text-[#E8222A] group-hover:bg-[#E8222A]/10 transition-all duration-300">
+                        <iconify-icon icon="solar:arrow-right-up-linear" class="text-xl"></iconify-icon>
+                    </div>
+                </a>
+
+                <!-- Service 2 -->
+                <a href="#" class="group relative aspect-square md:aspect-[3/4] bg-zinc-900 overflow-hidden block">
+                    <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1581092160562-40aa08e78837?q=80&amp;w=2070&amp;auto=format&amp;fit=crop')] bg-cover bg-center opacity-30 group-hover:opacity-50 transition-opacity duration-700 grayscale group-hover:grayscale-0"></div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-[#111111] via-[#111111]/60 to-transparent"></div>
+                    <div class="absolute bottom-0 left-0 p-8 w-full flex flex-col justify-end transform transition-transform duration-500 group-hover:-translate-y-4">
+                        <div class="w-10 h-[2px] bg-[#E8222A] mb-4 transform origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-500 delay-100"></div>
+                        <h3 class="font-condensed text-3xl font-semibold uppercase tracking-tight mb-2 text-white">Om- &amp; tillbyggnad</h3>
+                        <p class="text-[#999999] text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-200 h-0 group-hover:h-auto overflow-hidden">Smarta tillbyggnader, planlösningar och utbyggnader anpassade efter dina behov.</p>
+                    </div>
+                    <div class="absolute top-8 right-8 w-12 h-12 rounded-full border border-white/10 flex items-center justify-center text-white/50 group-hover:border-[#E8222A] group-hover:text-[#E8222A] group-hover:bg-[#E8222A]/10 transition-all duration-300">
+                        <iconify-icon icon="solar:arrow-right-up-linear" class="text-xl"></iconify-icon>
+                    </div>
+                </a>
+
+                <!-- Service 3 -->
+                <a href="#" class="group relative aspect-square md:aspect-[3/4] bg-zinc-900 overflow-hidden block">
+                    <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1620601614002-31518fdf973b?q=80&amp;w=1964&amp;auto=format&amp;fit=crop')] bg-cover bg-center opacity-30 group-hover:opacity-50 transition-opacity duration-700 grayscale group-hover:grayscale-0"></div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-[#111111] via-[#111111]/60 to-transparent"></div>
+                    <div class="absolute bottom-0 left-0 p-8 w-full flex flex-col justify-end transform transition-transform duration-500 group-hover:-translate-y-4">
+                        <div class="w-10 h-[2px] bg-[#E8222A] mb-4 transform origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-500 delay-100"></div>
+                        <h3 class="font-condensed text-3xl font-semibold uppercase tracking-tight mb-2 text-white">Renovering</h3>
+                        <p class="text-[#999999] text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-200 h-0 group-hover:h-auto overflow-hidden">Kök, badrum och totalrenovering med ROT-avdrag och hantverk i toppklass.</p>
+                    </div>
+                    <div class="absolute top-8 right-8 w-12 h-12 rounded-full border border-white/10 flex items-center justify-center text-white/50 group-hover:border-[#E8222A] group-hover:text-[#E8222A] group-hover:bg-[#E8222A]/10 transition-all duration-300">
+                        <iconify-icon icon="solar:arrow-right-up-linear" class="text-xl"></iconify-icon>
+                    </div>
+                </a>
+
+                <!-- Service 4 -->
+                <a href="#" class="group relative aspect-square md:aspect-[3/4] bg-zinc-900 overflow-hidden block">
+                    <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1509391366360-120023a8e9e4?q=80&amp;w=2070&amp;auto=format&amp;fit=crop')] bg-cover bg-center opacity-30 group-hover:opacity-50 transition-opacity duration-700 grayscale group-hover:grayscale-0"></div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-[#111111] via-[#111111]/60 to-transparent"></div>
+                    <div class="absolute bottom-0 left-0 p-8 w-full flex flex-col justify-end transform transition-transform duration-500 group-hover:-translate-y-4">
+                        <div class="w-10 h-[2px] bg-[#E8222A] mb-4 transform origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-500 delay-100"></div>
+                        <h3 class="font-condensed text-3xl font-semibold uppercase tracking-tight mb-2 text-white">Mark &amp; grund</h3>
+                        <p class="text-[#999999] text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-200 h-0 group-hover:h-auto overflow-hidden">Markarbeten, dränering, grundläggning och plattor — en stabil start på varje projekt.</p>
+                    </div>
+                    <div class="absolute top-8 right-8 w-12 h-12 rounded-full border border-white/10 flex items-center justify-center text-white/50 group-hover:border-[#E8222A] group-hover:text-[#E8222A] group-hover:bg-[#E8222A]/10 transition-all duration-300">
+                        <iconify-icon icon="solar:arrow-right-up-linear" class="text-xl"></iconify-icon>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. Why SKS -->
+    <section class="py-32 border-t border-white/5 bg-[#141414]">
+        <div class="max-w-[1400px] mx-auto px-6">
+            <span class="text-[#E8222A] font-condensed uppercase tracking-[0.2em] text-xs font-semibold mb-4 flex items-center gap-3">
+                <span class="w-8 h-[1px] bg-[#E8222A]"></span>
+                Varför SKS
+            </span>
+            <div class="flex flex-col lg:flex-row justify-between gap-16 mb-20">
+                <h2 class="font-condensed font-semibold text-5xl md:text-7xl tracking-tighter uppercase text-white max-w-2xl leading-[0.9]">Ett lag.<br>Hela bygget.<br><span class="text-[#999999]">Inga mellanhänder.</span></h2>
+                <div class="max-w-md flex flex-col justify-end">
+                    <p class="text-[#999999] text-base leading-relaxed mb-8">Vi lägger inte ut ditt förtroende på entreprenad. När du ringer SKS får du SKS-laget. Från en enkel renovering till en komplett nybyggnation sköter våra egna hantverkare allt.</p>
+                    <a href="#" class="inline-flex items-center gap-2 text-white font-condensed uppercase tracking-widest text-xs font-semibold hover:text-[#E8222A] transition-colors pb-2 border-b border-white/20 hover:border-[#E8222A] self-start">
+                        Prata med vårt team <iconify-icon icon="solar:arrow-right-linear"></iconify-icon>
+                    </a>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+                <div class="border-t-2 border-[#E8222A] pt-8">
+                    <h3 class="font-condensed text-3xl font-semibold uppercase tracking-tight mb-4 text-white">13+ Års erfarenhet</h3>
+                    <p class="text-[#999999] text-sm leading-relaxed">Ett familjeägt företag grundat 2011. Vi tar med oss årtionden av praktiskt kunnande till varje byggarbetsplats.</p>
+                </div>
+                <div class="border-t-2 border-white/10 hover:border-[#E8222A] transition-colors duration-300 pt-8">
+                    <h3 class="font-condensed text-3xl font-semibold uppercase tracking-tight mb-4 text-white">Allt under ett tak</h3>
+                    <p class="text-[#999999] text-sm leading-relaxed">Slipp samordna flera hantverkare. Vi projekterar, bygger och färdigställer ditt projekt sömlöst från grund till tak.</p>
+                </div>
+                <div class="border-t-2 border-white/10 hover:border-[#E8222A] transition-colors duration-300 pt-8">
+                    <h3 class="font-condensed text-3xl font-semibold uppercase tracking-tight mb-4 text-white">Kunden i fokus</h3>
+                    <p class="text-[#999999] text-sm leading-relaxed">Tydliga priser, städade arbetsplatser och pålitlig kommunikation. Vi respekterar din fastighet och din tid som om den vore vår egen.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. Stats Bar -->
+    <section class="border-y border-white/5 bg-[#111111]">
+        <div class="max-w-[1400px] mx-auto px-6 grid grid-cols-2 lg:grid-cols-4 divide-x divide-white/5 border-l border-r border-white/5">
+            <div class="py-16 text-center group cursor-default hover:bg-white/5 transition-colors">
+                <div class="font-condensed text-6xl lg:text-7xl font-semibold text-[#E8222A] tracking-tighter mb-2 group-hover:scale-105 transition-transform duration-300">13+</div>
+                <div class="uppercase text-xs font-condensed tracking-[0.2em] font-semibold text-[#999999]">År</div>
+            </div>
+            <div class="py-16 text-center group cursor-default hover:bg-white/5 transition-colors">
+                <div class="font-condensed text-6xl lg:text-7xl font-semibold text-[#E8222A] tracking-tighter mb-2 group-hover:scale-105 transition-transform duration-300">500+</div>
+                <div class="uppercase text-xs font-condensed tracking-[0.2em] font-semibold text-[#999999]">Projekt</div>
+            </div>
+            <div class="py-16 text-center group cursor-default hover:bg-white/5 transition-colors">
+                <div class="font-condensed text-6xl lg:text-7xl font-semibold text-[#E8222A] tracking-tighter mb-2 group-hover:scale-105 transition-transform duration-300">4,9★</div>
+                <div class="uppercase text-xs font-condensed tracking-[0.2em] font-semibold text-[#999999]">Betyg</div>
+            </div>
+            <div class="py-16 text-center group cursor-default hover:bg-white/5 transition-colors">
+                <div class="font-condensed text-6xl lg:text-7xl font-semibold text-[#E8222A] tracking-tighter mb-2 group-hover:scale-105 transition-transform duration-300">98%</div>
+                <div class="uppercase text-xs font-condensed tracking-[0.2em] font-semibold text-[#999999]">Nöjda kunder</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 7. Trust Signal Ticker -->
+    <section class="py-4 bg-[#0a0a0a] border-b border-white/5 overflow-hidden flex relative">
+        <div class="absolute left-0 top-0 w-32 h-full bg-gradient-to-r from-[#0a0a0a] to-transparent z-10"></div>
+        <div class="absolute right-0 top-0 w-32 h-full bg-gradient-to-l from-[#0a0a0a] to-transparent z-10"></div>
+
+        <div class="w-[200%] flex animate-ticker font-condensed uppercase tracking-widest text-sm font-semibold text-[#999999] whitespace-nowrap">
+            <!-- Set 1 -->
+            <div class="w-1/2 flex justify-around items-center px-4">
+                <span class="flex items-center gap-2"><iconify-icon icon="solar:chat-round-check-linear" class="text-[#E8222A]"></iconify-icon> "Svarade på en söndag — kanon."</span>
+                <span class="text-white/20">•</span>
+                <span class="text-white">ID06-anslutna</span>
+                <span class="text-white/20">•</span>
+                <span class="flex items-center gap-2"><iconify-icon icon="solar:shield-check-linear" class="text-[#E8222A]"></iconify-icon> ISO 9001-certifierade</span>
+                <span class="text-white/20">•</span>
+                <span class="flex items-center gap-2"><iconify-icon icon="solar:medal-star-linear" class="text-[#E8222A]"></iconify-icon> Auktoriserade byggare</span>
+                <span class="text-white/20">•</span>
+                <span class="text-white">"Renaste hantverkarna jag anlitat."</span>
+                <span class="text-white/20">•</span>
+                <span>Godkänd för F-skatt</span>
+            </div>
+            <!-- Set 2 (Duplicate) -->
+            <div class="w-1/2 flex justify-around items-center px-4">
+                <span class="flex items-center gap-2"><iconify-icon icon="solar:chat-round-check-linear" class="text-[#E8222A]"></iconify-icon> "Svarade på en söndag — kanon."</span>
+                <span class="text-white/20">•</span>
+                <span class="text-white">ID06-anslutna</span>
+                <span class="text-white/20">•</span>
+                <span class="flex items-center gap-2"><iconify-icon icon="solar:shield-check-linear" class="text-[#E8222A]"></iconify-icon> ISO 9001-certifierade</span>
+                <span class="text-white/20">•</span>
+                <span class="flex items-center gap-2"><iconify-icon icon="solar:medal-star-linear" class="text-[#E8222A]"></iconify-icon> Auktoriserade byggare</span>
+                <span class="text-white/20">•</span>
+                <span class="text-white">"Renaste hantverkarna jag anlitat."</span>
+                <span class="text-white/20">•</span>
+                <span>Godkänd för F-skatt</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- 8. Testimonials -->
+    <section class="py-32 overflow-hidden bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-zinc-900/40 via-[#111111] to-[#111111]">
+        <div class="max-w-[1400px] mx-auto px-6">
+            <span class="text-[#E8222A] font-condensed uppercase tracking-[0.2em] text-xs font-semibold mb-4 flex items-center gap-3">
+                <span class="w-8 h-[1px] bg-[#E8222A]"></span>
+                Kundomdömen
+            </span>
+            <div class="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-16">
+                <h2 class="font-condensed font-semibold text-5xl md:text-7xl tracking-tighter uppercase text-white max-w-2xl">Vad våra kunder säger.</h2>
+                <div class="flex gap-2">
+                    <button class="w-12 h-12 border border-white/20 rounded-none flex items-center justify-center text-white hover:bg-[#E8222A] hover:border-[#E8222A] transition-colors"><iconify-icon icon="solar:arrow-left-linear"></iconify-icon></button>
+                    <button class="w-12 h-12 border border-white/20 rounded-none flex items-center justify-center text-white hover:bg-[#E8222A] hover:border-[#E8222A] transition-colors"><iconify-icon icon="solar:arrow-right-linear"></iconify-icon></button>
+                </div>
+            </div>
+
+            <!-- Carousel Track -->
+            <div class="flex overflow-x-auto snap-x snap-mandatory hide-scrollbar gap-6 pb-8 -mx-6 px-6 lg:mx-0 lg:px-0">
+
+                <!-- Card 1 -->
+                <div class="min-w-[320px] md:min-w-[450px] bg-[#161616] border border-white/5 p-10 snap-start flex flex-col justify-between group hover:border-white/20 transition-colors">
+                    <iconify-icon icon="solar:quote-left-bold" class="text-5xl text-white/5 mb-8 group-hover:text-[#E8222A]/20 transition-colors"></iconify-icon>
+                    <p class="text-white text-lg leading-relaxed mb-10">"Otroligt proffsiga från start till mål. De totalrenoverade vårt kök och byggde en ny altan. Städade upp efter sig och förklarade allt på vägen."</p>
+                    <div class="flex items-center justify-between border-t border-white/5 pt-6 mt-auto">
+                        <div>
+                            <div class="font-condensed font-semibold text-xl tracking-tight uppercase text-white">Anna Lindqvist</div>
+                            <div class="flex text-[#E8222A] text-sm mt-1 gap-1">
+                                <iconify-icon icon="solar:star-bold"></iconify-icon><iconify-icon icon="solar:star-bold"></iconify-icon><iconify-icon icon="solar:star-bold"></iconify-icon><iconify-icon icon="solar:star-bold"></iconify-icon><iconify-icon icon="solar:star-bold"></iconify-icon>
+                            </div>
+                        </div>
+                        <div class="w-10 h-10 bg-white rounded-full flex items-center justify-center text-black font-semibold text-xl">G</div>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="min-w-[320px] md:min-w-[450px] bg-[#161616] border border-white/5 p-10 snap-start flex flex-col justify-between group hover:border-white/20 transition-colors">
+                    <iconify-icon icon="solar:quote-left-bold" class="text-5xl text-white/5 mb-8 group-hover:text-[#E8222A]/20 transition-colors"></iconify-icon>
+                    <p class="text-white text-lg leading-relaxed mb-10">"Höll både tidsplan och budget på vår tillbyggnad. Teamet var oerhört kunnigt och löste varje utmaning längs vägen. Rekommenderas varmt."</p>
+                    <div class="flex items-center justify-between border-t border-white/5 pt-6 mt-auto">
+                        <div>
+                            <div class="font-condensed font-semibold text-xl tracking-tight uppercase text-white">Erik Johansson</div>
+                            <div class="flex text-[#E8222A] text-sm mt-1 gap-1">
+                                <iconify-icon icon="solar:star-bold"></iconify-icon><iconify-icon icon="solar:star-bold"></iconify-icon><iconify-icon icon="solar:star-bold"></iconify-icon><iconify-icon icon="solar:star-bold"></iconify-icon><iconify-icon icon="solar:star-bold"></iconify-icon>
+                            </div>
+                        </div>
+                        <div class="w-10 h-10 bg-white rounded-full flex items-center justify-center text-black font-semibold text-xl">G</div>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="min-w-[320px] md:min-w-[450px] bg-[#161616] border border-white/5 p-10 snap-start flex flex-col justify-between group hover:border-white/20 transition-colors">
+                    <iconify-icon icon="solar:quote-left-bold" class="text-5xl text-white/5 mb-8 group-hover:text-[#E8222A]/20 transition-colors"></iconify-icon>
+                    <p class="text-white text-lg leading-relaxed mb-10">"SKS skötte hela vår badrumsrenovering med ROT-avdrag och allt. Punktliga, trevliga och bra priser. En riktig tillgång för bygden."</p>
+                    <div class="flex items-center justify-between border-t border-white/5 pt-6 mt-auto">
+                        <div>
+                            <div class="font-condensed font-semibold text-xl tracking-tight uppercase text-white">Maria Karlsson</div>
+                            <div class="flex text-[#E8222A] text-sm mt-1 gap-1">
+                                <iconify-icon icon="solar:star-bold"></iconify-icon><iconify-icon icon="solar:star-bold"></iconify-icon><iconify-icon icon="solar:star-bold"></iconify-icon><iconify-icon icon="solar:star-bold"></iconify-icon><iconify-icon icon="solar:star-bold"></iconify-icon>
+                            </div>
+                        </div>
+                        <div class="w-10 h-10 bg-white rounded-full flex items-center justify-center text-black font-semibold text-xl">G</div>
+                    </div>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="min-w-[320px] md:min-w-[450px] bg-[#161616] border border-white/5 p-10 snap-start flex flex-col justify-between group hover:border-white/20 transition-colors">
+                    <iconify-icon icon="solar:quote-left-bold" class="text-5xl text-white/5 mb-8 group-hover:text-[#E8222A]/20 transition-colors"></iconify-icon>
+                    <p class="text-white text-lg leading-relaxed mb-10">"Byggde vår nya villa nyckelfärdig. Laget jobbade på i alla väder, var mycket varsamma om tomten och skötte allt pappersarbete åt oss."</p>
+                    <div class="flex items-center justify-between border-t border-white/5 pt-6 mt-auto">
+                        <div>
+                            <div class="font-condensed font-semibold text-xl tracking-tight uppercase text-white">Johan Persson</div>
+                            <div class="flex text-[#E8222A] text-sm mt-1 gap-1">
+                                <iconify-icon icon="solar:star-bold"></iconify-icon><iconify-icon icon="solar:star-bold"></iconify-icon><iconify-icon icon="solar:star-bold"></iconify-icon><iconify-icon icon="solar:star-bold"></iconify-icon><iconify-icon icon="solar:star-bold"></iconify-icon>
+                            </div>
+                        </div>
+                        <div class="w-10 h-10 bg-white rounded-full flex items-center justify-center text-black font-semibold text-xl">G</div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="mt-12 text-center md:text-left">
+                <a href="#" class="inline-flex items-center gap-2 text-[#E8222A] font-condensed uppercase tracking-widest text-xs font-semibold hover:text-white transition-colors pb-2 border-b border-[#E8222A]/30 hover:border-white">
+                    Se alla Google-omdömen <iconify-icon icon="solar:arrow-right-linear"></iconify-icon>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 10. Company News Banner -->
+    <div class="max-w-[1400px] mx-auto px-6 pb-16">
+        <div class="bg-gradient-to-r from-[#1a1a1a] to-[#111111] border border-white/5 border-l-4 border-l-[#E8222A] p-6 md:p-8 flex flex-col md:flex-row items-center justify-between gap-6 relative overflow-hidden">
+            <iconify-icon icon="solar:buildings-3-linear" class="absolute -right-10 -top-10 text-9xl text-white/[0.02]"></iconify-icon>
+            <div class="relative z-10 flex items-center gap-4">
+                <div class="hidden sm:flex w-12 h-12 bg-white/5 rounded-full items-center justify-center text-[#E8222A]">
+                    <iconify-icon icon="solar:info-circle-linear" class="text-2xl"></iconify-icon>
+                </div>
+                <p class="text-[#999999] text-sm md:text-base leading-relaxed max-w-3xl">
+                    <strong class="text-white font-semibold font-condensed text-lg tracking-tight uppercase block mb-1">Nyhet: vi växer i Mälardalen</strong>
+                    SKS Bygg &amp; Entreprenad öppnar nytt kontor och utökar laget för att möta efterfrågan på bygg, renovering och totalentreprenad i hela regionen.
+                </p>
+            </div>
+            <a href="#" class="shrink-0 border border-white/20 px-8 py-4 font-condensed uppercase text-xs tracking-widest font-semibold hover:bg-white hover:text-[#111111] transition-colors relative z-10">Läs mer</a>
+        </div>
+    </div>
+
+    <!-- 9. About -->
+    <section class="py-32 border-t border-white/5">
+        <div class="max-w-[1400px] mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
+            <!-- Image Placeholder -->
+            <div class="relative aspect-square lg:aspect-[4/5] bg-zinc-900 overflow-hidden order-2 lg:order-1">
+                <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1621905252507-b35492cc74b4?q=80&amp;w=2069&amp;auto=format&amp;fit=crop')] bg-cover bg-center mix-blend-luminosity opacity-40"></div>
+                <div class="absolute inset-0 bg-gradient-to-t from-[#111111] to-transparent"></div>
+                <!-- Accent Elements -->
+                <div class="absolute bottom-0 left-0 w-full h-1 bg-[#E8222A]"></div>
+                <div class="absolute top-8 left-8 border-l border-t border-[#E8222A] w-16 h-16 opacity-50"></div>
+                <div class="absolute bottom-8 right-8 border-r border-b border-[#E8222A] w-16 h-16 opacity-50"></div>
+            </div>
+
+            <!-- Content -->
+            <div class="order-1 lg:order-2">
+                <span class="text-[#E8222A] font-condensed uppercase tracking-[0.2em] text-xs font-semibold mb-4 flex items-center gap-3">
+                    <span class="w-8 h-[1px] bg-[#E8222A]"></span>
+                    Om SKS
+                </span>
+                <h2 class="font-condensed font-semibold text-5xl md:text-6xl tracking-tighter uppercase text-white mb-8">Mälardalens mest betrodda byggteam.</h2>
+                <div class="space-y-6 text-[#999999] text-base leading-relaxed mb-10">
+                    <p>Grundat 2011 som en sammansvetsad familjeverksamhet har SKS Bygg &amp; Entreprenad vuxit till en av Mälardalens mest kapabla entreprenörer.</p>
+                    <p>Vi byggde företaget på en enkel idé: ett samtal ska lösa ditt problem. Oavsett om du bygger en ny villa, gör en omfattande tillbyggnad eller behöver en totalrenovering, sköter vårt samlade lag det med kompromisslösa krav.</p>
+                </div>
+                <a href="#" class="bg-[#111111] border border-white/20 hover:border-white transition-colors duration-300 text-white font-condensed font-semibold uppercase tracking-wider text-sm px-8 py-4 text-center inline-flex items-center justify-center gap-3">
+                    Möt teamet <iconify-icon icon="solar:arrow-right-linear"></iconify-icon>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 11. FAQ -->
+    <section class="py-32 bg-[#141414] border-t border-white/5">
+        <div class="max-w-4xl mx-auto px-6">
+            <span class="text-[#E8222A] font-condensed uppercase tracking-[0.2em] text-xs font-semibold mb-4 flex items-center justify-center gap-3">
+                <span class="w-8 h-[1px] bg-[#E8222A]"></span>
+                Support &amp; info
+                <span class="w-8 h-[1px] bg-[#E8222A]"></span>
+            </span>
+            <h2 class="font-condensed font-semibold text-5xl md:text-6xl tracking-tighter uppercase text-white text-center mb-16">Vanliga frågor</h2>
+
+            <div class="space-y-2">
+                <!-- FAQ 1 -->
+                <details class="group bg-[#111111] border border-white/5 hover:border-white/20 transition-colors">
+                    <summary class="flex justify-between items-center font-condensed font-semibold text-xl tracking-tight uppercase cursor-pointer p-6">
+                        Vilka områden jobbar ni i?
+                        <span class="transition-transform duration-300 group-open:rotate-180 text-[#E8222A]">
+                            <iconify-icon icon="solar:alt-arrow-down-linear" class="text-2xl"></iconify-icon>
+                        </span>
+                    </summary>
+                    <div class="text-[#999999] text-sm leading-relaxed px-6 pb-6 border-t border-white/5 pt-4">
+                        Vi arbetar främst i Västerås, Enköping, Eskilstuna, Köping, Sala och övriga Mälardalen. Hör av dig så berättar vi om vi kan ta oss an ditt projekt.
+                    </div>
+                </details>
+
+                <!-- FAQ 2 -->
+                <details class="group bg-[#111111] border border-white/5 hover:border-white/20 transition-colors">
+                    <summary class="flex justify-between items-center font-condensed font-semibold text-xl tracking-tight uppercase cursor-pointer p-6">
+                        Är era offerter kostnadsfria?
+                        <span class="transition-transform duration-300 group-open:rotate-180 text-[#E8222A]">
+                            <iconify-icon icon="solar:alt-arrow-down-linear" class="text-2xl"></iconify-icon>
+                        </span>
+                    </summary>
+                    <div class="text-[#999999] text-sm leading-relaxed px-6 pb-6 border-t border-white/5 pt-4">
+                        Ja, vi lämnar kostnadsfria offerter utan förbindelse på all nybyggnation, om- och tillbyggnad samt större renoveringar. Vi går alltid igenom priset i förväg.
+                    </div>
+                </details>
+
+                <!-- FAQ 3 -->
+                <details class="group bg-[#111111] border border-white/5 hover:border-white/20 transition-colors">
+                    <summary class="flex justify-between items-center font-condensed font-semibold text-xl tracking-tight uppercase cursor-pointer p-6">
+                        Är ni licensierade och försäkrade?
+                        <span class="transition-transform duration-300 group-open:rotate-180 text-[#E8222A]">
+                            <iconify-icon icon="solar:alt-arrow-down-linear" class="text-2xl"></iconify-icon>
+                        </span>
+                    </summary>
+                    <div class="text-[#999999] text-sm leading-relaxed px-6 pb-6 border-t border-white/5 pt-4">
+                        Absolut. Vi är ID06-anslutna, ISO 9001-certifierade och godkända för F-skatt. Vi har full ansvarsförsäkring och följer alla svenska bygg- och säkerhetsregler.
+                    </div>
+                </details>
+
+                <!-- FAQ 4 -->
+                <details class="group bg-[#111111] border border-white/5 hover:border-white/20 transition-colors">
+                    <summary class="flex justify-between items-center font-condensed font-semibold text-xl tracking-tight uppercase cursor-pointer p-6">
+                        Kan ni ta totalentreprenad på hela projektet?
+                        <span class="transition-transform duration-300 group-open:rotate-180 text-[#E8222A]">
+                            <iconify-icon icon="solar:alt-arrow-down-linear" class="text-2xl"></iconify-icon>
+                        </span>
+                    </summary>
+                    <div class="text-[#999999] text-sm leading-relaxed px-6 pb-6 border-t border-white/5 pt-4">
+                        Ja! Det är SKS styrka. Eftersom vi har egna hantverkare för mark, grund, stomme, tak och inredning kan vi ta totalentreprenad och samordna allt — du slipper jaga olika underleverantörer.
+                    </div>
+                </details>
+
+                <!-- FAQ 5 -->
+                <details class="group bg-[#111111] border border-white/5 hover:border-white/20 transition-colors">
+                    <summary class="flex justify-between items-center font-condensed font-semibold text-xl tracking-tight uppercase cursor-pointer p-6">
+                        Kan jag använda ROT-avdrag?
+                        <span class="transition-transform duration-300 group-open:rotate-180 text-[#E8222A]">
+                            <iconify-icon icon="solar:alt-arrow-down-linear" class="text-2xl"></iconify-icon>
+                        </span>
+                    </summary>
+                    <div class="text-[#999999] text-sm leading-relaxed px-6 pb-6 border-t border-white/5 pt-4">
+                        Ja, vid renovering och ombyggnad i din bostad kan du ofta utnyttja ROT-avdraget. Vi drar av det direkt på fakturan och hjälper dig med allt pappersarbete mot Skatteverket.
+                    </div>
+                </details>
+
+                 <!-- FAQ 6 -->
+                 <details class="group bg-[#111111] border border-white/5 hover:border-white/20 transition-colors">
+                    <summary class="flex justify-between items-center font-condensed font-semibold text-xl tracking-tight uppercase cursor-pointer p-6">
+                        Rekryterar ni just nu?
+                        <span class="transition-transform duration-300 group-open:rotate-180 text-[#E8222A]">
+                            <iconify-icon icon="solar:alt-arrow-down-linear" class="text-2xl"></iconify-icon>
+                        </span>
+                    </summary>
+                    <div class="text-[#999999] text-sm leading-relaxed px-6 pb-6 border-t border-white/5 pt-4">
+                        Vi söker alltid skickliga snickare, murare och lärlingar som delar vår syn på kvalitet. Kika på sidan Jobba hos oss för aktuella tjänster eller skicka in din ansökan spontant.
+                    </div>
+                </details>
+            </div>
+        </div>
+    </section>
+
+    <!-- 12. Service Locations -->
+    <section class="py-20 border-t border-white/5 bg-[#111111] text-center">
+        <div class="max-w-[1000px] mx-auto px-6">
+            <h2 class="font-condensed font-semibold text-3xl md:text-4xl tracking-tighter uppercase mb-10 text-white">Vi bygger i Västerås, Mälardalen &amp; närområdet.</h2>
+            <div class="flex flex-wrap justify-center gap-3">
+                <span class="border border-white/10 px-5 py-2 text-xs uppercase tracking-widest font-condensed text-[#999999] hover:text-white hover:border-[#E8222A] hover:bg-[#E8222A]/5 transition-all cursor-default">Västerås</span>
+                <span class="border border-white/10 px-5 py-2 text-xs uppercase tracking-widest font-condensed text-[#999999] hover:text-white hover:border-[#E8222A] hover:bg-[#E8222A]/5 transition-all cursor-default">Enköping</span>
+                <span class="border border-white/10 px-5 py-2 text-xs uppercase tracking-widest font-condensed text-[#999999] hover:text-white hover:border-[#E8222A] hover:bg-[#E8222A]/5 transition-all cursor-default">Eskilstuna</span>
+                <span class="border border-white/10 px-5 py-2 text-xs uppercase tracking-widest font-condensed text-[#999999] hover:text-white hover:border-[#E8222A] hover:bg-[#E8222A]/5 transition-all cursor-default">Köping</span>
+                <span class="border border-white/10 px-5 py-2 text-xs uppercase tracking-widest font-condensed text-[#999999] hover:text-white hover:border-[#E8222A] hover:bg-[#E8222A]/5 transition-all cursor-default">Sala</span>
+                <span class="border border-white/10 px-5 py-2 text-xs uppercase tracking-widest font-condensed text-[#999999] hover:text-white hover:border-[#E8222A] hover:bg-[#E8222A]/5 transition-all cursor-default">Mälardalen</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- 13. Blog Preview -->
+    <section class="py-32 border-t border-white/5">
+        <div class="max-w-[1400px] mx-auto px-6">
+            <div class="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-16">
+                <div>
+                    <span class="text-[#E8222A] font-condensed uppercase tracking-[0.2em] text-xs font-semibold mb-4 flex items-center gap-3">
+                        <span class="w-8 h-[1px] bg-[#E8222A]"></span>
+                        Kunskapsbank
+                    </span>
+                    <h2 class="font-condensed font-semibold text-5xl md:text-7xl tracking-tighter uppercase text-white">Byggtips &amp; nyheter.</h2>
+                </div>
+                <a href="#" class="hidden md:inline-flex items-center gap-2 text-white font-condensed uppercase tracking-widest text-xs font-semibold hover:text-[#E8222A] transition-colors pb-2 border-b border-white/20 hover:border-[#E8222A]">
+                    Visa alla artiklar <iconify-icon icon="solar:arrow-right-linear"></iconify-icon>
+                </a>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Article 1 -->
+                <a href="#" class="group block border border-white/5 bg-[#141414] hover:border-white/20 transition-colors">
+                    <div class="aspect-[16/9] bg-zinc-900 overflow-hidden relative">
+                        <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1544724569-5f546fd6f2b6?q=80&amp;w=2069&amp;auto=format&amp;fit=crop')] bg-cover bg-center opacity-40 group-hover:opacity-60 group-hover:scale-105 transition-all duration-700 mix-blend-luminosity"></div>
+                    </div>
+                    <div class="p-8">
+                        <span class="inline-block bg-[#E8222A] text-white font-condensed tracking-widest uppercase text-[10px] font-semibold px-2 py-1 mb-4">Renovering</span>
+                        <h3 class="font-condensed text-2xl font-semibold tracking-tight uppercase mb-3 group-hover:text-[#E8222A] transition-colors line-clamp-2">Lönar sig ROT-avdraget vid en totalrenovering?</h3>
+                        <p class="text-[#999999] text-sm line-clamp-2 mb-6">Så fungerar ROT-avdraget och när det gör störst skillnad för din renoveringsbudget.</p>
+                        <span class="inline-flex items-center gap-2 text-white font-condensed uppercase tracking-widest text-xs font-semibold group-hover:text-[#E8222A] transition-colors">
+                            Läs mer <iconify-icon icon="solar:arrow-right-linear"></iconify-icon>
+                        </span>
+                    </div>
+                </a>
+
+                <!-- Article 2 -->
+                <a href="#" class="group block border border-white/5 bg-[#141414] hover:border-white/20 transition-colors">
+                    <div class="aspect-[16/9] bg-zinc-900 overflow-hidden relative">
+                        <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1620601614002-31518fdf973b?q=80&amp;w=1964&amp;auto=format&amp;fit=crop')] bg-cover bg-center opacity-40 group-hover:opacity-60 group-hover:scale-105 transition-all duration-700 mix-blend-luminosity"></div>
+                    </div>
+                    <div class="p-8">
+                        <span class="inline-block bg-[#E8222A] text-white font-condensed tracking-widest uppercase text-[10px] font-semibold px-2 py-1 mb-4">Tak &amp; fasad</span>
+                        <h3 class="font-condensed text-2xl font-semibold tracking-tight uppercase mb-3 group-hover:text-[#E8222A] transition-colors line-clamp-2">Tecken på att taket behöver bytas</h3>
+                        <p class="text-[#999999] text-sm line-clamp-2 mb-6">Vänta inte på vattenskadan. Lär dig de viktigaste varningssignalerna på ett slitet tak.</p>
+                        <span class="inline-flex items-center gap-2 text-white font-condensed uppercase tracking-widest text-xs font-semibold group-hover:text-[#E8222A] transition-colors">
+                            Läs mer <iconify-icon icon="solar:arrow-right-linear"></iconify-icon>
+                        </span>
+                    </div>
+                </a>
+
+                <!-- Article 3 -->
+                <a href="#" class="group block border border-white/5 bg-[#141414] hover:border-white/20 transition-colors">
+                    <div class="aspect-[16/9] bg-zinc-900 overflow-hidden relative">
+                        <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1581092160562-40aa08e78837?q=80&amp;w=2070&amp;auto=format&amp;fit=crop')] bg-cover bg-center opacity-40 group-hover:opacity-60 group-hover:scale-105 transition-all duration-700 mix-blend-luminosity"></div>
+                    </div>
+                    <div class="p-8">
+                        <span class="inline-block bg-[#E8222A] text-white font-condensed tracking-widest uppercase text-[10px] font-semibold px-2 py-1 mb-4">Nybyggnation</span>
+                        <h3 class="font-condensed text-2xl font-semibold tracking-tight uppercase mb-3 group-hover:text-[#E8222A] transition-colors line-clamp-2">Bygglov: så lång tid tar processen</h3>
+                        <p class="text-[#999999] text-sm line-clamp-2 mb-6">Allt om bygglov, ritningar och kontrollansvarig innan du sätter spaden i marken.</p>
+                        <span class="inline-flex items-center gap-2 text-white font-condensed uppercase tracking-widest text-xs font-semibold group-hover:text-[#E8222A] transition-colors">
+                            Läs mer <iconify-icon icon="solar:arrow-right-linear"></iconify-icon>
+                        </span>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 14. Final CTA Banner -->
+    <section class="py-32 relative bg-[#111111] border-t-4 border-[#E8222A] overflow-hidden">
+        <div class="absolute inset-0 bg-[radial-gradient(circle_at_bottom_left,_var(--tw-gradient-stops))] from-[#E8222A]/10 via-[#111111] to-[#111111] pointer-events-none"></div>
+        <div class="max-w-[1400px] mx-auto px-6 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+
+                <div>
+                    <h2 class="font-condensed font-semibold text-6xl md:text-8xl tracking-tighter uppercase mb-6 leading-[0.9]">
+                        Redo att komma igång?<br>
+                        <span class="text-[#E8222A]">Hör av dig.</span>
+                    </h2>
+                    <p class="text-[#999999] text-lg mb-10 max-w-md">Kontakta vårt team idag för en kostnadsfri offert utan förbindelse på ditt nästa projekt. Snabbt svar utlovas.</p>
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <a href="#" class="bg-[#E8222A] hover:bg-white hover:text-[#111111] transition-colors duration-300 text-white font-condensed font-semibold uppercase tracking-wider text-sm px-8 py-4 text-center rounded-none flex items-center justify-center">
+                            Begär offert idag
+                        </a>
+                        <a href="#" class="border border-white/20 hover:border-white transition-colors duration-300 text-white font-condensed font-semibold uppercase tracking-wider text-sm px-8 py-4 text-center rounded-none inline-flex items-center justify-center gap-3">
+                            <iconify-icon icon="solar:phone-linear" class="text-lg"></iconify-icon> Ring 021 — 00 00 00
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Inline Form -->
+                <div class="bg-[#161616] border border-white/5 p-8 md:p-12">
+                    <form class="space-y-4">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div>
+                                <label class="sr-only">Namn</label>
+                                <input type="text" placeholder="För- och efternamn" class="w-full bg-[#111111] border border-white/10 px-5 py-4 text-sm focus:border-[#E8222A] focus:ring-1 focus:ring-[#E8222A] outline-none text-white transition-all placeholder:text-[#999999]/50 rounded-none">
+                            </div>
+                            <div>
+                                <label class="sr-only">Telefon</label>
+                                <input type="tel" placeholder="Telefonnummer" class="w-full bg-[#111111] border border-white/10 px-5 py-4 text-sm focus:border-[#E8222A] focus:ring-1 focus:ring-[#E8222A] outline-none text-white transition-all placeholder:text-[#999999]/50 rounded-none">
+                            </div>
+                        </div>
+                        <div class="relative">
+                            <label class="sr-only">Önskad tjänst</label>
+                            <select class="w-full bg-[#111111] border border-white/10 px-5 py-4 text-sm focus:border-[#E8222A] focus:ring-1 focus:ring-[#E8222A] outline-none text-[#999999] transition-all appearance-none rounded-none cursor-pointer">
+                                <option value="" disabled="" selected="">Välj önskad tjänst...</option>
+                                <option value="nybyggnation">Nybyggnation</option>
+                                <option value="tillbyggnad">Om- &amp; tillbyggnad</option>
+                                <option value="renovering">Renovering</option>
+                                <option value="mark">Mark &amp; grund</option>
+                                <option value="annat">Annat / Vet ej</option>
+                            </select>
+                            <div class="absolute inset-y-0 right-5 flex items-center pointer-events-none text-[#999999]">
+                                <iconify-icon icon="solar:alt-arrow-down-linear"></iconify-icon>
+                            </div>
+                        </div>
+                        <div>
+                            <label class="sr-only">Meddelande</label>
+                            <textarea placeholder="Berätta om ditt projekt..." rows="4" class="w-full bg-[#111111] border border-white/10 px-5 py-4 text-sm focus:border-[#E8222A] focus:ring-1 focus:ring-[#E8222A] outline-none text-white transition-all placeholder:text-[#999999]/50 resize-none rounded-none"></textarea>
+                        </div>
+                        <button type="button" class="w-full bg-white text-[#111111] px-8 py-4 font-condensed font-semibold uppercase tracking-widest text-sm hover:bg-[#E8222A] hover:text-white transition-colors duration-300 rounded-none flex items-center justify-center gap-2 mt-2">
+                            Skicka förfrågan <iconify-icon icon="solar:arrow-right-linear"></iconify-icon>
+                        </button>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- 15. Footer -->
+    <footer class="bg-[#111111] border-t border-white/5 pt-20 pb-8">
+        <div class="max-w-[1400px] mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-12 mb-20">
+
+                <!-- Brand Col -->
+                <div class="lg:col-span-2">
+                    <a href="#" class="flex items-center gap-1 text-white mb-6">
+                        <iconify-icon icon="solar:buildings-3-linear" class="text-[#E8222A] text-2xl"></iconify-icon>
+                        <span class="font-condensed font-semibold text-3xl tracking-tighter uppercase">SKS</span>
+                    </a>
+                    <p class="text-[#999999] text-sm leading-relaxed max-w-sm mb-8">
+                        SKS Bygg &amp; Entreprenad — bygg, renovering &amp; entreprenad i Västerås &amp; Mälardalen. Ett lag. Ett samtal. Från grund till tak.
+                    </p>
+                    <div class="flex items-center gap-4 text-white/50">
+                        <a href="#" class="hover:text-white transition-colors"><iconify-icon icon="solar:plain-linear" class="text-xl"></iconify-icon></a>
+                        <a href="#" class="hover:text-white transition-colors"><iconify-icon icon="solar:camera-linear" class="text-xl"></iconify-icon></a>
+                        <a href="#" class="hover:text-white transition-colors"><iconify-icon icon="solar:suitcase-linear" class="text-xl"></iconify-icon></a>
+                    </div>
+                </div>
+
+                <!-- Links Cols -->
+                <div>
+                    <h4 class="font-condensed font-semibold tracking-widest uppercase text-xs mb-6 text-white">Tjänster</h4>
+                    <ul class="space-y-4 text-sm text-[#999999]">
+                        <li><a href="#" class="hover:text-white hover:pl-1 transition-all">Nybyggnation</a></li>
+                        <li><a href="#" class="hover:text-white hover:pl-1 transition-all">Om- &amp; tillbyggnad</a></li>
+                        <li><a href="#" class="hover:text-white hover:pl-1 transition-all">Renovering</a></li>
+                        <li><a href="#" class="hover:text-white hover:pl-1 transition-all">Kök &amp; badrum</a></li>
+                        <li><a href="#" class="hover:text-white hover:pl-1 transition-all">Snickeri</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-condensed font-semibold tracking-widest uppercase text-xs mb-6 text-white">Entreprenad</h4>
+                    <ul class="space-y-4 text-sm text-[#999999]">
+                        <li><a href="#" class="hover:text-white hover:pl-1 transition-all">Totalentreprenad</a></li>
+                        <li><a href="#" class="hover:text-white hover:pl-1 transition-all">Projektledning</a></li>
+                        <li><a href="#" class="hover:text-white hover:pl-1 transition-all">Mark &amp; grund</a></li>
+                        <li><a href="#" class="hover:text-white hover:pl-1 transition-all">Stomme</a></li>
+                        <li><a href="#" class="hover:text-white hover:pl-1 transition-all">Kommersiella projekt</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-condensed font-semibold tracking-widest uppercase text-xs mb-6 text-white">Tak &amp; fasad</h4>
+                    <ul class="space-y-4 text-sm text-[#999999]">
+                        <li><a href="#" class="hover:text-white hover:pl-1 transition-all">Takläggning</a></li>
+                        <li><a href="#" class="hover:text-white hover:pl-1 transition-all">Takbyte</a></li>
+                        <li><a href="#" class="hover:text-white hover:pl-1 transition-all">Fasadrenovering</a></li>
+                        <li><a href="#" class="hover:text-white hover:pl-1 transition-all">Puts &amp; målning</a></li>
+                        <li><a href="#" class="hover:text-white hover:pl-1 transition-all">Fönsterbyte</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-condensed font-semibold tracking-widest uppercase text-xs mb-6 text-white">Snabblänkar</h4>
+                    <ul class="space-y-4 text-sm text-[#999999]">
+                        <li><a href="#" class="hover:text-white hover:pl-1 transition-all">Om oss</a></li>
+                        <li><a href="#" class="hover:text-white hover:pl-1 transition-all">Jobba hos oss</a></li>
+                        <li><a href="#" class="hover:text-white hover:pl-1 transition-all">Områden</a></li>
+                        <li><a href="#" class="hover:text-white hover:pl-1 transition-all">Kontakt</a></li>
+                        <li><a href="#" class="hover:text-white hover:pl-1 transition-all">Begär offert</a></li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <!-- Bottom Bar -->
+            <div class="border-t border-white/5 pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-xs font-condensed tracking-widest uppercase text-[#999999]">
+                <p>© 2025 SKS Bygg &amp; Entreprenad. Alla rättigheter förbehållna. Industrigatan 1, 721 30 Västerås · info@sks.se</p>
+                <div class="flex gap-6">
+                    <span>Org.nr 556000-0000 · Godkänd för F-skatt</span>
+                    <a href="#" class="hover:text-white transition-colors">Integritetspolicy</a>
+                    <a href="#" class="hover:text-white transition-colors">Villkor</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+</body></html>
