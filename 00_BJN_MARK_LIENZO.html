@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html lang="sv" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BJN Mark &amp; Entreprenad — Projekt- &amp; Projekteringsledning</title>
+  <meta name="description" content="BJN Mark &amp; Entreprenad AB är konsulter som driver projekt åt privata fastighetsägare, fastighetsutvecklare och offentliga beställare inom projektledning, projekteringsledning, utredningar och byggledning." />
+  <link rel="icon" href="app/icon.svg" type="image/svg+xml" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            display: ['"Space Grotesk"', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Lenis CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/lenis@1.1.20/dist/lenis.css" />
+
+  <!-- Iconify Icon -->
+  <script src="https://code.iconify.design/iconify-icon/2.3.0/iconify-icon.min.js"></script>
+
+  <style>
+    :root {
+      --c-bg: #F3F2EF;        /* warm sand base */
+      --c-surface: #FFFFFF;   /* raised white surface */
+      --c-surface-2: #F8F7F4;
+      --c-ink: #15171A;       /* deep dark text */
+      --c-dark: #0E0F10;
+      --c-muted: #6B7280;
+      --c-slate: #44505A;     /* cool slate highlight */
+      --c-line: rgba(0, 0, 0, 0.10);
+      --font-display: 'Space Grotesk', sans-serif;
+      --font-body: 'Inter', sans-serif;
+    }
+    * { box-sizing: border-box; }
+    body {
+      background-color: var(--c-bg);
+      color: var(--c-ink);
+      font-family: var(--font-body);
+      margin: 0;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+    .display { font-family: var(--font-display); }
+    .tight { letter-spacing: -0.04em; }
+    .wrapper { position: relative; z-index: 10; background-color: var(--c-bg); }
+    .word-wrap { display: inline-block; overflow: hidden; vertical-align: top; padding-bottom: 0.1em; }
+    .word-inner { display: inline-block; will-change: transform; }
+    .loader {
+      position: fixed;
+      inset: 0;
+      background: var(--c-dark);
+      z-index: 10000;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #fff;
+    }
+    .loader-text {
+      font-family: var(--font-display);
+      font-size: 3vw;
+      letter-spacing: -0.05em;
+      font-weight: 600;
+    }
+    .loader-bar {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      height: 2px;
+      background: #fff;
+      width: 0%;
+    }
+    .svc-card {
+      position: relative;
+      border-radius: 14px;
+      overflow: hidden;
+      height: 20rem;
+    }
+    .svc-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .svc-card:hover img {
+      transform: scale(1.08);
+    }
+    .svc-scrim {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(0, 0, 0, 0.88), rgba(0, 0, 0, 0.15) 45%, transparent);
+    }
+    .svc-glass {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      padding: 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      border-top: 1px solid rgba(255, 255, 255, 0.14);
+      background: rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      z-index: 2;
+    }
+    details > summary { list-style: none; }
+    details > summary::-webkit-details-marker { display: none; }
+    @media (max-width: 768px) {
+      .loader-text { font-size: 8vw; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- PRELOADER -->
+  <div class="loader">
+    <div class="loader-text">BJN MARK &amp; ENTREPRENAD</div>
+    <div class="loader-bar"></div>
+  </div>
+
+  <!-- NAV -->
+  <nav class="fixed top-0 w-full px-6 py-5 md:px-12 flex justify-between items-center z-50 text-white backdrop-blur-md bg-black/25 border-b border-white/5">
+    <div class="display font-semibold text-lg md:text-xl tight flex items-center gap-2">
+      <iconify-icon icon="solar:hill-2-linear" width="22" class="text-amber-500"></iconify-icon>
+      <span>BJN Mark</span>
+    </div>
+    <div class="hidden md:flex gap-8 text-xs font-medium uppercase tracking-[0.18em] text-white/70">
+      <a href="#om" class="hover:text-white transition-colors">Om oss</a>
+      <a href="#tjanster" class="hover:text-white transition-colors">Tjänster</a>
+      <a href="#arbeten" class="hover:text-white transition-colors">Arbeten</a>
+      <a href="#kontakt" class="hover:text-white transition-colors">Kontakt</a>
+    </div>
+    <a
+      href="#kontakt"
+      class="hidden md:inline-flex items-center gap-1.5 border border-white/20 px-4 py-1.5 text-xs uppercase tracking-widest hover:bg-white hover:text-black transition-colors rounded-full font-medium"
+    >
+      Kontakta oss
+    </a>
+  </nav>
+
+  <div class="wrapper">
+    <!-- HERO -->
+    <section class="hero-section relative min-h-screen flex flex-col justify-between overflow-hidden bg-[#0D0F12] text-white pt-24 pb-10 lg:pb-12">
+      <div class="absolute inset-0 z-0 pointer-events-none">
+        <img
+          src="public/hero-live-bjn.jpg"
+          alt="BJN Mark &amp; Entreprenad"
+          class="hero-parallax-target w-full h-full object-cover object-[center_35%]"
+        />
+        <div class="absolute inset-0 bg-gradient-to-r from-[#07080A]/85 via-[#07080A]/40 via-45% to-transparent pointer-events-none"></div>
+        <div class="absolute inset-x-0 bottom-0 h-48 bg-gradient-to-t from-[#07080A]/90 via-[#07080A]/35 to-transparent pointer-events-none"></div>
+        <div class="absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-[#07080A]/55 to-transparent pointer-events-none"></div>
+      </div>
+
+      <div class="relative z-10 max-w-[1600px] w-full mx-auto px-6 md:px-12 flex flex-col justify-between flex-grow pt-6 sm:pt-8 pb-2">
+        <div class="max-w-2xl lg:max-w-3xl">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-white/10 bg-white/5 backdrop-blur-xs text-[11px] uppercase tracking-[0.2em] text-white/80 w-fit mb-5">
+            <iconify-icon icon="solar:clipboard-check-linear" width="14" class="text-amber-400"></iconify-icon>
+            <span>Projekt- &amp; Projekteringsledning</span>
+            <span class="w-1 h-1 rounded-full bg-white/40"></span>
+            <span class="text-white/70 font-normal">Stockholm &amp; Mälardalen</span>
+          </div>
+
+          <h1 class="hero-anim-title display text-3xl sm:text-4xl lg:text-[3.25rem] font-normal leading-[1.12] tight text-white mb-5">
+            Vi driver projekt åt beställare.
+          </h1>
+
+          <p class="hero-anim-sub text-base sm:text-lg lg:text-xl text-white/85 font-light leading-relaxed max-w-xl mb-7">
+            Vi arbetar med privata fastighetsägare, fastighetsutvecklare och offentliga beställare inom projektledning, projekteringsledning, utredningar och byggledning.
+          </p>
+
+          <div class="hero-anim-btn flex flex-wrap items-center gap-5">
+            <a
+              href="#kontakt"
+              class="inline-flex items-center gap-4 bg-white text-black pl-7 pr-2.5 py-2.5 rounded-full text-sm font-medium tracking-wide hover:bg-white/90 transition-all group shadow-lg shadow-black/25"
+            >
+              <span>Kontakta oss</span>
+              <span class="w-9 h-9 rounded-full bg-black text-white flex items-center justify-center group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform">
+                <iconify-icon icon="solar:arrow-right-up-linear" width="18"></iconify-icon>
+              </span>
+            </a>
+            <a
+              href="tel:0706520743"
+              class="inline-flex items-center gap-2 text-xs uppercase tracking-widest text-white/70 hover:text-white transition-colors py-2"
+            >
+              <iconify-icon icon="solar:phone-calling-linear" width="16" class="text-white/80"></iconify-icon>
+              <span>070-652 07 43</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="w-full mt-8 md:mt-10">
+          <div class="w-full h-px bg-white/15 mb-6 lg:mb-8"></div>
+          <div class="hero-anim-media grid grid-cols-2 lg:grid-cols-4 gap-7 lg:gap-10">
+            <div class="hero-anim-stat">
+              <div class="display text-4xl sm:text-5xl lg:text-[3.5rem] font-medium tracking-tight text-white mb-1.5 leading-none">2011</div>
+              <div class="text-xs font-medium uppercase tracking-widest text-white/50 mb-1">Gruppens rötter</div>
+              <p class="text-xs sm:text-sm text-white/70 font-light leading-snug">Bygg- &amp; projektledning med mångårig erfarenhet</p>
+            </div>
+            <div class="hero-anim-stat">
+              <div class="display text-4xl sm:text-5xl lg:text-[3.5rem] font-medium tracking-tight text-white mb-1.5 leading-none">2021</div>
+              <div class="text-xs font-medium uppercase tracking-widest text-white/50 mb-1">BJN Mark grundas</div>
+              <p class="text-xs sm:text-sm text-white/70 font-light leading-snug">Etablerat i Nykvarn &amp; Mälardalen</p>
+            </div>
+            <div class="hero-anim-stat">
+              <div class="display text-4xl sm:text-5xl lg:text-[3.5rem] font-medium tracking-tight text-white mb-1.5 leading-none">5</div>
+              <div class="text-xs font-medium uppercase tracking-widest text-white/50 mb-1">Verksamhetsområden</div>
+              <p class="text-xs sm:text-sm text-white/70 font-light leading-snug">Projekt- &amp; projekteringsledning, utredningar, byggledning &amp; interim</p>
+            </div>
+            <div class="hero-anim-stat">
+              <div class="display text-4xl sm:text-5xl lg:text-[3.5rem] font-medium tracking-tight text-white mb-1.5 leading-none">1</div>
+              <div class="text-xs font-medium uppercase tracking-widest text-white/50 mb-1">Kontakt hela vägen</div>
+              <p class="text-xs sm:text-sm text-white/70 font-light leading-snug">Tydlig styrning genom hela projektet</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TRUST STRIP -->
+    <section class="bg-[var(--c-surface)] py-5 border-b border-black/10 overflow-hidden">
+      <div class="max-w-[1600px] mx-auto px-6 md:px-12 flex flex-wrap items-center justify-center md:justify-between gap-x-10 gap-y-3 text-[11px] uppercase tracking-[0.18em] text-neutral-500">
+        <span class="flex items-center gap-2"><iconify-icon icon="solar:clipboard-check-linear" class="text-[var(--c-slate)]"></iconify-icon> Projektledning</span>
+        <span class="flex items-center gap-2"><iconify-icon icon="solar:document-text-linear" class="text-[var(--c-slate)]"></iconify-icon> Projekteringsledning</span>
+        <span class="flex items-center gap-2"><iconify-icon icon="solar:magnifer-linear" class="text-[var(--c-slate)]"></iconify-icon> Utredningar</span>
+        <span class="flex items-center gap-2"><iconify-icon icon="solar:buildings-2-linear" class="text-[var(--c-slate)]"></iconify-icon> Byggledning</span>
+        <span class="flex items-center gap-2"><iconify-icon icon="solar:user-hand-up-linear" class="text-[var(--c-slate)]"></iconify-icon> Interimschef</span>
+      </div>
+    </section>
+
+    <!-- OM OSS -->
+    <section id="om" class="py-28 md:py-32 px-6 md:px-20 grid md:grid-cols-2 gap-16 max-w-[1600px] mx-auto">
+      <div class="sticky top-32 self-start">
+        <h2 class="display text-4xl md:text-5xl font-medium tight leading-tight split-animate">
+          Vi driver projekt åt beställare. <span class="text-neutral-400">Bas i Nykvarn.</span>
+        </h2>
+        <div class="mt-8 flex flex-wrap gap-4 text-xs font-medium uppercase tracking-widest text-neutral-500">
+          <div class="flex items-center gap-2"><iconify-icon icon="solar:users-group-two-rounded-linear" class="text-lg"></iconify-icon> Del av BJN-gruppen</div>
+          <div class="flex items-center gap-2"><iconify-icon icon="solar:round-double-alt-arrow-right-linear" class="text-lg"></iconify-icon> Kort beslutsväg</div>
+        </div>
+      </div>
+      <div class="text-lg md:text-xl font-light leading-relaxed text-neutral-600">
+        <p class="mb-8">BJN Mark &amp; Entreprenad är konsulter med bas i Nykvarn. Vi arbetar med privata fastighetsägare, fastighetsutvecklare och offentliga beställare inom projekt- och projekteringsledning, utredningar, byggledning och som interimschefer.</p>
+        <p class="mb-8">Vi driver projekt åt beställare. Vi genomför inte entreprenader och vi arbetar inte med privatkunder.</p>
+        <div class="h-px w-full bg-black/10 my-10"></div>
+        <div class="grid grid-cols-2 gap-8">
+          <div><h4 className="text-sm font-medium uppercase tracking-widest text-black mb-2">Bas</h4><p className="text-sm text-neutral-500">Nykvarn &amp; Mälardalen</p></div>
+          <div><h4 className="text-sm font-medium uppercase tracking-widest text-black mb-2">Fokus</h4><p className="text-sm text-neutral-500">Projektledning · Byggledning</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TJÄNSTER - Original SIX-Card Visual Grid -->
+    <section id="tjanster" class="bg-[var(--c-surface)] py-24 md:py-28 border-y border-black/10">
+      <div class="max-w-[1600px] mx-auto px-6 md:px-12">
+        <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-14">
+          <div>
+            <div class="flex items-center gap-3 mb-4"><span class="w-8 h-px bg-[var(--c-slate)]"></span><span class="text-xs font-medium uppercase tracking-widest text-[var(--c-slate)]">Tjänster</span></div>
+            <h2 class="display text-4xl md:text-5xl font-medium tight">Det vi gör</h2>
+          </div>
+          <p class="max-w-md text-neutral-500 leading-relaxed">Vi är konsulter som driver projekt åt privata fastighetsägare, fastighetsutvecklare och offentliga beställare.</p>
+        </div>
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
+          <div class="svc-card group">
+            <img src="public/service_schakt.jpg" alt="Projektledning" />
+            <div class="svc-scrim"></div>
+            <div class="svc-glass"><span class="text-white font-medium text-lg display tight">Projektledning</span><iconify-icon icon="solar:arrow-right-up-linear" class="text-white" width="22"></iconify-icon></div>
+          </div>
+          <div class="svc-card group">
+            <img src="public/service_finplanering.jpg" alt="Projekteringsledning" />
+            <div class="svc-scrim"></div>
+            <div class="svc-glass"><span class="text-white font-medium text-lg display tight">Projekteringsledning</span><iconify-icon icon="solar:arrow-right-up-linear" class="text-white" width="22"></iconify-icon></div>
+          </div>
+          <div class="svc-card group">
+            <img src="public/service_dranering_va.jpg" alt="Utredningar" />
+            <div class="svc-scrim"></div>
+            <div class="svc-glass"><span class="text-white font-medium text-lg display tight">Utredningar</span><iconify-icon icon="solar:arrow-right-up-linear" class="text-white" width="22"></iconify-icon></div>
+          </div>
+          <div class="svc-card group">
+            <img src="public/service_grundlaggning.jpg" alt="Byggledning" />
+            <div class="svc-scrim"></div>
+            <div class="svc-glass"><span class="text-white font-medium text-lg display tight">Byggledning</span><iconify-icon icon="solar:arrow-right-up-linear" class="text-white" width="22"></iconify-icon></div>
+          </div>
+          <div class="svc-card group">
+            <img src="public/service_stenlaggning.jpg" alt="Interimschef" />
+            <div class="svc-scrim"></div>
+            <div class="svc-glass"><span class="text-white font-medium text-lg display tight">Interimschef</span><iconify-icon icon="solar:arrow-right-up-linear" class="text-white" width="22"></iconify-icon></div>
+          </div>
+          <div class="svc-card group">
+            <img src="public/service_vagar_ytor.jpg" alt="Vi driver projekt åt beställare" />
+            <div class="svc-scrim"></div>
+            <div class="svc-glass"><span class="text-white font-medium text-lg display tight">Vi driver projekt åt beställare</span><iconify-icon icon="solar:arrow-right-up-linear" class="text-white" width="22"></iconify-icon></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAKTA - Original 4-Column Composition -->
+    <section class="py-20 md:py-24 px-6 md:px-12 max-w-[1600px] mx-auto">
+      <div class="flex flex-col gap-14">
+        <div class="flex flex-col md:flex-row justify-between items-start md:items-end gap-6">
+          <h2 class="display text-3xl md:text-5xl font-medium tight leading-tight max-w-3xl">Gedigna rötter inom bygg- &amp; projektledning.</h2>
+          <span class="text-sm font-medium uppercase tracking-widest text-neutral-500 pb-2 border-b border-black">Nykvarn</span>
+        </div>
+        <div class="grid grid-cols-2 md:grid-cols-4 divide-y md:divide-y-0 md:divide-x divide-black/10 border-y border-black/10">
+          <div class="flex flex-col gap-2 py-8 md:py-10 md:px-8 first:md:pl-0">
+            <span class="display text-5xl md:text-7xl font-medium tight">2011</span>
+            <span class="text-xs font-medium uppercase tracking-widest mt-3">Gruppens rötter</span>
+            <span class="text-sm text-neutral-500">BJN Projekt — bygg &amp; projektledning</span>
+          </div>
+          <div class="flex flex-col gap-2 py-8 md:py-10 md:px-8">
+            <span class="display text-5xl md:text-7xl font-medium tight">2021</span>
+            <span class="text-xs font-medium uppercase tracking-widest mt-3">BJN Mark grundas</span>
+            <span class="text-sm text-neutral-500">Etablerat i Nykvarn &amp; Mälardalen</span>
+          </div>
+          <div class="flex flex-col gap-2 py-8 md:py-10 md:px-8">
+            <span class="display text-5xl md:text-7xl font-medium tight">1</span>
+            <span class="text-xs font-medium uppercase tracking-widest mt-3">Kontakt hela vägen</span>
+            <span class="text-sm text-neutral-500">Vi driver projektet åt beställaren</span>
+          </div>
+          <div class="flex flex-col gap-2 py-8 md:py-10 md:px-8 last:md:pr-0">
+            <span class="display text-5xl md:text-7xl font-medium tight">5</span>
+            <span class="text-xs font-medium uppercase tracking-widest mt-3">Verksamhetsområden</span>
+            <span class="text-sm text-neutral-500">Projekt- &amp; byggledning, utredningar och interim</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- MANIFESTO -->
+    <section class="py-28 md:py-36 bg-[var(--c-dark)] text-white border-y border-black/10">
+      <div class="max-w-[1500px] mx-auto px-6 md:px-12">
+        <div class="flex flex-col gap-4 mb-20 max-w-3xl">
+          <span class="text-xs font-medium uppercase tracking-widest text-white/45">Vår verksamhet</span>
+          <h2 class="display text-4xl md:text-6xl font-medium tight">Vi driver projekt åt beställare.</h2>
+        </div>
+        <div class="flex flex-col divide-y divide-white/10 border-t border-white/10">
+          <div class="py-10 flex flex-col md:flex-row gap-6 md:gap-24 group hover:bg-white/[0.03] transition-colors -mx-6 px-6 md:-mx-12 md:px-12">
+            <span class="display text-4xl md:text-5xl font-medium tight text-white/30 group-hover:text-white transition-colors w-24">01</span>
+            <div class="flex-1 flex flex-col gap-3"><h3 class="display text-2xl md:text-3xl font-medium tight">Projektledning</h3><p class="text-base md:text-lg text-white/55 max-w-2xl font-light">Vi driver projekt åt beställare.</p></div>
+          </div>
+          <div class="py-10 flex flex-col md:flex-row gap-6 md:gap-24 group hover:bg-white/[0.03] transition-colors -mx-6 px-6 md:-mx-12 md:px-12">
+            <span class="display text-4xl md:text-5xl font-medium tight text-white/30 group-hover:text-white transition-colors w-24">02</span>
+            <div class="flex-1 flex flex-col gap-3"><h3 class="display text-2xl md:text-3xl font-medium tight">Projekteringsledning</h3><p class="text-base md:text-lg text-white/55 max-w-2xl font-light">Vi arbetar med projekteringsledning.</p></div>
+          </div>
+          <div class="py-10 flex flex-col md:flex-row gap-6 md:gap-24 group hover:bg-white/[0.03] transition-colors -mx-6 px-6 md:-mx-12 md:px-12">
+            <span class="display text-4xl md:text-5xl font-medium tight text-white/30 group-hover:text-white transition-colors w-24">03</span>
+            <div class="flex-1 flex flex-col gap-3"><h3 class="display text-2xl md:text-3xl font-medium tight">Utredningar</h3><p class="text-base md:text-lg text-white/55 max-w-2xl font-light">Vi arbetar med utredningar.</p></div>
+          </div>
+          <div class="py-10 flex flex-col md:flex-row gap-6 md:gap-24 group hover:bg-white/[0.03] transition-colors -mx-6 px-6 md:-mx-12 md:px-12">
+            <span class="display text-4xl md:text-5xl font-medium tight text-white/30 group-hover:text-white transition-colors w-24">04</span>
+            <div class="flex-1 flex flex-col gap-3"><h3 class="display text-2xl md:text-3xl font-medium tight">Byggledning &amp; interimschef</h3><p class="text-base md:text-lg text-white/55 max-w-2xl font-light">Vi arbetar med byggledning och som interimschefer.</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ARBETEN - RESTORED ORIGINAL SECTION & VISUAL STRUCTURE -->
+    <section id="arbeten" class="py-28 md:py-32 bg-[var(--c-bg)]">
+      <div class="max-w-[1600px] mx-auto px-6 md:px-12 flex flex-col gap-20">
+        <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 border-b border-black/10 pb-8">
+          <h2 class="display text-5xl md:text-7xl font-medium tight">Ur vardagen</h2>
+          <span class="text-sm font-medium uppercase tracking-widest text-neutral-500">Projektledning · Projekteringsledning · Byggledning</span>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-y-20 md:gap-x-12 items-center">
+          <div class="md:col-span-7 flex flex-col gap-6 group cursor-pointer">
+            <div class="relative overflow-hidden bg-neutral-200 aspect-[4/3] rounded-sm">
+              <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=1400&q=80" alt="Projektledning" class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700" />
+            </div>
+            <div class="flex justify-between items-start border-t border-black/10 pt-4">
+              <div>
+                <h3 class="display text-2xl font-medium tight">Projektledning</h3>
+                <span class="text-sm text-neutral-500 block mt-1">Vi driver projekt åt beställare</span>
+              </div>
+              <span class="text-xs uppercase tracking-widest font-medium">Verksamhetsområde</span>
+            </div>
+          </div>
+          <div class="md:col-span-4 md:col-start-9 flex flex-col gap-6 group cursor-pointer mt-0 md:mt-40">
+            <div class="relative overflow-hidden bg-neutral-200 aspect-[3/4] rounded-sm">
+              <img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=1000&q=80" alt="Projekteringsledning" class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700" />
+            </div>
+            <div class="flex justify-between items-start border-t border-black/10 pt-4">
+              <div>
+                <h3 class="display text-2xl font-medium tight">Projekteringsledning</h3>
+                <span class="text-sm text-neutral-500 block mt-1">Vi arbetar med projekteringsledning</span>
+              </div>
+              <span class="text-xs uppercase tracking-widest font-medium">Verksamhetsområde</span>
+            </div>
+          </div>
+          <div class="md:col-span-8 md:col-start-3 flex flex-col gap-6 group cursor-pointer mt-0 md:mt-16">
+            <div class="relative overflow-hidden bg-neutral-200 aspect-video rounded-sm">
+              <img src="https://images.unsplash.com/photo-1517089152318-42ec560349c0?w=1400&q=80" alt="Byggledning" class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700" />
+            </div>
+            <div class="flex justify-between items-start border-t border-black/10 pt-4">
+              <div>
+                <h3 class="display text-2xl font-medium tight">Byggledning</h3>
+                <span class="text-sm text-neutral-500 block mt-1">Vi arbetar med byggledning</span>
+              </div>
+              <span class="text-xs uppercase tracking-widest font-medium">Verksamhetsområde</span>
+            </div>
+          </div>
+        </div>
+        <div class="flex justify-center">
+          <a href="#kontakt" class="border border-black/80 hover:bg-black hover:text-white transition-colors px-8 py-4 rounded-full text-sm font-medium uppercase tracking-widest">Diskutera ditt projekt</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="py-24 md:py-28 bg-[var(--c-bg)] border-t border-black/10">
+      <div class="max-w-[1500px] mx-auto px-6 md:px-12 grid grid-cols-1 md:grid-cols-12 gap-10">
+        <div class="md:col-span-4 flex flex-col gap-4">
+          <span class="text-xs font-medium uppercase tracking-widest text-neutral-500">Vanliga frågor</span>
+          <h2 class="display text-5xl md:text-7xl font-medium tight">FAQ</h2>
+        </div>
+        <div class="md:col-span-8 flex flex-col divide-y divide-black/10 border-t border-black/10">
+          <details class="group py-6 cursor-pointer" open>
+            <summary class="flex justify-between items-center font-medium text-lg md:text-xl text-neutral-700 hover:text-black transition-colors">
+              Vilka arbetar ni med?
+              <span class="transition-transform duration-300 group-open:rotate-45"><iconify-icon icon="solar:add-circle-linear" width="26" class="text-neutral-400"></iconify-icon></span>
+            </summary>
+            <p class="text-base md:text-lg text-neutral-600 mt-4 pr-12 leading-relaxed font-light">Vi arbetar med privata fastighetsägare, fastighetsutvecklare och offentliga beställare.</p>
+          </details>
+          <details class="group py-6 cursor-pointer">
+            <summary class="flex justify-between items-center font-medium text-lg md:text-xl text-neutral-700 hover:text-black transition-colors">
+              Vilka tjänster erbjuder ni?
+              <span class="transition-transform duration-300 group-open:rotate-45"><iconify-icon icon="solar:add-circle-linear" width="26" class="text-neutral-400"></iconify-icon></span>
+            </summary>
+            <p class="text-base md:text-lg text-neutral-600 mt-4 pr-12 leading-relaxed font-light">Vi arbetar med projektledning, projekteringsledning, utredningar, byggledning och som interimschefer.</p>
+          </details>
+          <details class="group py-6 cursor-pointer">
+            <summary class="flex justify-between items-center font-medium text-lg md:text-xl text-neutral-700 hover:text-black transition-colors">
+              Genomför ni entreprenader?
+              <span class="transition-transform duration-300 group-open:rotate-45"><iconify-icon icon="solar:add-circle-linear" width="26" class="text-neutral-400"></iconify-icon></span>
+            </summary>
+            <p class="text-base md:text-lg text-neutral-600 mt-4 pr-12 leading-relaxed font-light">Nej. Vi är konsulter och driver projekt åt beställare.</p>
+          </details>
+          <details class="group py-6 cursor-pointer">
+            <summary class="flex justify-between items-center font-medium text-lg md:text-xl text-neutral-700 hover:text-black transition-colors">
+              Arbetar ni med privatkunder?
+              <span class="transition-transform duration-300 group-open:rotate-45"><iconify-icon icon="solar:add-circle-linear" width="26" class="text-neutral-400"></iconify-icon></span>
+            </summary>
+            <p class="text-base md:text-lg text-neutral-600 mt-4 pr-12 leading-relaxed font-light">Nej. Vi arbetar inte med privatkunder.</p>
+          </details>
+          <div class="pt-8 flex justify-between items-center text-neutral-500 text-sm">
+            <span>Undrar du något annat?</span>
+            <a href="#kontakt" class="font-medium text-black flex items-center gap-2 hover:gap-3 transition-all">Kontakta oss <iconify-icon icon="solar:arrow-right-linear"></iconify-icon></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA + KONTAKT -->
+    <section id="kontakt" class="py-28 md:py-32 bg-[var(--c-ink)] text-white relative z-10 border-b border-white/5">
+      <div class="max-w-[1500px] mx-auto px-6 md:px-12 grid lg:grid-cols-2 gap-16 items-center">
+        <div>
+          <div class="flex items-center gap-3 mb-6"><span class="w-8 h-px bg-white/50"></span><span class="text-xs font-medium uppercase tracking-widest text-white/50">Kontakt</span></div>
+          <h2 class="display text-4xl md:text-6xl font-medium tight leading-[1.05] mb-6">Kontakta oss om <br />ditt projekt</h2>
+          <p class="text-white/60 font-light leading-relaxed max-w-md mb-10">Beskriv ditt projekt så återkommer vi.</p>
+          <div class="space-y-8">
+            <div>
+              <p class="text-xs uppercase tracking-widest text-white/40 mb-3">Adam Taner — Projektchef</p>
+              <a href="tel:+46733321122" class="flex items-center gap-3 text-lg hover:text-white/70 transition-colors"><iconify-icon icon="solar:phone-linear"></iconify-icon> 073-332 11 22</a>
+              <a href="mailto:adam@bjnmark.se" class="flex items-center gap-3 text-lg hover:text-white/70 transition-colors mt-2"><iconify-icon icon="solar:letter-linear"></iconify-icon> adam@bjnmark.se</a>
+            </div>
+            <div>
+              <p class="text-xs uppercase tracking-widest text-white/40 mb-3">Jonas Nylander — Produktionsansvarig</p>
+              <a href="tel:+46730706767" class="flex items-center gap-3 text-lg hover:text-white/70 transition-colors"><iconify-icon icon="solar:phone-linear"></iconify-icon> 073-070 67 67</a>
+              <a href="mailto:jonas@bjnprojekt.se" class="flex items-center gap-3 text-lg hover:text-white/70 transition-colors mt-2"><iconify-icon icon="solar:letter-linear"></iconify-icon> jonas@bjnprojekt.se</a>
+            </div>
+            <a href="https://www.google.com/maps/search/?api=1&query=R%C3%A4fsv%C3%A4gen+13,+155+34 Nykvarn" target="_blank" class="flex items-center gap-3 text-white/80 hover:text-white transition-colors">
+              <iconify-icon icon="solar:map-point-linear" class="text-amber-400"></iconify-icon>
+              <span>Räfsvägen 13, 155 34 Nykvarn (Öppna i Google Maps)</span>
+            </a>
+          </div>
+        </div>
+        <div class="bg-white/[0.04] border border-white/10 rounded-2xl p-8 backdrop-blur-sm">
+          <form onsubmit="event.preventDefault(); window.location.href='mailto:adam@bjnmark.se?subject=Projektförfrågan';" class="grid gap-4">
+            <input type="text" placeholder="Namn" required class="bg-transparent border border-white/15 rounded-lg px-4 py-3.5 text-sm placeholder:text-white/40 focus:border-white/50 focus:outline-none transition-colors text-white" />
+            <input type="tel" placeholder="Telefon" required class="bg-transparent border border-white/15 rounded-lg px-4 py-3.5 text-sm placeholder:text-white/40 focus:border-white/50 focus:outline-none transition-colors text-white" />
+            <select class="bg-[#15181D] border border-white/15 rounded-lg px-4 py-3.5 text-sm text-white/80 focus:border-white/50 focus:outline-none transition-colors">
+              <option value="">Typ av uppdrag</option>
+              <option value="Projektledning">Projektledning</option>
+              <option value="Projekteringsledning">Projekteringsledning</option>
+              <option value="Utredning">Utredning</option>
+              <option value="Byggledning">Byggledning</option>
+              <option value="Interimschef">Interimschef</option>
+              <option value="Annat">Annat</option>
+            </select>
+            <textarea rows="4" placeholder="Beskriv ditt projekt" class="bg-transparent border border-white/15 rounded-lg px-4 py-3.5 text-sm placeholder:text-white/40 focus:border-white/50 focus:outline-none transition-colors resize-none text-white"></textarea>
+            <button type="submit" class="bg-white text-black rounded-lg px-6 py-4 text-sm font-medium uppercase tracking-widest hover:bg-white/85 transition-colors font-semibold">Skicka förfrågan</button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="relative z-20 bg-[var(--c-dark)] text-white border-t border-white/10">
+    <div class="max-w-[1600px] mx-auto px-6 md:px-12 pt-20 pb-12">
+      <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-8 pb-14 border-b border-white/10">
+        <div class="max-w-xl">
+          <div class="flex items-center gap-3 mb-3">
+            <iconify-icon icon="solar:hill-2-linear" width="28" class="text-white/80"></iconify-icon>
+            <span class="display text-2xl md:text-3xl font-medium tight tracking-tight">BJN Mark &amp; Entreprenad</span>
+          </div>
+          <p class="text-white/60 text-sm md:text-base font-light leading-relaxed">
+            Konsultverksamhet inom projekt- och projekteringsledning, utredningar och byggledning i Mälardalen. Vi driver projekt åt beställare.
+          </p>
+        </div>
+        <div class="flex flex-wrap gap-4">
+          <a
+            href="#kontakt"
+            class="inline-flex items-center gap-2 bg-white text-black px-6 py-3.5 rounded-full text-xs uppercase tracking-widest font-medium hover:bg-white/85 transition-colors"
+          >
+            Kontakta oss <iconify-icon icon="solar:arrow-right-up-linear" width="18"></iconify-icon>
+          </a>
+          <a
+            href="tel:+46733321122"
+            class="inline-flex items-center gap-2 border border-white/20 text-white px-6 py-3.5 rounded-full text-xs uppercase tracking-widest font-medium hover:border-white hover:bg-white/5 transition-colors"
+          >
+            <iconify-icon icon="solar:phone-linear" width="18"></iconify-icon> 073-332 11 22
+          </a>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12 py-14 border-b border-white/10 text-sm">
+        <div>
+          <h4 class="text-xs font-semibold uppercase tracking-[0.2em] text-white/40 mb-5">Tjänster</h4>
+          <ul class="space-y-3 text-white/70 font-light text-sm">
+            <li><a href="#tjanster" class="hover:text-white transition-colors">Projektledning</a></li>
+            <li><a href="#tjanster" class="hover:text-white transition-colors">Projekteringsledning</a></li>
+            <li><a href="#tjanster" class="hover:text-white transition-colors">Utredningar</a></li>
+            <li><a href="#tjanster" class="hover:text-white transition-colors">Byggledning</a></li>
+            <li><a href="#tjanster" class="hover:text-white transition-colors">Interimschef</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="text-xs font-semibold uppercase tracking-[0.2em] text-white/40 mb-5">Navigation</h4>
+          <ul class="space-y-3 text-white/70 font-light text-sm">
+            <li><a href="#om" class="hover:text-white transition-colors">Om BJN Mark</a></li>
+            <li><a href="#tjanster" class="hover:text-white transition-colors">Våra tjänster</a></li>
+            <li><a href="#arbeten" class="hover:text-white transition-colors">Ur vardagen</a></li>
+            <li><a href="#kontakt" class="hover:text-white transition-colors">Vanliga frågor (FAQ)</a></li>
+            <li><a href="#kontakt" class="hover:text-white transition-colors">Kontakta oss</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="text-xs font-semibold uppercase tracking-[0.2em] text-white/40 mb-5">Kontaktpersoner</h4>
+          <div class="space-y-5">
+            <div>
+              <p class="font-medium text-white text-sm">Adam Taner</p>
+              <p class="text-xs text-white/40 uppercase tracking-wider mb-1.5">Projektchef</p>
+              <a href="tel:+46733321122" class="block text-white/80 hover:text-white transition-colors text-sm">073-332 11 22</a>
+              <a href="mailto:adam@bjnmark.se" class="block text-white/50 hover:text-white transition-colors text-xs mt-0.5">adam@bjnmark.se</a>
+            </div>
+            <div>
+              <p class="font-medium text-white text-sm">Jonas Nylander</p>
+              <p class="text-xs text-white/40 uppercase tracking-wider mb-1.5">Produktionsansvarig</p>
+              <a href="tel:+46730706767" class="block text-white/80 hover:text-white transition-colors text-sm">073-070 67 67</a>
+              <a href="mailto:jonas@bjnprojekt.se" class="block text-white/50 hover:text-white transition-colors text-xs mt-0.5">jonas@bjnprojekt.se</a>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="text-xs font-semibold uppercase tracking-[0.2em] text-white/40 mb-5">Företagsuppgifter</h4>
+          <div class="space-y-4 text-white/70 font-light text-sm">
+            <div>
+              <p class="text-xs text-white/40 uppercase tracking-wider mb-1">Kontor &amp; post</p>
+              <p class="leading-relaxed">Räfsvägen 13<br />155 34 Nykvarn</p>
+            </div>
+            <div>
+              <p class="text-xs text-white/40 uppercase tracking-wider mb-1">Bolag &amp; org.nr</p>
+              <p class="font-medium text-white/90">BJN Mark &amp; Entreprenad AB</p>
+              <p class="text-xs text-white/50">Org.nr 559322-4925</p>
+            </div>
+            <div class="pt-1">
+              <span class="inline-block text-[11px] uppercase tracking-wider text-white/60 border border-white/15 px-2.5 py-1 rounded">
+                Godkänd för F-skatt
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="pt-8 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs text-white/40 font-light">
+        <div>
+          © <script>document.write(new Date().getFullYear())</script> BJN Mark &amp; Entreprenad AB. Alla rättigheter förbehållna.
+        </div>
+        <div class="flex items-center gap-4">
+          <span>Nykvarn · Mälardalen</span>
+          <span>•</span>
+          <span>Projektledning · Projekteringsledning · Byggledning</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- GSAP & Lenis CDN Scripts -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://unpkg.com/lenis@1.1.20/dist/lenis.min.js"></script>
+
+  <script>
+    gsap.registerPlugin(ScrollTrigger);
+
+    // Smooth Scroll with Lenis
+    const lenis = new Lenis({ duration: 1.2, easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)) });
+    function raf(time) {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    }
+    requestAnimationFrame(raf);
+
+    // GSAP Intro & Preloader
+    const tl = gsap.timeline({
+      onComplete: () => {
+        gsap.fromTo(".hero-anim-title", { opacity: 0, y: 24 }, { opacity: 1, y: 0, duration: 1, ease: "power3.out", delay: 0.2 });
+        gsap.fromTo(".hero-anim-sub", { opacity: 0, y: 18 }, { opacity: 1, y: 0, duration: 0.9, ease: "power3.out", delay: 0.35 });
+        gsap.fromTo(".hero-anim-btn", { opacity: 0, y: 16, scale: 0.96 }, { opacity: 1, y: 0, scale: 1, duration: 0.8, ease: "power3.out", delay: 0.5 });
+        gsap.fromTo(".hero-anim-media", { opacity: 0, y: 28, scale: 0.97 }, { opacity: 1, y: 0, scale: 1, duration: 1, ease: "power3.out", delay: 0.4 });
+        gsap.fromTo(".hero-anim-stat", { opacity: 0, y: 20 }, { opacity: 1, y: 0, stagger: 0.08, duration: 0.9, ease: "power3.out", delay: 0.55 });
+        
+        gsap.to(".hero-parallax-target", {
+          yPercent: 12,
+          ease: "none",
+          scrollTrigger: {
+            trigger: ".hero-section",
+            start: "top top",
+            end: "bottom top",
+            scrub: true
+          }
+        });
+        ScrollTrigger.refresh();
+      }
+    });
+
+    tl.to(".loader-bar", { width: "100%", duration: 0.8, ease: "power2.inOut" })
+      .to(".loader-text", { y: -30, opacity: 0, duration: 0.4 })
+      .to(".loader", { yPercent: -100, duration: 0.6, ease: "power4.inOut" })
+      .set(".loader", { display: "none" });
+  </script>
+</body>
+</html>

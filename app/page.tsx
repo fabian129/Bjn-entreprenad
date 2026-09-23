@@ -107,9 +107,9 @@ export default function Page() {
     setErrorMessage("");
     setFormStatus("sending");
 
-    const body = `Namn: ${namn}\r\nTelefon: ${tel}\r\nTyp av projekt: ${typ}\r\n\r\nBeskrivning:\r\n${besk}`;
+    const body = `Namn: ${namn}\r\nTelefon: ${tel}\r\nTyp av uppdrag: ${typ}\r\n\r\nBeskrivning:\r\n${besk}`;
     const mailtoUrl = `mailto:adam@bjnmark.se?subject=${encodeURIComponent(
-      "Offertförfrågan via hemsidan — " + (typ !== "Typ av projekt" ? typ : namn)
+      "Projektförfrågan via hemsidan — " + (typ !== "Typ av uppdrag" ? typ : namn)
     )}&body=${encodeURIComponent(body)}`;
 
     window.location.href = mailtoUrl;
@@ -142,7 +142,7 @@ export default function Page() {
           href="#kontakt"
           className="hidden md:inline-flex items-center gap-1.5 border border-white/20 px-4 py-1.5 text-xs uppercase tracking-widest hover:bg-white hover:text-black transition-colors rounded-full font-medium"
         >
-          Begär offert
+          Kontakta oss
         </a>
       </nav>
 
@@ -153,7 +153,7 @@ export default function Page() {
           <div className="absolute inset-0 z-0 pointer-events-none">
             <Image
               src="/hero-live-bjn.jpg"
-              alt="BJN Mark bygg- och markentreprenad"
+              alt="BJN Mark &amp; Entreprenad"
               fill
               priority
               sizes="100vw"
@@ -167,21 +167,21 @@ export default function Page() {
 
           {/* Hero Content Container */}
           <div className="relative z-10 max-w-[1600px] w-full mx-auto px-6 md:px-12 flex flex-col justify-between flex-grow pt-6 sm:pt-8 pb-2">
-            {/* Top / Left Text Block - Original BJN text with SKS Space Grotesk font styling */}
+            {/* Top / Left Text Block */}
             <div className="max-w-2xl lg:max-w-3xl">
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-white/10 bg-white/5 backdrop-blur-xs text-[11px] uppercase tracking-[0.2em] text-white/80 w-fit mb-5">
-                <iconify-icon icon="solar:hill-2-linear" width="14" className="text-amber-400" />
-                <span>Mark- &amp; Grundentreprenad</span>
+                <iconify-icon icon="solar:clipboard-check-linear" width="14" className="text-amber-400" />
+                <span>Projekt- &amp; Projekteringsledning</span>
                 <span className="w-1 h-1 rounded-full bg-white/40"></span>
                 <span className="text-white/70 font-normal">Stockholm &amp; Mälardalen</span>
               </div>
 
               <h1 className="hero-anim-title display text-3xl sm:text-4xl lg:text-[3.25rem] font-normal leading-[1.12] tight text-white mb-5">
-                Mark &amp; anläggning med precision från grunden.
+                Vi driver projekt åt beställare.
               </h1>
 
               <p className="hero-anim-sub text-base sm:text-lg lg:text-xl text-white/85 font-light leading-relaxed max-w-xl mb-7">
-                Markentreprenader i Stockholm och Mälardalen. Från schakt och VA till färdig finplanering med fasta lag och full kontroll.
+                Vi arbetar med privata fastighetsägare, fastighetsutvecklare och offentliga beställare inom projektledning, projekteringsledning, utredningar och byggledning.
               </p>
 
               {/* Pill Button with Inset Circle Arrow + Phone */}
@@ -190,7 +190,7 @@ export default function Page() {
                   href="#kontakt"
                   className="inline-flex items-center gap-4 bg-white text-black pl-7 pr-2.5 py-2.5 rounded-full text-sm font-medium tracking-wide hover:bg-white/90 transition-all group shadow-lg shadow-black/25"
                 >
-                  <span>Begär offert</span>
+                  <span>Kontakta oss</span>
                   <span className="w-9 h-9 rounded-full bg-black text-white flex items-center justify-center group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform">
                     <iconify-icon icon="solar:arrow-right-up-linear" width="18"></iconify-icon>
                   </span>
@@ -205,12 +205,12 @@ export default function Page() {
               </div>
             </div>
 
-            {/* Bottom Group: Divider Line + Large 4-Metric Grid Tailored to BJN */}
+            {/* Bottom Group: Divider Line + Original 4-Metric Grid Tailored to BJN */}
             <div className="w-full mt-8 md:mt-10">
               {/* Thin Divider Line */}
               <div className="w-full h-px bg-white/15 mb-6 lg:mb-8" />
 
-              {/* 4-Metric Grid with Large Numbers making clear sense for BJN */}
+              {/* 4-Metric Grid with Large Numbers in Fabian's exact 4-column composition */}
               <div className="hero-anim-media grid grid-cols-2 lg:grid-cols-4 gap-7 lg:gap-10">
                 {/* Metric 1 */}
                 <div className="hero-anim-stat">
@@ -234,20 +234,20 @@ export default function Page() {
                     BJN Mark grundas
                   </div>
                   <p className="text-xs sm:text-sm text-white/70 font-light leading-snug">
-                    Mark- &amp; anläggningsentreprenader i egen regi
+                    Etablerat i Nykvarn &amp; Mälardalen
                   </p>
                 </div>
 
                 {/* Metric 3 */}
                 <div className="hero-anim-stat">
                   <div className="display text-4xl sm:text-5xl lg:text-[3.5rem] font-medium tracking-tight text-white mb-1.5 leading-none">
-                    100%
+                    5
                   </div>
                   <div className="text-xs font-medium uppercase tracking-widest text-white/50 mb-1">
-                    Egen maskinpark
+                    Verksamhetsområden
                   </div>
                   <p className="text-xs sm:text-sm text-white/70 font-light leading-snug">
-                    Grävmaskiner, dumper, laserstyrning och fasta lag
+                    Projekt- &amp; projekteringsledning, utredningar, byggledning &amp; interim
                   </p>
                 </div>
 
@@ -260,7 +260,7 @@ export default function Page() {
                     Kontakt hela vägen
                   </div>
                   <p className="text-xs sm:text-sm text-white/70 font-light leading-snug">
-                    Samma ansvariga lag från schakt till finplanering
+                    Tydlig styrning genom hela projektet
                   </p>
                 </div>
               </div>
@@ -271,11 +271,11 @@ export default function Page() {
         {/* TRUST STRIP */}
         <section className="bg-[var(--c-surface)] py-5 border-b border-black/10 overflow-hidden">
           <div className="max-w-[1600px] mx-auto px-6 md:px-12 flex flex-wrap items-center justify-center md:justify-between gap-x-10 gap-y-3 text-[11px] uppercase tracking-[0.18em] text-neutral-500">
-            <span className="flex items-center gap-2"><iconify-icon icon="solar:box-minimalistic-linear" className="text-[var(--c-slate)]"></iconify-icon> Markarbeten &amp; schakt</span>
-            <span className="flex items-center gap-2"><iconify-icon icon="solar:waterdrops-linear" className="text-[var(--c-slate)]"></iconify-icon> Dränering &amp; VA</span>
-            <span className="flex items-center gap-2"><iconify-icon icon="solar:layers-minimalistic-linear" className="text-[var(--c-slate)]"></iconify-icon> Grundläggning</span>
-            <span className="flex items-center gap-2"><iconify-icon icon="solar:leaf-linear" className="text-[var(--c-slate)]"></iconify-icon> Finplanering</span>
-            <span className="flex items-center gap-2"><iconify-icon icon="solar:map-point-linear" className="text-[var(--c-slate)]"></iconify-icon> Stockholm &amp; Mälardalen</span>
+            <span className="flex items-center gap-2"><iconify-icon icon="solar:clipboard-check-linear" className="text-[var(--c-slate)]"></iconify-icon> Projektledning</span>
+            <span className="flex items-center gap-2"><iconify-icon icon="solar:document-text-linear" className="text-[var(--c-slate)]"></iconify-icon> Projekteringsledning</span>
+            <span className="flex items-center gap-2"><iconify-icon icon="solar:magnifer-linear" className="text-[var(--c-slate)]"></iconify-icon> Utredningar</span>
+            <span className="flex items-center gap-2"><iconify-icon icon="solar:buildings-2-linear" className="text-[var(--c-slate)]"></iconify-icon> Byggledning</span>
+            <span className="flex items-center gap-2"><iconify-icon icon="solar:user-hand-up-linear" className="text-[var(--c-slate)]"></iconify-icon> Interimschef</span>
           </div>
         </section>
 
@@ -283,7 +283,7 @@ export default function Page() {
         <section id="om" className="py-28 md:py-32 px-6 md:px-20 grid md:grid-cols-2 gap-16 max-w-[1600px] mx-auto">
           <div className="sticky top-32 self-start">
             <h2 className="display text-4xl md:text-5xl font-medium tight leading-tight split-animate">
-              <SplitWords text="Mark är vårt modersmål." /> <SplitWords className="text-neutral-400" text="Bas i Nykvarn." />
+              <SplitWords text="Vi driver projekt åt beställare." /> <SplitWords className="text-neutral-400" text="Bas i Nykvarn." />
             </h2>
             <div className="mt-8 flex flex-wrap gap-4 text-xs font-medium uppercase tracking-widest text-neutral-500">
               <div className="flex items-center gap-2"><iconify-icon icon="solar:users-group-two-rounded-linear" className="text-lg"></iconify-icon> Del av BJN-gruppen</div>
@@ -291,17 +291,17 @@ export default function Page() {
             </div>
           </div>
           <div className="text-lg md:text-xl font-light leading-relaxed text-neutral-600">
-            <p className="mb-8 split-animate"><SplitWords text="BJN Mark & Entreprenad är ett anläggningsföretag med bas i Nykvarn. Vi tar oss an allt från villatomter och dräneringar till kompletta markentreprenader åt företag och beställare i Mälardalen." /></p>
-            <p className="mb-8 split-animate"><SplitWords text="Vi är små nog att bry oss om varje detalj, men rustade nog att leverera komplexa markentreprenader med full kontroll på tid, ekonomi och kvalitet." /></p>
+            <p className="mb-8 split-animate"><SplitWords text="BJN Mark & Entreprenad är konsulter med bas i Nykvarn. Vi arbetar med privata fastighetsägare, fastighetsutvecklare och offentliga beställare inom projekt- och projekteringsledning, utredningar, byggledning och som interimschefer." /></p>
+            <p className="mb-8 split-animate"><SplitWords text="Vi driver projekt åt beställare. Vi genomför inte entreprenader och vi arbetar inte med privatkunder." /></p>
             <div className="h-px w-full bg-black/10 my-10"></div>
             <div className="grid grid-cols-2 gap-8">
               <div><h4 className="text-sm font-medium uppercase tracking-widest text-black mb-2">Bas</h4><p className="text-sm text-neutral-500">Nykvarn &amp; Mälardalen</p></div>
-              <div><h4 className="text-sm font-medium uppercase tracking-widest text-black mb-2">Fokus</h4><p className="text-sm text-neutral-500">Mark · Anläggning · Entreprenad</p></div>
+              <div><h4 className="text-sm font-medium uppercase tracking-widest text-black mb-2">Fokus</h4><p className="text-sm text-neutral-500">Projektledning · Byggledning</p></div>
             </div>
           </div>
         </section>
 
-        {/* TJÄNSTER */}
+        {/* TJÄNSTER - Original SIX-Card Visual Grid */}
         <section id="tjanster" className="bg-[var(--c-surface)] py-24 md:py-28 border-y border-black/10">
           <div className="max-w-[1600px] mx-auto px-6 md:px-12">
             <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-14">
@@ -309,16 +309,16 @@ export default function Page() {
                 <div className="flex items-center gap-3 mb-4"><span className="w-8 h-px bg-[var(--c-slate)]"></span><span className="text-xs font-medium uppercase tracking-widest text-[var(--c-slate)]">Tjänster</span></div>
                 <h2 className="display text-4xl md:text-5xl font-medium tight">Det vi gör</h2>
               </div>
-              <p className="max-w-md text-neutral-500 leading-relaxed">Hela vägen från obearbetad mark till färdig, hållbar yta — en kontakt, ett ansvar, ett lag.</p>
+              <p className="max-w-md text-neutral-500 leading-relaxed">Vi är konsulter som driver projekt åt privata fastighetsägare, fastighetsutvecklare och offentliga beställare.</p>
             </div>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
               {[
-                { img: "/service_schakt.jpg", label: "Markarbeten & schakt" },
-                { img: "/service_finplanering.jpg", label: "Anläggning & finplanering" },
-                { img: "/service_dranering_va.jpg", label: "Dränering & VA" },
-                { img: "/service_grundlaggning.jpg", label: "Grundläggning" },
-                { img: "/service_stenlaggning.jpg", label: "Stenläggning & murar" },
-                { img: "/service_vagar_ytor.jpg", label: "Vägar & hårdgjorda ytor" },
+                { img: "/service_schakt.jpg", label: "Projektledning" },
+                { img: "/service_finplanering.jpg", label: "Projekteringsledning" },
+                { img: "/service_dranering_va.jpg", label: "Utredningar" },
+                { img: "/service_grundlaggning.jpg", label: "Byggledning" },
+                { img: "/service_stenlaggning.jpg", label: "Interimschef" },
+                { img: "/service_vagar_ytor.jpg", label: "Vi driver projekt åt beställare" },
               ].map((s) => (
                 <div className="svc-card group" key={s.label}>
                   <Image src={s.img} alt={s.label} fill sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw" className="object-cover" />
@@ -330,18 +330,34 @@ export default function Page() {
           </div>
         </section>
 
-        {/* FAKTA */}
+        {/* FAKTA - Original 4-Column Composition */}
         <section className="py-20 md:py-24 px-6 md:px-12 max-w-[1600px] mx-auto">
           <div className="flex flex-col gap-14">
             <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-6">
-              <h2 className="display text-3xl md:text-5xl font-medium tight leading-tight max-w-3xl">Ett ungt bolag med gamla rötter i marken.</h2>
+              <h2 className="display text-3xl md:text-5xl font-medium tight leading-tight max-w-3xl">Gedigna rötter inom bygg- &amp; projektledning.</h2>
               <span className="text-sm font-medium uppercase tracking-widest text-neutral-500 pb-2 border-b border-black">Nykvarn</span>
             </div>
             <div className="grid grid-cols-2 md:grid-cols-4 divide-y md:divide-y-0 md:divide-x divide-black/10 border-y border-black/10">
-              <div className="flex flex-col gap-2 py-8 md:py-10 md:px-8 first:md:pl-0"><span className="display text-5xl md:text-7xl font-medium tight">2011</span><span className="text-xs font-medium uppercase tracking-widest mt-3">Gruppens rötter</span><span className="text-sm text-neutral-500">BJN Projekt — bygg &amp; projektledning</span></div>
-              <div className="flex flex-col gap-2 py-8 md:py-10 md:px-8"><span className="display text-5xl md:text-7xl font-medium tight">2021</span><span className="text-xs font-medium uppercase tracking-widest mt-3">BJN Mark grundas</span><span className="text-sm text-neutral-500">Mark &amp; anläggning i egen regi</span></div>
-              <div className="flex flex-col gap-2 py-8 md:py-10 md:px-8"><span className="display text-5xl md:text-7xl font-medium tight">1</span><span className="text-xs font-medium uppercase tracking-widest mt-3">Kontakt hela vägen</span><span className="text-sm text-neutral-500">Från schakt till finplanering</span></div>
-              <div className="flex flex-col gap-2 py-8 md:py-10 md:px-8 last:md:pr-0"><span className="display text-5xl md:text-7xl font-medium tight">100<span className="text-neutral-400">%</span></span><span className="text-xs font-medium uppercase tracking-widest mt-3">Fokus på mark</span><span className="text-sm text-neutral-500">Det här är allt vi gör</span></div>
+              <div className="flex flex-col gap-2 py-8 md:py-10 md:px-8 first:md:pl-0">
+                <span className="display text-5xl md:text-7xl font-medium tight">2011</span>
+                <span className="text-xs font-medium uppercase tracking-widest mt-3">Gruppens rötter</span>
+                <span className="text-sm text-neutral-500">BJN Projekt — bygg &amp; projektledning</span>
+              </div>
+              <div className="flex flex-col gap-2 py-8 md:py-10 md:px-8">
+                <span className="display text-5xl md:text-7xl font-medium tight">2021</span>
+                <span className="text-xs font-medium uppercase tracking-widest mt-3">BJN Mark grundas</span>
+                <span className="text-sm text-neutral-500">Etablerat i Nykvarn &amp; Mälardalen</span>
+              </div>
+              <div className="flex flex-col gap-2 py-8 md:py-10 md:px-8">
+                <span className="display text-5xl md:text-7xl font-medium tight">1</span>
+                <span className="text-xs font-medium uppercase tracking-widest mt-3">Kontakt hela vägen</span>
+                <span className="text-sm text-neutral-500">Vi driver projektet åt beställaren</span>
+              </div>
+              <div className="flex flex-col gap-2 py-8 md:py-10 md:px-8 last:md:pr-0">
+                <span className="display text-5xl md:text-7xl font-medium tight">5</span>
+                <span className="text-xs font-medium uppercase tracking-widest mt-3">Verksamhetsområden</span>
+                <span className="text-sm text-neutral-500">Projekt- &amp; byggledning, utredningar och interim</span>
+              </div>
             </div>
           </div>
         </section>
@@ -350,15 +366,15 @@ export default function Page() {
         <section className="py-28 md:py-36 bg-[var(--c-dark)] text-white border-y border-black/10">
           <div className="max-w-[1500px] mx-auto px-6 md:px-12">
             <div className="flex flex-col gap-4 mb-20 max-w-3xl">
-              <span className="text-xs font-medium uppercase tracking-widest text-white/45">Vårt hantverk</span>
-              <h2 className="display text-4xl md:text-6xl font-medium tight split-animate"><SplitWords text="Stabil mark är ett löfte — inte en slump." /></h2>
+              <span className="text-xs font-medium uppercase tracking-widest text-white/45">Vår verksamhet</span>
+              <h2 className="display text-4xl md:text-6xl font-medium tight split-animate"><SplitWords text="Vi driver projekt åt beställare." /></h2>
             </div>
             <div className="flex flex-col divide-y divide-white/10 border-t border-white/10">
               {[
-                { n: "01", t: "Grundlig projektering", p: "Vi börjar i marken. Avvägning, planering och en tydlig kalkyl innan första spadtaget — så att inga överraskningar dyker upp senare." },
-                { n: "02", t: "Ett fast lag", p: "Ett lag som äger hela leveransen från start till mål — inga led att skylla på, en ansvarig hela vägen." },
-                { n: "03", t: "Ordning i varje beslut", p: "Masshantering och återvinning med ordning och reda. Vi lämnar marken bättre än vi fann den." },
-                { n: "04", t: "Överlämning utan punktlista", p: "Vi är inte klara förrän du är det. Slutbesiktning, dokumentation och en yta som håller i decennier — inte bara till garantin gått ut." },
+                { n: "01", t: "Projektledning", p: "Vi driver projekt åt beställare." },
+                { n: "02", t: "Projekteringsledning", p: "Vi arbetar med projekteringsledning." },
+                { n: "03", t: "Utredningar", p: "Vi arbetar med utredningar." },
+                { n: "04", t: "Byggledning & interimschef", p: "Vi arbetar med byggledning och som interimschefer." },
               ].map((item) => (
                 <div className="py-10 flex flex-col md:flex-row gap-6 md:gap-24 group hover:bg-white/[0.03] transition-colors -mx-6 px-6 md:-mx-12 md:px-12" key={item.n}>
                   <span className="display text-4xl md:text-5xl font-medium tight text-white/30 group-hover:text-white transition-colors w-24">{item.n}</span>
@@ -369,48 +385,74 @@ export default function Page() {
           </div>
         </section>
 
-        {/* ARBETEN */}
+        {/* ARBETEN - RESTORED ORIGINAL SECTION & VISUAL STRUCTURE */}
         <section id="arbeten" className="py-28 md:py-32 bg-[var(--c-bg)]">
           <div className="max-w-[1600px] mx-auto px-6 md:px-12 flex flex-col gap-20">
             <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 border-b border-black/10 pb-8">
               <h2 className="display text-5xl md:text-7xl font-medium tight">Ur vardagen</h2>
-              <span className="text-sm font-medium uppercase tracking-widest text-neutral-500">Mark · Anläggning</span>
+              <span className="text-sm font-medium uppercase tracking-widest text-neutral-500">Projektledning · Projekteringsledning · Byggledning</span>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-12 gap-y-20 md:gap-x-12 items-center">
               <div className="md:col-span-7 flex flex-col gap-6 group cursor-pointer">
-                <div className="relative overflow-hidden bg-neutral-200 aspect-[4/3] rounded-sm"><Image src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=1400&q=80" alt="Schakt och grundläggning" fill sizes="(max-width: 768px) 100vw, 58vw" className="object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700" /></div>
-                <div className="flex justify-between items-start border-t border-black/10 pt-4"><div><h3 className="display text-2xl font-medium tight">Schakt &amp; grundläggning</h3><span className="text-sm text-neutral-500 block mt-1">Villatomter &amp; bostadsprojekt</span></div><span className="text-xs uppercase tracking-widest font-medium">Markentreprenad</span></div>
+                <div className="relative overflow-hidden bg-neutral-200 aspect-[4/3] rounded-sm">
+                  <Image src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=1400&q=80" alt="Projektledning" fill sizes="(max-width: 768px) 100vw, 58vw" className="object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700" />
+                </div>
+                <div className="flex justify-between items-start border-t border-black/10 pt-4">
+                  <div>
+                    <h3 className="display text-2xl font-medium tight">Projektledning</h3>
+                    <span className="text-sm text-neutral-500 block mt-1">Vi driver projekt åt beställare</span>
+                  </div>
+                  <span className="text-xs uppercase tracking-widest font-medium">Verksamhetsområde</span>
+                </div>
               </div>
               <div className="md:col-span-4 md:col-start-9 flex flex-col gap-6 group cursor-pointer mt-0 md:mt-40">
-                <div className="relative overflow-hidden bg-neutral-200 aspect-[3/4] rounded-sm"><Image src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=1000&q=80" alt="VA och dränering" fill sizes="(max-width: 768px) 100vw, 33vw" className="object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700" /></div>
-                <div className="flex justify-between items-start border-t border-black/10 pt-4"><div><h3 className="display text-2xl font-medium tight">VA &amp; dränering</h3><span className="text-sm text-neutral-500 block mt-1">Om- &amp; nyanläggning</span></div><span className="text-xs uppercase tracking-widest font-medium">Dränering</span></div>
+                <div className="relative overflow-hidden bg-neutral-200 aspect-[3/4] rounded-sm">
+                  <Image src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=1000&q=80" alt="Projekteringsledning" fill sizes="(max-width: 768px) 100vw, 33vw" className="object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700" />
+                </div>
+                <div className="flex justify-between items-start border-t border-black/10 pt-4">
+                  <div>
+                    <h3 className="display text-2xl font-medium tight">Projekteringsledning</h3>
+                    <span className="text-sm text-neutral-500 block mt-1">Vi arbetar med projekteringsledning</span>
+                  </div>
+                  <span className="text-xs uppercase tracking-widest font-medium">Verksamhetsområde</span>
+                </div>
               </div>
               <div className="md:col-span-8 md:col-start-3 flex flex-col gap-6 group cursor-pointer mt-0 md:mt-16">
-                <div className="relative overflow-hidden bg-neutral-200 aspect-video rounded-sm"><Image src="https://images.unsplash.com/photo-1517089152318-42ec560349c0?w=1400&q=80" alt="Finplanering" fill sizes="(max-width: 768px) 100vw, 66vw" className="object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700" /></div>
-                <div className="flex justify-between items-start border-t border-black/10 pt-4"><div><h3 className="display text-2xl font-medium tight">Finplanering</h3><span className="text-sm text-neutral-500 block mt-1">Ytor som håller</span></div><span className="text-xs uppercase tracking-widest font-medium">Anläggning</span></div>
+                <div className="relative overflow-hidden bg-neutral-200 aspect-video rounded-sm">
+                  <Image src="https://images.unsplash.com/photo-1517089152318-42ec560349c0?w=1400&q=80" alt="Byggledning" fill sizes="(max-width: 768px) 100vw, 66vw" className="object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700" />
+                </div>
+                <div className="flex justify-between items-start border-t border-black/10 pt-4">
+                  <div>
+                    <h3 className="display text-2xl font-medium tight">Byggledning</h3>
+                    <span className="text-sm text-neutral-500 block mt-1">Vi arbetar med byggledning</span>
+                  </div>
+                  <span className="text-xs uppercase tracking-widest font-medium">Verksamhetsområde</span>
+                </div>
               </div>
             </div>
-            <div className="flex justify-center"><a href="#kontakt" className="border border-black/80 hover:bg-black hover:text-white transition-colors px-8 py-4 rounded-full text-sm font-medium uppercase tracking-widest">Diskutera ditt projekt</a></div>
+            <div className="flex justify-center">
+              <a href="#kontakt" className="border border-black/80 hover:bg-black hover:text-white transition-colors px-8 py-4 rounded-full text-sm font-medium uppercase tracking-widest">Diskutera ditt projekt</a>
+            </div>
           </div>
         </section>
 
         {/* FAQ */}
         <section className="py-24 md:py-28 bg-[var(--c-bg)] border-t border-black/10">
           <div className="max-w-[1500px] mx-auto px-6 md:px-12 grid grid-cols-1 md:grid-cols-12 gap-10">
-            <div className="md:col-span-4 flex flex-col gap-4"><span className="text-xs font-medium uppercase tracking-widest text-neutral-500">Du kanske undrar</span><h2 className="display text-5xl md:text-7xl font-medium tight">FAQ</h2></div>
+            <div className="md:col-span-4 flex flex-col gap-4"><span className="text-xs font-medium uppercase tracking-widest text-neutral-500">Vanliga frågor</span><h2 className="display text-5xl md:text-7xl font-medium tight">FAQ</h2></div>
             <div className="md:col-span-8 flex flex-col divide-y divide-black/10 border-t border-black/10">
               {[
-                { q: "Vilka typer av markarbeten åtar ni er?", a: "Allt från enskilda villatomter och dräneringar till kompletta markentreprenader — schakt, VA, grundläggning och finplanering.", open: true },
-                { q: "Hur snabbt kan ni starta ett projekt?", a: "Med fasta lag är vi flexibla. Efter platsbesök och offert kan vi oftast vara på plats inom ett par veckor — akuta jobb snabbare." },
-                { q: "Hjälper ni till redan i planeringsstadiet?", a: "Ja. Vi kommer gärna in tidigt, gör platsbesök och hjälper dig planera markarbetet så att helheten blir rätt från början — innan första spadtaget." },
-                { q: "Arbetar ni med ROT-avdrag för privatpersoner?", a: "Absolut. Vi hjälper privatkunder med ROT där det är tillämpligt och sköter all administration mot Skatteverket åt dig." },
+                { q: "Vilka arbetar ni med?", a: "Vi arbetar med privata fastighetsägare, fastighetsutvecklare och offentliga beställare.", open: true },
+                { q: "Vilka tjänster erbjuder ni?", a: "Vi arbetar med projektledning, projekteringsledning, utredningar, byggledning och som interimschefer." },
+                { q: "Genomför ni entreprenader?", a: "Nej. Vi är konsulter och driver projekt åt beställare." },
+                { q: "Arbetar ni med privatkunder?", a: "Nej. Vi arbetar inte med privatkunder." },
               ].map((f) => (
                 <details className="group py-6 cursor-pointer" open={f.open} key={f.q}>
                   <summary className="flex justify-between items-center font-medium text-lg md:text-xl text-neutral-700 hover:text-black transition-colors">{f.q}<span className="transition-transform duration-300 group-open:rotate-45"><iconify-icon icon="solar:add-circle-linear" width="26" className="text-neutral-400"></iconify-icon></span></summary>
                   <p className="text-base md:text-lg text-neutral-600 mt-4 pr-12 leading-relaxed font-light">{f.a}</p>
                 </details>
               ))}
-              <div className="pt-8 flex justify-between items-center text-neutral-500 text-sm"><span>Undrar du något annat?</span><a href="#kontakt" className="font-medium text-black flex items-center gap-2 hover:gap-3 transition-all">Ställ din fråga <iconify-icon icon="solar:arrow-right-linear"></iconify-icon></a></div>
+              <div className="pt-8 flex justify-between items-center text-neutral-500 text-sm"><span>Undrar du något annat?</span><a href="#kontakt" className="font-medium text-black flex items-center gap-2 hover:gap-3 transition-all">Kontakta oss <iconify-icon icon="solar:arrow-right-linear"></iconify-icon></a></div>
             </div>
           </div>
         </section>
@@ -420,8 +462,8 @@ export default function Page() {
           <div className="max-w-[1500px] mx-auto px-6 md:px-12 grid lg:grid-cols-2 gap-16 items-center">
             <div>
               <div className="flex items-center gap-3 mb-6"><span className="w-8 h-px bg-white/50"></span><span className="text-xs font-medium uppercase tracking-widest text-white/50">Kontakt</span></div>
-              <h2 className="display text-4xl md:text-6xl font-medium tight leading-[1.05] mb-6">Redo att <br />bryta mark?</h2>
-              <p className="text-white/60 font-light leading-relaxed max-w-md mb-10">Beskriv ditt projekt så återkommer vi med ett kostnadsfritt platsbesök och en tydlig offert — utan krångel.</p>
+              <h2 className="display text-4xl md:text-6xl font-medium tight leading-[1.05] mb-6">Kontakta oss om <br />ditt projekt</h2>
+              <p className="text-white/60 font-light leading-relaxed max-w-md mb-10">Beskriv ditt projekt så återkommer vi.</p>
               <div className="space-y-8">
                 <div>
                   <p className="text-xs uppercase tracking-widest text-white/40 mb-3">Adam Taner — Projektchef</p>
@@ -440,8 +482,8 @@ export default function Page() {
               <div className="grid gap-4">
                 <input ref={namnRef} type="text" placeholder="Namn" className="bg-transparent border border-white/15 rounded-lg px-4 py-3.5 text-sm placeholder:text-white/40 focus:border-white/50 focus:outline-none transition-colors" />
                 <input ref={telRef} type="tel" placeholder="Telefon" className="bg-transparent border border-white/15 rounded-lg px-4 py-3.5 text-sm placeholder:text-white/40 focus:border-white/50 focus:outline-none transition-colors" />
-                <select ref={typRef} defaultValue="Typ av projekt" className="bg-transparent border border-white/15 rounded-lg px-4 py-3.5 text-sm text-white/60 focus:border-white/50 focus:outline-none transition-colors">
-                  {["Typ av projekt", "Markarbeten & schakt", "Dränering & VA", "Grundläggning", "Finplanering", "Annat"].map((o) => (
+                <select ref={typRef} defaultValue="Typ av uppdrag" className="bg-transparent border border-white/15 rounded-lg px-4 py-3.5 text-sm text-white/60 focus:border-white/50 focus:outline-none transition-colors">
+                  {["Typ av uppdrag", "Projektledning", "Projekteringsledning", "Utredning", "Byggledning", "Interimschef", "Annat"].map((o) => (
                     <option className="text-black" key={o}>{o}</option>
                   ))}
                 </select>
@@ -465,7 +507,7 @@ export default function Page() {
                 <span className="display text-2xl md:text-3xl font-medium tight tracking-tight">BJN Mark &amp; Entreprenad</span>
               </div>
               <p className="text-white/60 text-sm md:text-base font-light leading-relaxed">
-                Mark- och anläggningsentreprenader i Nykvarn och Mälardalen. Från schakt och grundläggning till färdig finplanering — utfört med precision och full kontroll.
+                Konsultverksamhet inom projekt- och projekteringsledning, utredningar och byggledning i Mälardalen. Vi driver projekt åt beställare.
               </p>
             </div>
             <div className="flex flex-wrap gap-4">
@@ -473,7 +515,7 @@ export default function Page() {
                 href="#kontakt"
                 className="inline-flex items-center gap-2 bg-white text-black px-6 py-3.5 rounded-full text-xs uppercase tracking-widest font-medium hover:bg-white/85 transition-colors"
               >
-                Begär offert <iconify-icon icon="solar:arrow-right-up-linear" width="18"></iconify-icon>
+                Kontakta oss <iconify-icon icon="solar:arrow-right-up-linear" width="18"></iconify-icon>
               </a>
               <a
                 href="tel:+46733321122"
@@ -490,12 +532,11 @@ export default function Page() {
             <div>
               <h4 className="text-xs font-semibold uppercase tracking-[0.2em] text-white/40 mb-5">Tjänster</h4>
               <ul className="space-y-3 text-white/70 font-light text-sm">
-                <li><a href="#tjanster" className="hover:text-white transition-colors">Markarbeten &amp; schakt</a></li>
-                <li><a href="#tjanster" className="hover:text-white transition-colors">Anläggning &amp; finplanering</a></li>
-                <li><a href="#tjanster" className="hover:text-white transition-colors">Dränering &amp; VA</a></li>
-                <li><a href="#tjanster" className="hover:text-white transition-colors">Grundläggning</a></li>
-                <li><a href="#tjanster" className="hover:text-white transition-colors">Stenläggning &amp; murar</a></li>
-                <li><a href="#tjanster" className="hover:text-white transition-colors">Vägar &amp; hårdgjorda ytor</a></li>
+                <li><a href="#tjanster" className="hover:text-white transition-colors">Projektledning</a></li>
+                <li><a href="#tjanster" className="hover:text-white transition-colors">Projekteringsledning</a></li>
+                <li><a href="#tjanster" className="hover:text-white transition-colors">Utredningar</a></li>
+                <li><a href="#tjanster" className="hover:text-white transition-colors">Byggledning</a></li>
+                <li><a href="#tjanster" className="hover:text-white transition-colors">Interimschef</a></li>
               </ul>
             </div>
 
@@ -507,7 +548,7 @@ export default function Page() {
                 <li><a href="#tjanster" className="hover:text-white transition-colors">Våra tjänster</a></li>
                 <li><a href="#arbeten" className="hover:text-white transition-colors">Ur vardagen</a></li>
                 <li><a href="#kontakt" className="hover:text-white transition-colors">Vanliga frågor (FAQ)</a></li>
-                <li><a href="#kontakt" className="hover:text-white transition-colors">Kostnadsfritt platsbesök</a></li>
+                <li><a href="#kontakt" className="hover:text-white transition-colors">Kontakta oss</a></li>
               </ul>
             </div>
 
@@ -560,7 +601,7 @@ export default function Page() {
             <div className="flex items-center gap-4">
               <span>Nykvarn · Mälardalen</span>
               <span>•</span>
-              <span>Mark · Anläggning · Entreprenad</span>
+              <span>Projektledning · Projekteringsledning · Byggledning</span>
             </div>
           </div>
         </div>

@@ -8,12 +8,12 @@ const inter = Inter({ subsets: ["latin"], display: "swap", variable: "--font-int
 const grotesk = Space_Grotesk({ subsets: ["latin"], display: "swap", variable: "--font-grotesk" });
 
 export const metadata: Metadata = {
-  title: "BJN Mark & Entreprenad — Mark & anläggning i Nykvarn",
+  title: "BJN Mark & Entreprenad — Projekt- & Projekteringsledning",
   description:
-    "BJN Mark & Entreprenad AB utför markarbeten, schakt, dränering, VA, grundläggning och finplanering i Nykvarn och Mälardalen.",
+    "BJN Mark & Entreprenad AB är konsulter som driver projekt åt privata fastighetsägare, fastighetsutvecklare och offentliga beställare inom projektledning, projekteringsledning, utredningar och byggledning.",
   openGraph: {
-    title: "BJN Mark & Entreprenad — Nykvarn & Mälardalen",
-    description: "Mark, anläggning & entreprenad från schakt till färdig finplanering.",
+    title: "BJN Mark & Entreprenad — Projekt- & Projekteringsledning",
+    description: "Vi driver projekt åt beställare inom projektledning, projekteringsledning, utredningar och byggledning.",
     locale: "sv_SE",
     type: "website",
   },
